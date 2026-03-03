@@ -1,22 +1,27 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "框架": null,
-  "routes": [
-    {
-      "src": "^/in(.*)$",
-      "dest": "https://vervemind-web.vercel.app/in$1"
-    },
-    {
-      "src": "^/api/(.*)$",
-      "dest": "https://vervemind-web.vercel.app/api/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "https://vervemind-web.vercel.app/$1"
-    }
-  ],
+  "version": 2,
+  "framework": null,
+  "buildCommand": "cd apps/web && npm run build",
+  "outputDirectory": "apps/web/dist",
   "regions": ["iad1"],
   "env": {
     "VERVEMIND_ENV": "production"
-  }
+  },
+  "rewrites": [
+    { "source": "/in(.*)", "destination": "/in/index.html" },
+    { "source": "/blitz(.*)", "destination": "/blitz/index.html" },
+    { "source": "/seo(.*)", "destination": "/seo/index.html" },
+    { "source": "/voice(.*)", "destination": "/voice/index.html" }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "X-XSS-Protection", "value": "1; mode=block" }
+      ]
+    }
+  ]
 }
