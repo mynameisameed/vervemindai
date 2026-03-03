@@ -17,7 +17,7 @@ export default function SEOPage() {
       </nav>
       <section style={{padding:'160px 0 100px',background:'linear-gradient(180deg,#D1FAE5,#fff)',position:'relative',overflow:'hidden'}}>
         <div style={{maxWidth:1200,margin:'0 auto',padding:'0 24px'}}>
-          <h1 style={{fontSize:56,fontWeight:800,lineHeight:1.1,marginBottom:24}}>Be Found By <span style={{background:'linear-gradient(135deg,#10B981,#3B82F6)','-webkit-background-clip':'text','-webkit-text-fill-color':'transparent'}}>Local Customers</span></h1>
+          <h1 style={{fontSize:56,fontWeight:800,lineHeight:1.1,marginBottom:24,color:'#10B981'}}>Be Found By Local Customers</h1>
           <p style={{fontSize:20,color:'#6B7280',marginBottom:32,maxWidth:500}}>Dominate Google Maps, local search results, and attract customers in your area searching for your services right now.</p>
           <div style={{display:'flex',gap:40,marginTop:48,paddingTop:32,borderTop:'1px solid rgba(0,0,0,.1)'}}>
             <div><div style={{fontSize:36,fontWeight:800,color:'#10B981'}}>200%</div><div style={{fontSize:14,color:'#6B7280'}}>More Local Leads</div></div>

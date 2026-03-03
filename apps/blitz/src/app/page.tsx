@@ -17,7 +17,7 @@ export default function BlitzPage() {
       </nav>
       <section style={{padding:'160px 0 100px',background:'linear-gradient(180deg,#FEF3C7,#fff)',position:'relative',overflow:'hidden'}}>
         <div style={{maxWidth:1200,margin:'0 auto',padding:'0 24px'}}>
-          <h1 style={{fontSize:56,fontWeight:800,lineHeight:1.1,marginBottom:24}}>Win Back Your <span style={{background:'linear-gradient(135deg,#F59E0B,#EF4444)','-webkit-background-clip':'text','-webkit-text-fill-color':'transparent'}}>Lost Customers</span></h1>
+          <h1 style={{fontSize:56,fontWeight:800,lineHeight:1.1,marginBottom:24,color:'#F59E0B'}}>Win Back Your Lost Customers</h1>
           <p style={{fontSize:20,color:'#6B7280',marginBottom:32,maxWidth:500}}>The complete system to reactivate past clients, re-engage cold leads, and turn "gone" customers into repeat buyers.</p>
           <div style={{display:'flex',gap:40,marginTop:48,paddingTop:32,borderTop:'1px solid rgba(0,0,0,.1)'}}>
             <div><div style={{fontSize:36,fontWeight:800,color:'#F59E0B'}}>73%</div><div style={{fontSize:14,color:'#6B7280'}}>Average Recovery Rate</div></div>

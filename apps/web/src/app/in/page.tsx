@@ -19,7 +19,7 @@ export default function IndiaPage() {
       <section style={{padding:'160px 0 100px',background:'linear-gradient(180deg,#F0F1FF,#fff)',position:'relative',overflow:'hidden'}}>
         <div style={{maxWidth:1200,margin:'0 auto',padding:'0 24px',display:'grid',gridTemplateColumns:'1fr 1fr',gap:60,alignItems:'center'}}>
           <div>
-            <h1 style={{fontSize:56,fontWeight:800,lineHeight:1.1,marginBottom:24}}>Fill Your Clinic's <span style={{background:'linear-gradient(135deg,#6366F1,#8B5CF6)','-webkit-background-clip':'text','-webkit-text-fill-color':'transparent'}}>Appointment Book</span> While You Sleep</h1>
+            <h1 style={{fontSize:56,fontWeight:800,lineHeight:1.1,marginBottom:24,background:'linear-gradient(135deg,#6366F1,#8B5CF6)','-webkit-background-clip':'text','-webkit-text-fill-color':'transparent',color:'transparent'}}>Fill Your Clinic's Appointment Book While You Sleep</h1>
             <p style={{fontSize:20,color:'#6B7280',marginBottom:32,maxWidth:500}}>AI-powered booking that calls patients, confirms appointments, and brings back no-shows — working 24/7 for clinics across India.</p>
             <div style={{display:'flex',gap:40,marginTop:48,paddingTop:32,borderTop:'1px solid rgba(0,0,0,.1)'}}>
               <div><div style={{fontSize:36,fontWeight:800,color:'#6366F1'}}>500+</div><div style={{fontSize:14,color:'#6B7280'}}>Clinics in India</div></div>
