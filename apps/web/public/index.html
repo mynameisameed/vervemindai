@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VerveMind - AI Automation for Dental & Medical Clinics</title>
+    <meta name="description" content="Transform your clinic with AI-powered appointment booking and lead reactivation.">
+    <script src="geo-redirect.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Inter',sans-serif;background:#0A0A0B;color:#fff;line-height:1.6}
+        .container{max-width:1200px;margin:0 auto;padding:0 24px}
+        nav{position:fixed;top:0;left:0;right:0;background:rgba(10,10,11,0.95);backdrop-filter:blur(10px);z-index:1000;padding:16px 0}
+        .nav-content{display:flex;justify-content:space-between;align-items:center}
+        .logo{font-size:24px;font-weight:800;background:linear-gradient(135deg,#6366F1,#8B5CF6);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+        .links{display:flex;gap:32px}
+        .links a{color:#9CA3AF;text-decoration:none;font-weight:500;transition:color 0.2s}
+        .links a:hover{color:#fff}
+        .region-toggle{background:#1F2937;padding:8px 16px;border-radius:8px;border:1px solid #374151;cursor:pointer;font-size:14px;color:#9CA3AF}
+        .region-toggle:hover{border-color:#6366F1;color:#fff}
+        .hero{padding:160px 0 100px;text-align:center}
+        .hero h1{font-size:64px;font-weight:800;line-height:1.1;margin-bottom:24px}
+        .hero h1 span{background:linear-gradient(135deg,#6366F1,#8B5CF6);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+        .hero p{font-size:20px;color:#9CA3AF;max-width:600px;margin:0 auto 40px}
+        .btn{display:inline-flex;align-items:center;gap:8px;padding:16px 32px;border-radius:12px;font-weight:600;text-decoration:none;transition:0.2s}
+        .btn-primary{background:linear-gradient(135deg,#6366F1,#8B5CF6);color:#fff}
+        .btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 40px rgba(99,102,241,0.3)}
+        .btn-secondary{background:transparent;border:2px solid #374151;color:#fff}
+        .btn-secondary:hover{border-color:#6366F1}
+        .stats{display:flex;justify-content:center;gap:60px;padding:60px 0;border-top:1px solid #1F2937}
+        .stat{text-align:center}
+        .stat-value{font-size:48px;font-weight:800;background:linear-gradient(135deg,#6366F1,#8B5CF6);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+        .stat-label{color:#9CA3AF;font-size:14px}
+        .footer{padding:40px 0;text-align:center;color:#6B7280;font-size:14px}
+        .loading{position:fixed;top:0;left:0;right:0;bottom:0;background:#0A0A0B;display:flex;align-items:center;justify-content:center;z-index:9999;transition:opacity 0.3s}
+        .loading.hidden{opacity:0;pointer-events:none}
+    </style>
+</head>
+<body>
+    <div class="loading" id="loading">Loading...</div>
+    
+    <nav>
+        <div class="container nav-content">
+            <div class="logo">VerveMind</div>
+            <div class="links">
+                <a href="#products">Products</a>
+                <a href="#pricing">Pricing</a>
+                <a href="#about">About</a>
+                <button class="region-toggle" onclick="toggleRegion()">🌐 Switch to India</button>
+            </div>
+        </div>
+    </nav>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>AI That Books <span>Appointments</span><br>While You Sleep</h1>
+            <p>Transform your dental or medical clinic with 24/7 AI-powered scheduling, lead reactivation, and patient communication. Starting at $299/month.</p>
+            <div style="display:flex;gap:16px;justify-content:center">
+                <a href="#demo" class="btn btn-primary">See Demo →</a>
+                <a href="#contact" class="btn btn-secondary">Talk to Sales</a>
+            </div>
+        </div>
+    </section>
+    
+    <section class="stats">
+        <div class="stat">
+            <div class="stat-value">50K+</div>
+            <div class="stat-label">Appointments Booked</div>
+        </div>
+        <div class="stat">
+            <div class="stat-value">300%</div>
+            <div class="stat-label">ROI Average</div>
+        </div>
+        <div class="stat">
+            <div class="stat-value">98%</div>
+            <div class="stat-label">Accuracy</div>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <div class="container">
+            © 2026 VerveMind. US Operations.<br>
+            <small>Auto-detected your region. <a href="/in/" style="color:#6366F1">Go to India site →</a></small>
+        </div>
+    </footer>
+    
+    <script>
+        // Hide loading after geo-redirect check
+        setTimeout(() => {
+            document.getElementById('loading').classList.add('hidden');
+        }, 500);
+        
+        // Update region toggle button text
+        const region = localStorage.getItem('vervemind-region') || 'US';
+        const btn = document.querySelector('.region-toggle');
+        if(btn && region === 'IN') {
+            btn.textContent = '🌐 Switch to US';
+        }
+    </script>
+</body>
+</html>
