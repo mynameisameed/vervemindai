@@ -1,4 +1,62 @@
+"use client";
+
+import { FormEvent, useState } from "react";
+
+const CALENDLY_URL = "https://calendly.com/vervemindai/30min";
+
 export default function IndiaPage() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+    setStatus("idle");
+
+    const formData = new FormData(event.currentTarget);
+    const clinicName = String(formData.get("clinicName") || "").trim();
+    const phoneNumber = String(formData.get("phoneNumber") || "").replace(/\D/g, "");
+
+    if (!clinicName || phoneNumber.length < 10) {
+      setStatus("error");
+      setMessage("Please enter a valid clinic name and 10-digit phone number.");
+      setIsSubmitting(false);
+      return;
+    }
+
+    try {
+      const payload = {
+        clinicName,
+        phoneNumber: `+91${phoneNumber}`,
+        source: "vervemind-india-landing",
+        timestamp: new Date().toISOString(),
+      };
+
+      const webhook = process.env.NEXT_PUBLIC_INTAKE_WEBHOOK;
+      if (webhook) {
+        const response = await fetch(webhook, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+
+        if (!response.ok) {
+          throw new Error("Webhook request failed");
+        }
+      }
+
+      setStatus("success");
+      setMessage("Thanks! We received your request. You can now book your kickoff call.");
+      event.currentTarget.reset();
+    } catch {
+      setStatus("error");
+      setMessage("Submission failed. Please book directly via Calendly below.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <>
       <nav style={{position:'fixed',top:0,left:0,right:0,background:'rgba(255,255,255,.95)',backdropFilter:'blur(10px)',zIndex:1000,padding:'16px 0',borderBottom:'1px solid rgba(0,0,0,.05)'}}>
@@ -8,10 +66,7 @@ export default function IndiaPage() {
             VerveMind India
           </div>
           <div style={{display:'flex',gap:32,alignItems:'center'}}>
-            <a href="#problem" style={{color:'#6B7280',textDecoration:'none',fontWeight:500}}>Problems</a>
-            <a href="#solution" style={{color:'#6B7280',textDecoration:'none',fontWeight:500}}>Solution</a>
             <a href="#pricing" style={{color:'#6B7280',textDecoration:'none',fontWeight:500}}>Pricing</a>
-            <a href="#faq" style={{color:'#6B7280',textDecoration:'none',fontWeight:500}}>FAQ</a>
             <a href="#contact" style={{display:'inline-flex',alignItems:'center',gap:8,padding:'12px 24px',borderRadius:12,fontWeight:600,fontSize:16,textDecoration:'none',background:'linear-gradient(135deg,#6366F1,#8B5CF6)',color:'#fff',boxShadow:'0 4px 14px rgba(99,102,241,.4)'}}>Get Started</a>
           </div>
         </div>
@@ -19,7 +74,7 @@ export default function IndiaPage() {
       <section style={{padding:'160px 0 100px',background:'linear-gradient(180deg,#F0F1FF,#fff)',position:'relative',overflow:'hidden'}}>
         <div style={{maxWidth:1200,margin:'0 auto',padding:'0 24px',display:'grid',gridTemplateColumns:'1fr 1fr',gap:60,alignItems:'center'}}>
           <div>
-            <h1 style={{fontSize:56,fontWeight:800,lineHeight:1.1,marginBottom:24,color:'#6366F1'}}>Fill Your Clinic's Appointment Book While You Sleep</h1>
+            <h1 style={{fontSize:56,fontWeight:800,lineHeight:1.1,marginBottom:24,color:'#6366F1'}}>Fill Your Clinic&apos;s Appointment Book While You Sleep</h1>
             <p style={{fontSize:20,color:'#6B7280',marginBottom:32,maxWidth:500}}>AI-powered booking that calls patients, confirms appointments, and brings back no-shows — working 24/7 for clinics across India.</p>
             <div style={{display:'flex',gap:40,marginTop:48,paddingTop:32,borderTop:'1px solid rgba(0,0,0,.1)'}}>
               <div><div style={{fontSize:36,fontWeight:800,color:'#6366F1'}}>500+</div><div style={{fontSize:14,color:'#6B7280'}}>Clinics in India</div></div>
@@ -30,20 +85,24 @@ export default function IndiaPage() {
           <div id="contact" style={{background:'#fff',padding:40,borderRadius:24,boxShadow:'0 20px 25px rgba(0,0,0,.1)'}}>
             <h3 style={{fontSize:24,marginBottom:8}}>Start Your Free Trial</h3>
             <p style={{color:'#6B7280',marginBottom:24}}>No credit card required. 14-day free trial.</p>
-            <form>
+            <form onSubmit={handleSubmit}>
               <div style={{marginBottom:20}}>
                 <label style={{display:'block',fontWeight:600,marginBottom:8,fontSize:14}}>Clinic Name</label>
-                <input type="text" placeholder="e.g., Apollo Clinic" style={{width:'100%',padding:'14px 16px',border:'2px solid #E5E7EB',borderRadius:12,fontSize:16}} required />
+                <input name="clinicName" type="text" placeholder="e.g., Apollo Clinic" style={{width:'100%',padding:'14px 16px',border:'2px solid #E5E7EB',borderRadius:12,fontSize:16}} required />
               </div>
               <div style={{marginBottom:20}}>
                 <label style={{display:'block',fontWeight:600,marginBottom:8,fontSize:14}}>Phone Number</label>
                 <div style={{display:'flex',alignItems:'center',gap:12}}>
                   <div style={{display:'flex',alignItems:'center',gap:8,padding:'14px 16px',background:'#F9FAFB',border:'2px solid #E5E7EB',borderRadius:12,fontWeight:600}}><span>🇮🇳</span><span>+91</span></div>
-                  <input type="tel" placeholder="98765 43210" style={{flex:1,padding:'14px 16px',border:'2px solid #E5E7EB',borderRadius:12,fontSize:16}} required />
+                  <input name="phoneNumber" type="tel" inputMode="numeric" placeholder="98765 43210" style={{flex:1,padding:'14px 16px',border:'2px solid #E5E7EB',borderRadius:12,fontSize:16}} required />
                 </div>
               </div>
-              <button type="submit" style={{width:'100%',display:'inline-flex',alignItems:'center',justifyContent:'center',gap:8,padding:'12px 24px',borderRadius:12,fontWeight:600,fontSize:16,textDecoration:'none',background:'linear-gradient(135deg,#6366F1,#8B5CF6)',color:'#fff',boxShadow:'0 4px 14px rgba(99,102,241,.4)',border:'none',cursor:'pointer'}}>Start Free Trial</button>
+              <button disabled={isSubmitting} type="submit" style={{width:'100%',display:'inline-flex',alignItems:'center',justifyContent:'center',gap:8,padding:'12px 24px',borderRadius:12,fontWeight:600,fontSize:16,textDecoration:'none',background:'linear-gradient(135deg,#6366F1,#8B5CF6)',color:'#fff',boxShadow:'0 4px 14px rgba(99,102,241,.4)',border:'none',cursor:'pointer',opacity:isSubmitting?0.75:1}}>{isSubmitting ? "Submitting..." : "Start Free Trial"}</button>
             </form>
+            {status !== "idle" && (
+              <p style={{marginTop:14,color:status === "success" ? "#16A34A" : "#DC2626",fontSize:14}}>{message}</p>
+            )}
+            <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" style={{display:'inline-flex',justifyContent:'center',width:'100%',marginTop:14,color:'#6366F1',fontWeight:600,textDecoration:'none'}}>Or book directly on Calendly →</a>
           </div>
         </div>
       </section>
@@ -73,7 +132,7 @@ export default function IndiaPage() {
                   </li>
                 ))}
               </ul>
-              <a href="#contact" style={{display:'inline-flex',alignItems:'center',justifyContent:'center',gap:8,padding:'12px 24px',borderRadius:12,fontWeight:600,fontSize:16,textDecoration:'none',background:p.popular?'linear-gradient(135deg,#6366F1,#8B5CF6)':'transparent',color:p.popular?'#fff':'#6366F1',border:p.popular?'none':'2px solid #6366F1',width:'100%'}}>Get Started</a>
+              <a href={CALENDLY_URL} target="_blank" rel="noopener noreferrer" style={{display:'inline-flex',alignItems:'center',justifyContent:'center',gap:8,padding:'12px 24px',borderRadius:12,fontWeight:600,fontSize:16,textDecoration:'none',background:p.popular?'linear-gradient(135deg,#6366F1,#8B5CF6)':'transparent',color:p.popular?'#fff':'#6366F1',border:p.popular?'none':'2px solid #6366F1',width:'100%'}}>Book Demo</a>
             </div>
           ))}
         </div>
@@ -90,11 +149,11 @@ export default function IndiaPage() {
             </div>
           </div>
           <div style={{paddingTop:30,borderTop:'1px solid rgba(255,255,255,.1)',display:'flex',justifyContent:'space-between',alignItems:'center',fontSize:14,color:'#9CA3AF'}}>
-            <div>© 2024 VerveMind India. All rights reserved.</div>
+            <div>© 2026 VerveMind India. All rights reserved.</div>
             <div style={{display:'flex',alignItems:'center',gap:8,background:'rgba(255,255,255,.1)',padding:'8px 16px',borderRadius:8,fontSize:13}}>💳 Powered by UPI & Indian Payment Gateways</div>
           </div>
         </div>
       </footer>
     </>
-  )
+  );
 }

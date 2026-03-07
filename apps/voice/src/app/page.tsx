@@ -84,7 +84,7 @@ export default function VoicePage() {
                   </li>
                 ))}
               </ul>
-              <a href="#" style={{display:'inline-flex',alignItems:'center',justifyContent:'center',gap:8,padding:'12px 24px',borderRadius:12,fontWeight:600,fontSize:16,textDecoration:'none',background:p.popular?'linear-gradient(135deg,#8B5CF6,#EC4899)':'#F3E8FF',color:p.popular?'#fff':'#8B5CF6',width:'100%'}}>Get Started</a>
+              <a href="https://calendly.com/vervemindai/30min" target="_blank" rel="noopener noreferrer" style={{display:'inline-flex',alignItems:'center',justifyContent:'center',gap:8,padding:'12px 24px',borderRadius:12,fontWeight:600,fontSize:16,textDecoration:'none',background:p.popular?'linear-gradient(135deg,#8B5CF6,#EC4899)':'#F3E8FF',color:p.popular?'#fff':'#8B5CF6',width:'100%'}}>Book Strategy Call</a>
             </div>
           ))}
         </div>

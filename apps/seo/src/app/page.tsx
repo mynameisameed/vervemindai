@@ -73,7 +73,7 @@ export default function SEOPage() {
                   </li>
                 ))}
               </ul>
-              <a href="#" style={{display:'inline-flex',alignItems:'center',justifyContent:'center',gap:8,padding:'12px 24px',borderRadius:12,fontWeight:600,fontSize:16,textDecoration:'none',background:'linear-gradient(135deg,#10B981,#3B82F6)',color:'#fff',width:'100%'}}>Get Started</a>
+              <a href="https://calendly.com/vervemindai/30min" target="_blank" rel="noopener noreferrer" style={{display:'inline-flex',alignItems:'center',justifyContent:'center',gap:8,padding:'12px 24px',borderRadius:12,fontWeight:600,fontSize:16,textDecoration:'none',background:'linear-gradient(135deg,#10B981,#3B82F6)',color:'#fff',width:'100%'}}>Book Strategy Call</a>
             </div>
           ))}
         </div>
