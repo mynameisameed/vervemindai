@@ -86,7 +86,7 @@ export default function HomePage() {
           <div style={{ display: 'flex', gap: 28, alignItems: 'center' }}>
             {[
               { label: 'Engine', href: '#solutions' },
-              { label: 'How It Works', href: '#how-it-works' },
+              { label: 'Pricing', href: '/pricing' },
               { label: 'MedSpa', href: 'https://medspa.vervemindai.com' },
               { label: 'Dental', href: 'https://dental.vervemindai.com' },
               { label: 'Roofing', href: 'https://roofing.vervemindai.com' },
@@ -396,10 +396,10 @@ export default function HomePage() {
             <div>
               <h4 style={{ fontSize: 12, fontWeight: 800, color: '#FFFFFF', textTransform: 'uppercase', letterSpacing: '0.15em', marginBottom: 24 }}>Organization</h4>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 16 }}>
-                <li><a href="#how-it-works" style={{ color: '#A1A1AA', textDecoration: 'none', fontSize: 15 }}>How It Works</a></li>
-                <li><a href="#solutions" style={{ color: '#A1A1AA', textDecoration: 'none', fontSize: 15 }}>Solutions</a></li>
-                <li><a href="/blog" style={{ color: '#A1A1AA', textDecoration: 'none', fontSize: 15 }}>Blog</a></li>
-                <li><a href="/privacy" style={{ color: '#A1A1AA', textDecoration: 'none', fontSize: 15 }}>Privacy &amp; Security</a></li>
+                <li><a href="/about" style={{ color: '#A1A1AA', textDecoration: 'none', fontSize: 15 }}>About the Tech</a></li>
+                <li><a href="/pricing" style={{ color: '#A1A1AA', textDecoration: 'none', fontSize: 15 }}>Autonomous Pricing</a></li>
+                <li><a href="/blog" style={{ color: '#A1A1AA', textDecoration: 'none', fontSize: 15 }}>Engineering Blog</a></li>
+                <li><a href="/contact" style={{ color: '#A1A1AA', textDecoration: 'none', fontSize: 15 }}>Contact Support</a></li>
               </ul>
             </div>
             <div>
