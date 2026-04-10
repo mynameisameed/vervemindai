@@ -1,0 +1,22 @@
+# VerveMind AI
+
+> VerveMind AI deploys specialized AI voice agents and autonomous operating systems for small and medium-sized businesses. We serve MedSpa and aesthetic clinics, dental practices, roofing companies, and home services businesses across the United States.
+
+## Core Products
+
+- **Reactivation Blitz**: AI-powered dormant patient/client reactivation via SMS + voice outreach
+- **Dental Receptionist OS**: 24/7 AI phone answering, appointment booking, and patient intake for dental practices
+- **Roofing Quotes OS**: AI-powered inbound call handling and quote dispatch for roofing companies
+- **AI Receptionist**: General-purpose AI voice receptionist with sub-600ms response latency
+
+## Key Pages
+
+- [Homepage](https://vervemindai.com): Overview of all products and services
+- [MedSpa AI](https://medspa.vervemindai.com): AI receptionist and reactivation for aesthetic clinics
+- [Dental AI](https://dental.vervemindai.com): AI front desk for dental practices
+- [Blog](https://vervemindai.com/blog): Insights on AI automation for SMBs
+
+## Contact
+
+Email: team@vervemindai.com
+Book a call: https://calendly.com/vervemindai/lead
