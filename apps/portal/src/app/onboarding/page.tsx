@@ -18,8 +18,30 @@ export default function OnboardingWizard() {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
-  const nextStep = () => setStep(prev => Math.min(prev + 1, 4));
-  const prevStep = () => setStep(prev => Math.max(prev - 1, 1));
+  const deployAgent = async () => {
+    try {
+      const response = await fetch('https://samgaming-pc2.tail1abe0b.ts.net/webhook/onboarding', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          clinicName: formData.clinicName,
+          niche: formData.niche,
+          pmsSystem: formData.pmsSystem,
+          calendlyUrl: formData.bookingUrl,
+          tone: formData.brandTone,
+          specialOffer: formData.customOffer,
+        }),
+      });
+      if (response.ok) {
+        alert('Agent configured successfully! Redirecting...');
+        window.location.href = '/';
+      } else {
+        alert('Failed to deploy. Please try again.');
+      }
+    } catch (err) {
+      alert('Error connecting to deployment server.');
+    }
+  };
 
   return (
     <div style={{ display: 'flex', minHeight: '100vh', flexDirection: 'column', background: '#09090B', color: '#FFF', fontFamily: 'Inter, system-ui, sans-serif' }}>
@@ -193,7 +215,7 @@ export default function OnboardingWizard() {
                 Next Step <ChevronRight size={18} />
               </button>
             ) : (
-              <button onClick={() => alert('Synthesis triggered! (Dummy action)')} style={{ 
+              <button onClick={deployAgent} style={{ 
                 display: 'flex', alignItems: 'center', gap: 8, padding: '12px 24px', borderRadius: 12, fontWeight: 700,
                 background: 'linear-gradient(135deg, #00DFC1, #00F5D4)', color: '#09090B', border: 'none', cursor: 'pointer',
                 boxShadow: '0 8px 16px rgba(0,245,212,0.2)'

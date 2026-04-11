@@ -1,9 +1,32 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BarChart3, Users, PhoneCall, Calendar, Play, Pause, FileText, ChevronDown, ChevronUp } from 'lucide-react';
 
 export default function Dashboard() {
+  const [metrics, setMetrics] = useState({
+    totalCalls: 342,
+    appointments: 68,
+    conversionRate: 24,
+    revenue: '$14,500'
+  });
+
+  useEffect(() => {
+    fetch('https://samgaming-pc2.tail1abe0b.ts.net/webhook/dashboard-metrics')
+      .then(res => res.json())
+      .then(data => {
+        if (data && data.totalCalls !== undefined) {
+          setMetrics({
+            totalCalls: data.totalCalls,
+            appointments: data.appointments,
+            conversionRate: data.conversionRate || 24,
+            revenue: data.revenue || '$14,500'
+          });
+        }
+      })
+      .catch(err => console.error("Could not fetch live metrics"));
+  }, []);
+
   return (
     <div style={{ display: 'flex', minHeight: '100vh', flexDirection: 'column' }}>
       {/* Top Navbar */}
@@ -49,10 +72,10 @@ export default function Dashboard() {
 
         {/* Stats Grid */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 24, marginBottom: 40 }}>
-          <StatCard icon={<PhoneCall size={20} color="#00F5D4" />} title="Inbound Calls Handled" value="342" trend="+12% / mo" />
-          <StatCard icon={<Calendar size={20} color="#38bdf8" />} title="Appointments Booked" value="68" trend="+8% / mo" />
-          <StatCard icon={<Users size={20} color="#a78bfa" />} title="Reactivation Leads" value="12" trend="+24% / mo" />
-          <StatCard icon={<BarChart3 size={20} color="#fb923c" />} title="Est. Revenue Saved" value="$14,500" trend="+15% / mo" />
+          <StatCard icon={<PhoneCall size={20} color="#00F5D4" />} title="Inbound Calls Handled" value={metrics.totalCalls} trend="+12% / mo" />
+          <StatCard icon={<Calendar size={20} color="#38bdf8" />} title="Appointments Booked" value={metrics.appointments} trend="+8% / mo" />
+          <StatCard icon={<Users size={20} color="#a78bfa" />} title="Reactivation Leads" value={metrics.conversionRate} trend="+24% / mo" />
+          <StatCard icon={<BarChart3 size={20} color="#fb923c" />} title="Est. Revenue Saved" value={metrics.revenue} trend="+15% / mo" />
         </div>
 
         {/* Recent Calls Area */}
