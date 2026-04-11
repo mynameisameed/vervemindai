@@ -84,6 +84,33 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'WebSite',
+          name: 'VerveMind AI',
+          url: 'https://vervemindai.com',
+          potentialAction: {
+            '@type': 'SearchAction',
+            target: { '@type': 'EntryPoint', urlTemplate: 'https://vervemindai.com/blog?q={search_term_string}' },
+            'query-input': 'required name=search_term_string'
+          }
+        }) }} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          name: 'AI Receptionist & Reactivation OS',
+          provider: { '@type': 'Organization', name: 'VerveMind AI', url: 'https://vervemindai.com' },
+          serviceType: 'AI Voice Automation',
+          areaServed: 'US',
+          description: 'Autonomous AI voice agents that answer calls 24/7, book appointments, and reactivate dormant patient lists for MedSpas, Dental, and Home Services businesses.',
+          offers: {
+            '@type': 'Offer',
+            priceCurrency: 'USD',
+            price: '297',
+            priceSpecification: { '@type': 'UnitPriceSpecification', priceCurrency: 'USD', price: '297', unitText: 'MONTH' },
+            url: 'https://vervemindai.com/pricing'
+          }
+        }) }} />
       </head>
       <body style={{ margin: 0, padding: 0, background: '#09090B', color: '#E5E2E1' }}>
         {children}

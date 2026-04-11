@@ -1,0 +1,27 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Sitemap: https://vervemindai.com/sitemap.xml
+
+# Primary crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# AI crawlers — allow for citation indexing
+User-agent: GPTBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /

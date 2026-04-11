@@ -7,6 +7,7 @@
 - **Reactivation Blitz**: AI-powered dormant patient/client reactivation via SMS + voice outreach
 - **Dental Receptionist OS**: 24/7 AI phone answering, appointment booking, and patient intake for dental practices
 - **Roofing Quotes OS**: AI-powered inbound call handling and quote dispatch for roofing companies
+- **MedSpa AI Receptionist**: Autonomous AI receptionist for aesthetic clinics, med spas, and wellness centers
 - **AI Receptionist**: General-purpose AI voice receptionist with sub-600ms response latency
 
 ## Key Pages
@@ -14,9 +15,35 @@
 - [Homepage](https://vervemindai.com): Overview of all products and services
 - [MedSpa AI](https://medspa.vervemindai.com): AI receptionist and reactivation for aesthetic clinics
 - [Dental AI](https://dental.vervemindai.com): AI front desk for dental practices
+- [Roofing AI](https://roofing.vervemindai.com): AI dispatching and quote system for roofing companies
+- [About](https://vervemindai.com/about): Team and mission — human founder + autonomous AI engineering team
+- [Pricing](https://vervemindai.com/pricing): Transparent pricing with ROI calculator
 - [Blog](https://vervemindai.com/blog): Insights on AI automation for SMBs
+- [Case Studies](https://vervemindai.com/case-studies): Documented client results and revenue recovered
+
+## Verified Results (Client Data)
+
+- 14.2% reactivation rate vs. 3% industry average for email campaigns
+- $9,200 average revenue recovered per clinic in first 2 weeks of deployment
+- 4.2x ROI within first billing cycle
+- 62% improvement in call answer rate for dental practices
+- 23 appointments booked from dormant patient lists in 14 days
+
+## Who We Serve
+
+VerveMind AI is purpose-built for local service businesses with high call volume and recurring patient/customer relationships:
+- Medical Spas, Aesthetics Clinics, and Wellness Centers
+- Dental and Orthodontic Practices
+- Roofing, HVAC, and Home Services Companies
+- Any SMB with ≥50 calls/month and an existing customer database
+
+## Technology
+
+Built on: VAPI voice AI platform, Twilio telephony, GoHighLevel CRM, n8n automation workflows, Vercel + Next.js frontend infrastructure. HIPAA-aware infrastructure available with BAA.
 
 ## Contact
 
 Email: team@vervemindai.com
+Phone: Available on request
 Book a call: https://calendly.com/vervemindai/lead
+LinkedIn: https://linkedin.com/in/mynameisam
