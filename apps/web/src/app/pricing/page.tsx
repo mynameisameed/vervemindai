@@ -1,6 +1,7 @@
 import React from 'react';
 import { Metadata } from 'next';
 import PricingComparison from '../../components/PricingComparison';
+import ROICalculator from '../../components/ROICalculator';
 
 export const metadata: Metadata = {
   title: 'Pricing | VerveMind AI',
@@ -23,6 +24,7 @@ export default function PricingPage() {
           </p>
         </div>
         
+        <ROICalculator />
         <PricingComparison />
         
       </div>
