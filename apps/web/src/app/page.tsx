@@ -11,15 +11,17 @@ import {
 import VoiceDemoPlayer from '../components/VoiceDemoPlayer';
 import PricingComparison from '../components/PricingComparison';
 
-/* ─── Animated Counter Hook ─── */
+/* --- Animated Counter Hook --- */
 function useCounter(end: number, duration = 2000, startOnView = true) {
-  const [count, setCount] = useState(end);
+  const [count, setCount] = useState(end); // SSR: render the real number immediately
+  const [hasAnimated, setHasAnimated] = useState(false);
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
   
   useEffect(() => {
-    setCount(0);
-    if (!startOnView || !inView) return;
+    if (!startOnView || !inView || hasAnimated) return;
+    setHasAnimated(true);
+    setCount(0); // Reset to 0 only when we start animating
     let start = 0;
     const step = Math.ceil(end / (duration / 16));
     const timer = setInterval(() => {
@@ -28,7 +30,7 @@ function useCounter(end: number, duration = 2000, startOnView = true) {
       else setCount(start);
     }, 16);
     return () => clearInterval(timer);
-  }, [inView, end, duration, startOnView]);
+  }, [inView, end, duration, startOnView, hasAnimated]);
 
   return { count, ref };
 }
