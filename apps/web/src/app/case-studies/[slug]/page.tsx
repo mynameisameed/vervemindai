@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getAllCaseStudies, getCaseStudyBySlug } from '../../../../lib/case-studies';
+import { getAllCaseStudies, getCaseStudyBySlug } from '../../../lib/case-studies';
 import { ArrowLeft, CheckCircle2 } from 'lucide-react';
 
 export async function generateStaticParams() {

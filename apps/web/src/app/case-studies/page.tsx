@@ -1,7 +1,7 @@
 import React from 'react';
 import { Metadata } from 'next';
 import Link from 'next/link';
-import { getAllCaseStudies } from '../../../lib/case-studies';
+import { getAllCaseStudies } from '../../lib/case-studies';
 import { ArrowRight, BarChart3, Building } from 'lucide-react';
 
 export const metadata: Metadata = {
