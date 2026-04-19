@@ -41,6 +41,16 @@
       "has": [
         {
           "type": "host",
+          "value": "kits.vervemindai.com"
+        }
+      ],
+      "destination": "https://kits-2pcfqmksn-vervemindaiteam-5098s-projects.vercel.app/$1"
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
           "value": "reactivation.vervemindai.com"
         }
       ],
