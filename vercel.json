@@ -5,23 +5,90 @@
   "buildCommand": "npm run build:web",
   "installCommand": "npm install",
   "outputDirectory": "apps/web/.next",
-  "regions": ["iad1"],
+  "regions": [
+    "iad1"
+  ],
   "env": {
     "VERVEMIND_ENV": "production"
   },
+  "redirects": [
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "header",
+          "key": "x-vercel-ip-country",
+          "value": "IN"
+        }
+      ],
+      "destination": "/in",
+      "permanent": false
+    }
+  ],
   "rewrites": [
-    { "source": "/in(.*)", "destination": "/in/index.html" },
-    { "source": "/blitz(.*)", "destination": "/blitz/index.html" },
-    { "source": "/seo(.*)", "destination": "/seo/index.html" },
-    { "source": "/voice(.*)", "destination": "/voice/index.html" }
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "portal.vervemindai.com"
+        }
+      ],
+      "destination": "https://portal-iuslooptr-vervemindaiteam-5098s-projects.vercel.app/$1"
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "reactivation.vervemindai.com"
+        }
+      ],
+      "destination": "/reactivation/$1"
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "medspa.vervemindai.com"
+        }
+      ],
+      "destination": "/medspa/$1"
+    },
+    {
+      "source": "/in(.*)",
+      "destination": "/in/index.html"
+    },
+    {
+      "source": "/blitz(.*)",
+      "destination": "/blitz/index.html"
+    },
+    {
+      "source": "/seo(.*)",
+      "destination": "/seo/index.html"
+    },
+    {
+      "source": "/voice(.*)",
+      "destination": "/voice/index.html"
+    }
   ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "DENY" },
-        { "key": "X-XSS-Protection", "value": "1; mode=block" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        }
       ]
     }
   ]

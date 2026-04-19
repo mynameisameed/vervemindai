@@ -18,6 +18,9 @@ export default function OnboardingWizard() {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
+  const nextStep = () => setStep(prev => Math.min(prev + 1, 4));
+  const prevStep = () => setStep(prev => Math.max(prev - 1, 1));
+
   const deployAgent = async () => {
     try {
       const response = await fetch('https://samgaming-pc2.tail1abe0b.ts.net/webhook/onboarding', {

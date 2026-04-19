@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Receptionist for MedSpas — VerveMind AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #0b0c10;
+      --bg2: #111318;
+      --bg3: #16181f;
+      --border: #1f2230;
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --pink: #e879f9;
+      --purple: #a855f7;
+      --grad: linear-gradient(90deg, #e879f9, #a855f7);
+      --grad-r: linear-gradient(135deg, #e879f9 0%, #a855f7 100%);
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: rgba(11, 12, 16, 0.92);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 18px;
+      background: var(--grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-cta {
+      background: var(--grad);
+      color: #fff;
+      border: none;
+      padding: 10px 22px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      transition: opacity .2s;
+    }
+
+    .nav-cta:hover {
+      opacity: .85;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 96px 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding-top: 112px;
+      padding-bottom: 80px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(168, 85, 247, .12);
+      border: 1px solid rgba(168, 85, 247, .3);
+      color: var(--purple);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 99px;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 {
+      font-size: clamp(36px, 5vw, 64px);
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: -.02em;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 span {
+      background: var(--grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto 40px;
+      line-height: 1.7;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      background: var(--grad);
+      color: #fff;
+      font-weight: 700;
+      font-size: 17px;
+      padding: 16px 36px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      transition: transform .15s, box-shadow .15s;
+      box-shadow: 0 0 32px rgba(232, 121, 249, .25);
+      text-decoration: none;
+    }
+
+    .hero-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 48px rgba(232, 121, 249, .4);
+    }
+
+    .hero-sub {
+      display: block;
+      margin-top: 16px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* SECTION LABEL */
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      background: var(--grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    h2.section-title {
+      font-size: clamp(28px, 3.5vw, 44px);
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -.02em;
+      margin-bottom: 16px;
+    }
+
+    .section-sub {
+      font-size: 18px;
+      color: var(--muted);
+      max-width: 560px;
+      line-height: 1.7;
+      margin-bottom: 56px;
+    }
+
+    /* PAIN POINTS */
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .pain-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px;
+      transition: border-color .2s;
+    }
+
+    .pain-card:hover {
+      border-color: rgba(168, 85, 247, .4);
+    }
+
+    .pain-icon {
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+
+    .pain-card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .pain-card p {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .pain-card .highlight {
+      color: var(--pink);
+      font-weight: 600;
+    }
+
+    /* DIVIDER */
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 0;
+    }
+
+    /* HOW IT WORKS */
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      counter-reset: steps;
+    }
+
+    .step {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 32px 28px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .step::before {
+      content: counter(steps);
+      counter-increment: steps;
+      position: absolute;
+      top: -10px;
+      right: 16px;
+      font-size: 80px;
+      font-weight: 900;
+      color: rgba(168, 85, 247, .07);
+      line-height: 1;
+    }
+
+    .step-num {
+      width: 36px;
+      height: 36px;
+      background: var(--grad);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 18px;
+    }
+
+    .step h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .step p {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* EXAMPLES */
+    .examples-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .example-card {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .example-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--grad-r);
+      opacity: 0;
+      transition: opacity .25s;
+      pointer-events: none;
+      border-radius: 14px;
+    }
+
+    .example-card:hover::after {
+      opacity: .04;
+    }
+
+    .example-tag {
+      display: inline-block;
+      background: rgba(232, 121, 249, .1);
+      border: 1px solid rgba(232, 121, 249, .2);
+      color: var(--pink);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 99px;
+      margin-bottom: 16px;
+    }
+
+    .example-card h3 {
+      font-size: 17px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .example-card p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .example-result {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      font-size: 14px;
+      color: var(--purple);
+      font-weight: 600;
+    }
+
+    /* RESULTS */
+    .results-wrap {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 56px 48px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 40px;
+      margin-top: 48px;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: 52px;
+      font-weight: 900;
+      line-height: 1;
+      background: var(--grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 8px;
+    }
+
+    .stat-label {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .results-disclaimer {
+      margin-top: 28px;
+      font-size: 12px;
+      color: rgba(148, 163, 184, .5);
+      text-align: center;
+      font-style: italic;
+    }
+
+    /* CTA */
+    .cta-section {
+      background: linear-gradient(135deg, #150d2a 0%, #1a0e33 50%, #160d2e 100%);
+      border: 1px solid rgba(168, 85, 247, .2);
+      border-radius: 24px;
+      padding: 72px 48px;
+      text-align: center;
+      margin: 0 40px 80px;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-glow {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(168, 85, 247, .15) 0%, transparent 70%);
+      top: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      pointer-events: none;
+    }
+
+    .cta-section h2 {
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 900;
+      line-height: 1.15;
+      letter-spacing: -.02em;
+      margin-bottom: 16px;
+      position: relative;
+    }
+
+    .cta-section p {
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 480px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+      position: relative;
+    }
+
+    .urgency {
+      display: inline-block;
+      background: rgba(232, 121, 249, .1);
+      border: 1px solid rgba(232, 121, 249, .25);
+      color: var(--pink);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 6px 16px;
+      border-radius: 99px;
+      margin-bottom: 28px;
+      position: relative;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: var(--grad);
+      color: #fff;
+      font-weight: 700;
+      font-size: 17px;
+      padding: 16px 40px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 0 48px rgba(232, 121, 249, .3);
+      transition: transform .15s, box-shadow .15s;
+      text-decoration: none;
+      position: relative;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 64px rgba(232, 121, 249, .5);
+    }
+
+    .cta-sub {
+      display: block;
+      margin-top: 14px;
+      font-size: 13px;
+      color: var(--muted);
+      position: relative;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 40px;
+      text-align: center;
+      color: rgba(148, 163, 184, .4);
+      font-size: 13px;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 640px) {
+      nav {
+        padding: 16px 20px;
+      }
+
+      section {
+        padding: 64px 20px;
+      }
+
+      .hero {
+        padding-top: 64px;
+      }
+
+      .cta-section {
+        margin: 0 20px 64px;
+        padding: 48px 28px;
+      }
+
+      .results-wrap {
+        padding: 36px 24px;
+      }
+
+      footer {
+        padding: 24px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo">VerveMind AI</div>
+    <button class="nav-cta" href="#">Get a Demo →</button>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge">AI Receptionist · Lead Reactivation · 24/7</div>
+    <h1>Your MedSpa Is Losing<br><span>Thousands Every Month</span><br>to Missed Calls.</h1>
+    <p>Every unanswered call is a Botox appointment that books at the place down the street. We fix that —
+      automatically.</p>
+    <a href="#" class="hero-cta">See How It Works →</a>
+    <span class="hero-sub">No long-term contracts · Setup in 3 days</span>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- PAIN POINTS -->
+  <section>
+    <span class="section-label">The Problem</span>
+    <h2 class="section-title">Your front desk is<br>costing you clients.</h2>
+    <p class="section-sub">Not because they're bad at their job. Because no human can be in 5 places at once.</p>
+
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="pain-icon">📞</div>
+        <h3>Missed calls = missed revenue</h3>
+        <p>A Botox client calls during a busy treatment hour. No answer. <span class="highlight">She books at the medspa
+            that picks up.</span> That's $400–$800 gone in 30 seconds.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">🧊</div>
+        <h3>Leads go cold in 24 hours</h3>
+        <p>That woman who inquired about a HydraFacial membership last Tuesday? <span class="highlight">She's already
+            forgotten you.</span> No one followed up. The moment passed.</p>
+      </div>
+      <div class="pain-card">
+        <div class="pain-icon">📋</div>
+        <h3>Lapsed clients don't come back on their own</h3>
+        <p>You have 200+ clients who haven't booked in 90 days. Your front desk has <span class="highlight">zero time to
+            reach out</span> — so that revenue just sits there.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- HOW IT WORKS -->
+  <section>
+    <span class="section-label">How It Works</span>
+    <h2 class="section-title">Three things. Done automatically.</h2>
+    <p class="section-sub">No complicated software. No extra staff. It runs in the background while your team focuses on
+      the client in the chair.</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Answers every call instantly</h3>
+        <p>Our AI picks up in under 2 seconds — any hour, any day. It answers questions about Botox, facials,
+          memberships, and pricing. It books appointments directly into your calendar. Sounds natural. Never puts anyone
+          on hold.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Reactivates your dormant clients</h3>
+        <p>We pull your client list, identify who hasn't booked in 60–90+ days, and send personalized text sequences.
+          Not blasts — messages timed to each client's treatment history. "Hi Maya, it's been a while since your last
+          HydraFacial — we have an opening this Thursday."</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Follows up until they book</h3>
+        <p>Interested leads that didn't convert get a multi-touch follow-up sequence — automatically. You wake up to a
+          calendar that booked itself overnight.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- MEDSPA EXAMPLES -->
+  <section>
+    <span class="section-label">Real Scenarios</span>
+    <h2 class="section-title">Exactly what this looks like<br>at a medspa like yours.</h2>
+    <p class="section-sub">Not hypothetical. These are the conversations and campaigns your AI runs on day one.</p>
+
+    <div class="examples-grid">
+      <div class="example-card">
+        <div class="example-tag">Botox</div>
+        <h3>The 90-day lapse</h3>
+        <p>A client got Botox in January. She's due for a touch-up. Life got busy — she never called. Your AI texts her:
+          <em>"Hi Sarah, most Botox results start to fade around this time. Want to lock in a spot before we fill
+            up?"</em></p>
+        <div class="example-result">→ She books the same day. $350 revenue you almost lost forever.</div>
+      </div>
+      <div class="example-card">
+        <div class="example-tag">HydraFacial</div>
+        <h3>The membership upsell</h3>
+        <p>A one-time HydraFacial client is 45 days out. Your AI reaches out with a membership offer: one facial/month
+          for less than her last single session. She had no idea the membership existed.</p>
+        <div class="example-result">→ She signs up. That's $150/month in recurring revenue added — from a single text.
+        </div>
+      </div>
+      <div class="example-card">
+        <div class="example-tag">Filler Consult</div>
+        <h3>The inquiry that went cold</h3>
+        <p>Someone filled out your website form asking about lip filler. Your front desk got slammed. Two days passed.
+          Your AI follows up: <em>"Still thinking about it? We have a quick 15-min consult available this week — no
+            pressure, no commitment."</em></p>
+        <div class="example-result">→ She books the consult. Converts to a $600 treatment.</div>
+      </div>
+      <div class="example-card">
+        <div class="example-tag">After Hours</div>
+        <h3>The Saturday night call</h3>
+        <p>It's 8pm Saturday. A potential new client calls about your Sculptra package. Your front desk is gone. Your AI
+          answers, explains the treatment, handles her questions, and books her for a Monday consultation.</p>
+        <div class="example-result">→ $2,400 treatment booked. Would've been a voicemail she never left.</div>
+      </div>
+      <div class="example-card">
+        <div class="example-tag">Membership</div>
+        <h3>The renewal reminder</h3>
+        <p>A monthly membership client hasn't renewed. Your AI sends a personal-feeling text at the right time: <em>"Hey
+            Jenna — your membership renews next week. Want us to go ahead and schedule your facial while we're at
+            it?"</em></p>
+        <div class="example-result">→ Membership retained. Appointment booked. Two wins, zero effort.</div>
+      </div>
+      <div class="example-card">
+        <div class="example-tag">New Leads</div>
+        <h3>The Instagram DM lead</h3>
+        <p>Someone messages your Instagram about pricing. Your AI integrates with your DMs, responds instantly with the
+          details, answers follow-up questions, and drops a booking link at the right moment.</p>
+        <div class="example-result">→ Lead converted before your front desk opens Monday morning.</div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider" />
+
+  <!-- RESULTS -->
+  <section>
+    <div class="results-wrap">
+      <div style="text-align:center">
+        <span class="section-label">Projected Results</span>
+        <h2 class="section-title">What medspas typically see<br>in the first 30 days.</h2>
+        <p class="section-sub" style="margin:0 auto">Based on industry benchmarks for AI-assisted booking and
+          reactivation campaigns across boutique medspas.</p>
+      </div>
+      <div class="stats-grid">
+        <div class="stat">
+          <div class="stat-number">30+</div>
+          <div class="stat-label">Additional bookings<br>per month</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">60%</div>
+          <div class="stat-label">Of reactivated clients<br>book within 48 hrs</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">0%</div>
+          <div class="stat-label">Missed calls<br>go unanswered</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number">24/7</div>
+          <div class="stat-label">Coverage — nights,<br>weekends, holidays</div>
+        </div>
+      </div>
+      <p class="results-disclaimer">Projections based on industry data. Individual results vary by market, offer, and
+        client list size.</p>
+    </div>
+  </section>
+
+  <!-- BOTTOM CTA -->
+  <div class="cta-section">
+    <div class="cta-glow"></div>
+    <div class="urgency">⚡ Only onboarding 3 medspas this month</div>
+    <h2>Ready to stop losing<br><span
+        style="background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">clients
+        to voicemail?</span></h2>
+    <p>See exactly how it works for your medspa in a 20-minute call. No pitch, no pressure.</p>
+    <a href="#" class="cta-btn">Book a Free Strategy Call →</a>
+    <span class="cta-sub">Setup takes 3 days · Cancel anytime</span>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="logo" style="margin-bottom:8px">VerveMind AI</div>
+    <p>AI Receptionist + Lead Reactivation for MedSpas</p>
+    <p style="margin-top:6px">© 2026 VerveMind AI · All rights reserved</p>
+  </footer>
+
+</body>
+
+</html>

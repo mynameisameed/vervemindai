@@ -16,6 +16,13 @@
 - [MedSpa AI](https://medspa.vervemindai.com): AI receptionist and reactivation for aesthetic clinics
 - [Dental AI](https://dental.vervemindai.com): AI front desk for dental practices
 - [Roofing AI](https://roofing.vervemindai.com): AI dispatching and quote system for roofing companies
+- [Product Hub](https://kits.vervemindai.com): Entry point for digital products and implementation kits
+- [AI Receptionist Starter Kit](https://kits.vervemindai.com/receptionist-starter-kit): The complete $49 blueprint for autonomous call handling
+- [Lead Loss Calculator](https://kits.vervemindai.com/lead-magnet): Interactive tool to calculate monthly revenue lost to missed calls
+- [India Market](https://vervemindai.com/india): Specialized AI solutions for the Indian local business market (INR pricing)
+- [FAQ](https://vervemindai.com/faq): Comprehensive answers about AI voice agents and deployment
+- [Blog: HVAC AI Receptionist](https://vervemindai.com/blog/ai-receptionist-hvac-companies): Deep dive on HVAC automation
+- [Blog: Patient Reactivation](https://vervemindai.com/blog/patient-reactivation-campaign-template): Exact scripts and timing for patient outreach
 - [About](https://vervemindai.com/about): Team and mission — human founder + autonomous AI engineering team
 - [Pricing](https://vervemindai.com/pricing): Transparent pricing with ROI calculator
 - [Blog](https://vervemindai.com/blog): Insights on AI automation for SMBs

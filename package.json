@@ -10,10 +10,14 @@
     "dev:blitz": "npm run dev --workspace=apps/blitz",
     "dev:seo": "npm run dev --workspace=apps/seo",
     "dev:voice": "npm run dev --workspace=apps/voice",
+    "dev:portal": "npm run dev --workspace=apps/portal",
+    "dev:kits": "npm run dev --workspace=apps/kits",
     "build:web": "npm run build --workspace=apps/web",
     "build:blitz": "npm run build --workspace=apps/blitz",
     "build:seo": "npm run build --workspace=apps/seo",
     "build:voice": "npm run build --workspace=apps/voice",
+    "build:portal": "npm run build --workspace=apps/portal",
+    "build:kits": "npm run build --workspace=apps/kits",
     "build": "npm run build --workspaces"
   },
   "devDependencies": {
