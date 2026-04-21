@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { Check, X, Minus } from 'lucide-react';
+import { Check, X } from 'lucide-react';
 
 const features = [
   { name: 'Monthly Availability', verve: '24/7/365', service: 'Shift-based (16 hrs)', human: '40 hours/wk' },

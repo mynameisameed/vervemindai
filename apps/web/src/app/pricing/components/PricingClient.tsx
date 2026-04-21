@@ -1,11 +1,9 @@
 "use client";
 
 import React, { useEffect } from 'react';
-import { Metadata } from 'next';
 import PricingComparison from '@/components/PricingComparison';
 import ROICalculator from '@/components/ROICalculator';
 
-const TEAL = '#00F5D4';
 const BORDER = 'rgba(255,255,255,0.06)';
 const MUTED = 'var(--text-muted)';
 

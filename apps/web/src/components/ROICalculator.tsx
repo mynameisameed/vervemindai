@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Calculator, DollarSign, TrendingUp, PhoneMissed } from 'lucide-react';
 
 export default function ROICalculator() {
@@ -8,20 +8,13 @@ export default function ROICalculator() {
   const [avgTicket, setAvgTicket] = useState(450);
   const [closeRate, setCloseRate] = useState(40);
   
-  const [recoveredRevenue, setRecoveredRevenue] = useState(0);
-
   // VerveMind monthly cost
   const softwareCost = 177;
 
-  useEffect(() => {
-    // Math: If AI answers 100% of missed calls, and we assume an 80% qualification rate 
-    // multiplied by the human close rate...
-    const qualifiedLeads = missedCalls * 4 * 0.8; // Monthly missed calls qualified
-    const newBookings = qualifiedLeads * (closeRate / 100);
-    const newRevenue = newBookings * avgTicket;
-    
-    setRecoveredRevenue(newRevenue);
-  }, [missedCalls, avgTicket, closeRate]);
+  const weeksPerMonth = 4;
+  const qualifiedLeads = missedCalls * weeksPerMonth * 0.8;
+  const newBookings = qualifiedLeads * (closeRate / 100);
+  const recoveredRevenue = newBookings * avgTicket;
 
   return (
     <div style={{
