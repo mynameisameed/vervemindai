@@ -1,20 +1,17 @@
 "use client";
 
 import React, { useState } from 'react';
-import { Search, Play, Circle, CheckCircle2, Download, BrainCircuit, ArrowRight } from 'lucide-react';
+import { 
+  Search, Filter, ChevronRight, Play, FileText, 
+  Clock, CheckCircle, 
+  Download, Share2, Terminal, 
+  Activity, Shield, Mic, Zap, Database
+} from 'lucide-react';
 
-export default function CallIntelligencePage() {
-  const [selectedCall, setSelectedCall] = useState(1);
+export default function CallsPage() {
+  const [selectedCall, setSelectedCall] = useState<any>(null);
 
   const calls = [
-    { id: 1, name: 'John Smith', phone: '+1 (555) 012-3456', time: '10:42 AM', intent: 'Booking', sentiment: 'positive', duration: '2m 14s' },
-    { id: 2, name: 'Sarah Connor', phone: '+1 (555) 987-6543', time: '09:15 AM', intent: 'Pricing Inquiry', sentiment: 'neutral', duration: '4m 02s' },
-    { id: 3, name: 'Unknown Caller', phone: '+1 (555) 111-2222', time: 'Yesterday', intent: 'Spam', sentiment: 'negative', duration: '0m 15s' },
-    { id: 4, name: 'Mike Ross', phone: '+1 (555) 444-5555', time: 'Yesterday', intent: 'Reschedule', sentiment: 'positive', duration: '1m 45s' },
-  ];
-
-  const transcript = [
-    { speaker: 'AI', text: "Hi, thanks for calling VerveMind Dental. I'm Chloe, the AI assistant. How can I help you today?" },
     { speaker: 'Caller', text: "Hi, I need to schedule a cleaning for next week if possible." },
     { speaker: 'AI', text: "I can absolutely help with that. Are you a new or existing patient?" },
     { speaker: 'Caller', text: "Existing. My name is John Smith." },

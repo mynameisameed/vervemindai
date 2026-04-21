@@ -9,7 +9,6 @@
   --vm-secondary: #d2bbff;
   --vm-text: #E5E7EB;
   --vm-text-muted: #9CA3AF;
-  --vm-positive: #10B981;
 }
 
 @layer base {
@@ -25,7 +24,7 @@
 
 @layer components {
   .glass-panel {
-    @apply bg-white/[0.03] backdrop-blur-2xl border border-white/5;
+    @apply bg-white/[0.03] backdrop-blur-xl border border-white/5;
   }
   
   .glow-cyan {
@@ -34,10 +33,6 @@
 
   .glow-purple {
     box-shadow: 0 0 40px rgba(210, 187, 255, 0.2);
-  }
-
-  .text-glow-cyan {
-    text-shadow: 0 0 10px rgba(0, 245, 212, 0.5);
   }
 }
 

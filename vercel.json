@@ -19,10 +19,19 @@
           "type": "header",
           "key": "x-vercel-ip-country",
           "value": "IN"
+        },
+        {
+          "type": "host",
+          "value": "(www\\.)?vervemindai\\.com"
         }
       ],
-      "destination": "/in",
+      "destination": "/india",
       "permanent": false
+    },
+    {
+      "source": "/in",
+      "destination": "/india",
+      "permanent": true
     }
   ],
   "rewrites": [
@@ -34,7 +43,7 @@
           "value": "portal.vervemindai.com"
         }
       ],
-      "destination": "https://portal-iuslooptr-vervemindaiteam-5098s-projects.vercel.app/$1"
+      "destination": "/portal/$1"
     },
     {
       "source": "/(.*)",
@@ -44,7 +53,7 @@
           "value": "kits.vervemindai.com"
         }
       ],
-      "destination": "https://kits-2pcfqmksn-vervemindaiteam-5098s-projects.vercel.app/$1"
+      "destination": "/kits/$1"
     },
     {
       "source": "/(.*)",
@@ -67,9 +76,57 @@
       "destination": "/medspa/$1"
     },
     {
-      "source": "/in(.*)",
-      "destination": "/in/index.html"
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "hvac.vervemindai.com"
+        }
+      ],
+      "destination": "/hvac/$1"
     },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "dental.vervemindai.com"
+        }
+      ],
+      "destination": "/dental/$1"
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "roofing.vervemindai.com"
+        }
+      ],
+      "destination": "/roofing/$1"
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "dashboard.vervemindai.com"
+        }
+      ],
+      "destination": "/dashboard/$1"
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "blog.vervemindai.com"
+        }
+      ],
+      "destination": "/blog/$1"
+    },
+
+
     {
       "source": "/blitz(.*)",
       "destination": "/blitz/index.html"

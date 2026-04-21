@@ -50,7 +50,7 @@ function ThankYouContent() {
           <p className="text-brand-muted text-sm mb-8 leading-relaxed">
             Access the Google Drive folder containing all prompt templates, SMS scripts, and the setup SOP.
           </p>
-          <a href="#" className="mt-auto w-full bg-white/10 hover:bg-white/20 text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 transition-all">
+          <a href="https://drive.google.com/drive/folders/1yoZAszZizj9bEY_Pk6jmGQMxfVnSTuMQ" target="_blank" rel="noopener noreferrer" className="mt-auto w-full bg-white/10 hover:bg-white/20 text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 transition-all">
             Open Drive Folder
           </a>
         </div>

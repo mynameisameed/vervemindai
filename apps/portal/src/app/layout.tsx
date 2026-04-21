@@ -32,12 +32,16 @@ export default function RootLayout({
         <style>{`
           * { box-sizing: border-box; }
           :root {
-            /* VerveMind Brand — Electric Violet */
-            --vm-primary: #8B5CF6;
-            --vm-primary-light: #A78BFA;
-            --vm-primary-dim: #7C3AED;
-            --vm-primary-glow: rgba(139, 92, 246, 0.25);
-            --vm-primary-surface: rgba(139, 92, 246, 0.08);
+            /* Neural Luminary Brand — Electric Cyan */
+            --vm-primary: #00F5D4;
+            --vm-primary-light: #26fedc;
+            --vm-primary-dim: #00dfc1;
+            --vm-primary-glow: rgba(0, 245, 212, 0.25);
+            --vm-primary-surface: rgba(0, 245, 212, 0.08);
+            
+            /* Secondary accent — Electric Purple */
+            --vm-secondary: #d2bbff;
+            --vm-secondary-surface: rgba(210, 187, 255, 0.12);
             
             /* Warm accent for CTAs & revenue */
             --vm-accent: #F59E0B;
@@ -47,21 +51,21 @@ export default function RootLayout({
             --vm-positive: #34D399;
             --vm-positive-surface: rgba(52, 211, 153, 0.12);
             
-            /* Obsidian surfaces */
-            --vm-base: #0C0C0E;
-            --vm-surface-low: #111114;
-            --vm-surface: #18181B;
-            --vm-surface-high: #1F1F23;
-            --vm-surface-highest: #27272C;
+            /* Obsidian surfaces (Stitch Base) */
+            --vm-base: #131315;
+            --vm-surface-low: #0e0e10;
+            --vm-surface: #131315;
+            --vm-surface-high: #201f22;
+            --vm-surface-highest: #353437;
             
             /* Text hierarchy */
-            --vm-text: #F4F4F5;
-            --vm-text-secondary: #A1A1AA;
-            --vm-text-muted: #71717A;
+            --vm-text: #e5e1e4;
+            --vm-text-secondary: #b9cac4;
+            --vm-text-muted: #83948f;
             
-            /* Borders via tonal shift (no hard lines) */
-            --vm-border: rgba(244, 244, 245, 0.06);
-            --vm-border-active: rgba(139, 92, 246, 0.3);
+            /* Borders via tonal shift (Ghost Borders) */
+            --vm-border: rgba(131, 148, 143, 0.15);
+            --vm-border-active: rgba(0, 245, 212, 0.3);
           }
           body {
             margin: 0;
