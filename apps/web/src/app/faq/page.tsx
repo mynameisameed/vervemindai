@@ -198,7 +198,7 @@ export default function FAQPage() {
               display: 'inline-flex', padding: '14px 32px', borderRadius: 12,
               fontWeight: 700, textDecoration: 'none', fontSize: 15,
               background: `linear-gradient(135deg, #00DFC1, ${TEAL})`,
-              color: '#09090B', boxShadow: '0 8px 24px rgba(0,245,212,0.2)',
+              color: 'var(--bg)', boxShadow: '0 8px 24px rgba(0,245,212,0.2)',
             }}
           >
             Book a Free Demo

@@ -17,7 +17,7 @@ const categoryColors: Record<string, string> = {
   Dental: '#38bdf8',
   Industry: '#00F5D4',
   Roofing: '#fb923c',
-  General: '#71717A',
+  General: '#909099',
 };
 
 export default function BlogPostCard({ slug, title, description, date, category, readTime }: PostCardProps) {
@@ -45,9 +45,9 @@ export default function BlogPostCard({ slug, title, description, date, category,
         <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 16, flexWrap: 'wrap' }}>
           <span style={{
             fontSize: 12, fontWeight: 700, padding: '4px 12px', borderRadius: 999,
-            background: `${categoryColors[category] || '#71717A'}20`,
-            color: categoryColors[category] || '#71717A',
-            border: `1px solid ${categoryColors[category] || '#71717A'}30`,
+            background: `${categoryColors[category] || '#909099'}20`,
+            color: categoryColors[category] || '#909099',
+            border: `1px solid ${categoryColors[category] || '#909099'}30`,
           }}>
             {category}
           </span>

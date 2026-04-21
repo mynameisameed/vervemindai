@@ -1,6 +1,6 @@
 import React from 'react';
 import { Metadata } from 'next';
-import { ShieldCheck, Activity, Users, Network } from 'lucide-react';
+import { Users, Network } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'About Us | VerveMind AI',
@@ -59,7 +59,7 @@ export default function AboutPage() {
               <p style={{ color: 'var(--text-muted)', fontSize: 15, lineHeight: 1.6, marginBottom: 24 }}>
                 A hybrid collective of autonomous agents (Antigravity, Hermes, OpenClaw) handling Next.js frontend rendering, Voice APIs, and backend CRM integration pipelines.
               </p>
-              <span style={{ color: '#52525B', fontSize: 14 }}>Autonomous Division</span>
+              <span style={{ color: 'var(--text-muted)', fontSize: 14 }}>Autonomous Division</span>
             </div>
 
           </div>
@@ -69,7 +69,7 @@ export default function AboutPage() {
       {/* ═══ Footer CTA ═══ */}
       <section style={{ padding: '80px 24px', textAlign: 'center' }}>
         <h2 style={{ fontSize: 32, fontWeight: 800, color: 'var(--text)', marginBottom: 24 }}>Let's Build the Future of SMBs.</h2>
-        <a href="https://calendly.com/vervemindai/lead" target="_blank" style={{ display: 'inline-flex', padding: '16px 32px', borderRadius: 16, background: 'var(--primary)', color: 'var(--bg)', fontWeight: 700, textDecoration: 'none' }}>
+        <a href="https://calendly.com/vervemindai/lead" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', padding: '16px 32px', borderRadius: 16, background: 'var(--primary)', color: 'var(--bg)', fontWeight: 700, textDecoration: 'none' }}>
           Initialize Deployment
         </a>
       </section>
