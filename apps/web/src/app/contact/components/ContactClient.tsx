@@ -5,7 +5,7 @@ import { Mail, MapPin } from 'lucide-react';
 
 const TEAL = '#00F5D4';
 const BORDER = 'rgba(255,255,255,0.06)';
-const MUTED = '#A1A1AA';
+const MUTED = 'var(--text-muted)';
 
 export default function ContactClient() {
   // Load Calendly widget script once
@@ -19,7 +19,7 @@ export default function ContactClient() {
   }, []);
 
   return (
-    <div style={{ background: '#09090B', color: '#E5E2E1', minHeight: '100vh', fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif' }}>
+    <div style={{ background: 'var(--bg)', color: 'var(--text)', minHeight: '100vh', fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif' }}>
       <div style={{ maxWidth: 1100, margin: '0 auto', padding: '160px 24px 100px' }}>
 
         {/* Header */}
@@ -27,7 +27,7 @@ export default function ContactClient() {
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, marginBottom: 24, padding: '5px 16px', borderRadius: 999, background: 'rgba(0,245,212,0.08)', border: `1px solid rgba(0,245,212,0.2)`, color: TEAL, fontSize: 12, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase' as const }}>
             Contact
           </div>
-          <h1 style={{ fontSize: 'clamp(36px, 5vw, 56px)', fontWeight: 800, marginBottom: 16, letterSpacing: '-0.04em', color: '#FFF', lineHeight: 1.1 }}>
+          <h1 style={{ fontSize: 'clamp(36px, 5vw, 56px)', fontWeight: 800, marginBottom: 16, letterSpacing: '-0.04em', color: 'var(--text)', lineHeight: 1.1 }}>
             Let's Build Your<br />AI Workforce.
           </h1>
           <p style={{ fontSize: 18, color: MUTED, maxWidth: 560, lineHeight: 1.65 }}>
@@ -52,7 +52,7 @@ export default function ContactClient() {
 
             <div style={{ background: 'rgba(255,255,255,0.02)', border: `1px solid ${BORDER}`, borderRadius: 20, padding: 32 }}>
               <Mail size={28} color={TEAL} style={{ marginBottom: 16 }} />
-              <h3 style={{ fontSize: 18, color: '#FFF', fontWeight: 700, marginBottom: 8 }}>General Inquiry</h3>
+              <h3 style={{ fontSize: 18, color: 'var(--text)', fontWeight: 700, marginBottom: 8 }}>General Inquiry</h3>
               <p style={{ color: MUTED, fontSize: 15, marginBottom: 20, lineHeight: 1.6 }}>
                 For partnership requests, press inquiries, or general corporate contact.
               </p>
@@ -63,7 +63,7 @@ export default function ContactClient() {
 
             <div style={{ background: 'rgba(255,255,255,0.02)', border: `1px solid ${BORDER}`, borderRadius: 20, padding: 32 }}>
               <MapPin size={28} color="#FBBF24" style={{ marginBottom: 16 }} />
-              <h3 style={{ fontSize: 18, color: '#FFF', fontWeight: 700, marginBottom: 8 }}>Area Served</h3>
+              <h3 style={{ fontSize: 18, color: 'var(--text)', fontWeight: 700, marginBottom: 8 }}>Area Served</h3>
               <p style={{ color: MUTED, fontSize: 15, marginBottom: 20, lineHeight: 1.6 }}>
                 We deploy autonomous workforces to registered businesses in the United States and India.
               </p>
@@ -72,7 +72,7 @@ export default function ContactClient() {
 
             <div style={{ background: 'linear-gradient(135deg, rgba(0,245,212,0.06) 0%, rgba(0,223,193,0.02) 100%)', border: `1px solid rgba(0,245,212,0.15)`, borderRadius: 20, padding: 32 }}>
               <div style={{ fontSize: 28, marginBottom: 12 }}>💬</div>
-              <h3 style={{ fontSize: 18, color: '#FFF', fontWeight: 700, marginBottom: 8 }}>India? WhatsApp Us</h3>
+              <h3 style={{ fontSize: 18, color: 'var(--text)', fontWeight: 700, marginBottom: 8 }}>India? WhatsApp Us</h3>
               <p style={{ color: MUTED, fontSize: 15, marginBottom: 20, lineHeight: 1.6 }}>
                 Indian businesses can reach us directly on WhatsApp for a demo in Telugu, Hindi, or English.
               </p>

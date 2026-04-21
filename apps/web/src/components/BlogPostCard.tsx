@@ -51,18 +51,18 @@ export default function BlogPostCard({ slug, title, description, date, category,
           }}>
             {category}
           </span>
-          <span style={{ display: 'flex', alignItems: 'center', gap: 4, color: '#52525B', fontSize: 13 }}>
+          <span style={{ display: 'flex', alignItems: 'center', gap: 4, color: 'var(--text-muted)', fontSize: 13 }}>
             <Calendar size={13} /> {new Date(date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
           </span>
-          <span style={{ display: 'flex', alignItems: 'center', gap: 4, color: '#52525B', fontSize: 13 }}>
+          <span style={{ display: 'flex', alignItems: 'center', gap: 4, color: 'var(--text-muted)', fontSize: 13 }}>
             <Clock size={13} /> {readTime}
           </span>
         </div>
 
-        <h2 style={{ fontSize: 'clamp(20px, 3vw, 28px)', fontWeight: 700, letterSpacing: '-0.02em', margin: '0 0 12px', color: '#FFFFFF', lineHeight: 1.3 }}>
+        <h2 style={{ fontSize: 'clamp(20px, 3vw, 28px)', fontWeight: 700, letterSpacing: '-0.02em', margin: '0 0 12px', color: 'var(--text)', lineHeight: 1.3 }}>
           {title}
         </h2>
-        <p style={{ color: '#A1A1AA', fontSize: 15, lineHeight: 1.6, margin: '0 0 20px' }}>
+        <p style={{ color: 'var(--text-muted)', fontSize: 15, lineHeight: 1.6, margin: '0 0 20px' }}>
           {description}
         </p>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8, color: '#00F5D4', fontSize: 14, fontWeight: 600 }}>

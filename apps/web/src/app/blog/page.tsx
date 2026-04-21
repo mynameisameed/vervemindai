@@ -13,16 +13,16 @@ export default function BlogPage() {
   const posts = getAllPosts();
 
   return (
-    <div style={{ minHeight: '100vh', background: '#09090B', color: '#E5E2E1' }}>
+    <div style={{ minHeight: '100vh', background: 'var(--bg)', color: 'var(--text)' }}>
       {/* Header */}
       <div style={{ maxWidth: 900, margin: '0 auto', padding: '100px 24px 60px' }}>
-        <Link href="/" style={{ color: '#71717A', textDecoration: 'none', fontSize: 14, display: 'inline-flex', alignItems: 'center', gap: 6, marginBottom: 32 }}>
+        <Link href="/" style={{ color: 'var(--text-muted)', textDecoration: 'none', fontSize: 14, display: 'inline-flex', alignItems: 'center', gap: 6, marginBottom: 32 }}>
           ← Back to Home
         </Link>
         <h1 style={{ fontSize: 'clamp(36px, 5vw, 56px)', fontWeight: 800, letterSpacing: '-0.04em', lineHeight: 1.1, margin: '0 0 16px' }}>
           The <span style={{ background: 'linear-gradient(135deg, #00DFC1, #00F5D4)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>Intelligence</span> Feed
         </h1>
-        <p style={{ color: '#A1A1AA', fontSize: 18, lineHeight: 1.6, maxWidth: 600 }}>
+        <p style={{ color: 'var(--text-muted)', fontSize: 18, lineHeight: 1.6, maxWidth: 600 }}>
           Deep dives on AI automation, patient reactivation, and the economics of autonomous business operations.
         </p>
       </div>

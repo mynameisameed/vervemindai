@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 
 const TEAL = '#00F5D4';
-const MUTED = '#A1A1AA';
+const MUTED = 'var(--text-muted)';
 const BORDER = 'rgba(255,255,255,0.06)';
 
 const faqs = [
@@ -84,7 +84,7 @@ function FAQItem({ faq, index, isOpen, onToggle }: {
           display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 20,
         }}
       >
-        <span style={{ fontSize: 18, fontWeight: 600, color: '#FFFFFF', lineHeight: 1.4, flex: 1 }}>
+        <span style={{ fontSize: 18, fontWeight: 600, color: 'var(--text)', lineHeight: 1.4, flex: 1 }}>
           {faq.q}
         </span>
         <span
@@ -95,7 +95,7 @@ function FAQItem({ faq, index, isOpen, onToggle }: {
             border: `1px solid ${isOpen ? TEAL : BORDER}`,
             display: 'flex', alignItems: 'center', justifyContent: 'center',
             flexShrink: 0, transition: 'all 0.2s ease',
-            color: isOpen ? '#09090B' : MUTED,
+            color: isOpen ? 'var(--bg)' : MUTED,
             fontSize: 18, fontWeight: 400, lineHeight: 1,
           }}
         >
@@ -130,7 +130,7 @@ export default function FAQPage() {
   const toggle = (i: number) => setOpenIndex(openIndex === i ? null : i);
 
   return (
-    <div style={{ background: '#09090B', color: '#E5E2E1', minHeight: '100vh', fontFamily: 'Inter, system-ui, sans-serif' }}>
+    <div style={{ background: 'var(--bg)', color: 'var(--text)', minHeight: '100vh', fontFamily: 'Inter, system-ui, sans-serif' }}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
@@ -153,7 +153,7 @@ export default function FAQPage() {
             FAQ
           </div>
           <h1 style={{
-            fontSize: 'clamp(36px, 5vw, 56px)', fontWeight: 800, color: '#FFFFFF',
+            fontSize: 'clamp(36px, 5vw, 56px)', fontWeight: 800, color: 'var(--text)',
             letterSpacing: '-0.04em', margin: '0 0 16px',
           }}>
             Frequently Asked Questions
@@ -184,7 +184,7 @@ export default function FAQPage() {
           background: 'linear-gradient(180deg, rgba(0,245,212,0.06) 0%, rgba(0,223,193,0.02) 100%)',
           border: '1px solid rgba(0,245,212,0.15)', padding: '40px 32px',
         }}>
-          <h2 style={{ fontSize: 24, fontWeight: 800, color: '#FFFFFF', marginBottom: 10 }}>
+          <h2 style={{ fontSize: 24, fontWeight: 800, color: 'var(--text)', marginBottom: 10 }}>
             Still have questions?
           </h2>
           <p style={{ color: MUTED, marginBottom: 28, lineHeight: 1.65, fontSize: 15 }}>
