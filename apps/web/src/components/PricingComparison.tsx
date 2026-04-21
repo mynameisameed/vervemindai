@@ -44,8 +44,8 @@ export default function PricingComparison() {
           }}>
             <div style={{ fontWeight: 600, color: 'var(--text-muted)' }}>Capabilities</div>
             <div style={{ fontWeight: 800, color: '#00F5D4', fontSize: 18 }}>VerveMind AI</div>
-            <div style={{ fontWeight: 600, color: '#E5E2E1' }}>Answering Service</div>
-            <div style={{ fontWeight: 600, color: '#E5E2E1' }}>Human Receptionist</div>
+            <div style={{ fontWeight: 600, color: 'var(--text)' }}>Answering Service</div>
+            <div style={{ fontWeight: 600, color: 'var(--text)' }}>Human Receptionist</div>
           </div>
 
           {/* Feature Rows */}

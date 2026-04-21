@@ -33,7 +33,7 @@ export default function ROICalculator() {
         <div style={{ width: 64, height: 64, borderRadius: 16, background: 'rgba(0,245,212,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px' }}>
           <Calculator size={32} color="#00F5D4" />
         </div>
-        <h2 style={{ fontSize: 32, fontWeight: 800, color: '#FFF', margin: '0 0 12px' }}>Calculate Your Lost Revenue</h2>
+        <h2 style={{ fontSize: 32, fontWeight: 800, color: 'var(--text)', margin: '0 0 12px' }}>Calculate Your Lost Revenue</h2>
         <p style={{ color: 'var(--text-muted)', fontSize: 16, margin: 0 }}>Every missed call is a patient or customer walking away. See what happens when VerveMind picks up 100% of the time.</p>
       </div>
 
@@ -44,7 +44,7 @@ export default function ROICalculator() {
           
           <div>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 12 }}>
-              <label style={{ fontSize: 14, fontWeight: 600, color: '#E5E2E1', display: 'flex', alignItems: 'center', gap: 8 }}>
+              <label style={{ fontSize: 14, fontWeight: 600, color: 'var(--text)', display: 'flex', alignItems: 'center', gap: 8 }}>
                 <PhoneMissed size={16} color="#A1A1AA" /> Missed Calls per Week
               </label>
               <span style={{ fontWeight: 700, color: '#00F5D4' }}>{missedCalls} calls</span>
@@ -58,7 +58,7 @@ export default function ROICalculator() {
 
           <div>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 12 }}>
-              <label style={{ fontSize: 14, fontWeight: 600, color: '#E5E2E1', display: 'flex', alignItems: 'center', gap: 8 }}>
+              <label style={{ fontSize: 14, fontWeight: 600, color: 'var(--text)', display: 'flex', alignItems: 'center', gap: 8 }}>
                 <DollarSign size={16} color="#A1A1AA" /> Average Ticket/LTV
               </label>
               <span style={{ fontWeight: 700, color: '#00F5D4' }}>${avgTicket.toLocaleString()}</span>
@@ -72,7 +72,7 @@ export default function ROICalculator() {
 
           <div>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 12 }}>
-              <label style={{ fontSize: 14, fontWeight: 600, color: '#E5E2E1', display: 'flex', alignItems: 'center', gap: 8 }}>
+              <label style={{ fontSize: 14, fontWeight: 600, color: 'var(--text)', display: 'flex', alignItems: 'center', gap: 8 }}>
                 <TrendingUp size={16} color="#A1A1AA" /> Expected Close Rate
               </label>
               <span style={{ fontWeight: 700, color: '#00F5D4' }}>{closeRate}%</span>
@@ -91,7 +91,7 @@ export default function ROICalculator() {
           <div style={{ fontSize: 14, color: 'var(--text-muted)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 8 }}>
             New Monthly Revenue
           </div>
-          <div style={{ fontSize: 'clamp(40px, 5vw, 56px)', fontWeight: 800, color: '#FFF', letterSpacing: '-0.04em', marginBottom: 24 }}>
+          <div style={{ fontSize: 'clamp(40px, 5vw, 56px)', fontWeight: 800, color: 'var(--text)', letterSpacing: '-0.04em', marginBottom: 24 }}>
             +${Math.round(recoveredRevenue).toLocaleString()}
           </div>
           

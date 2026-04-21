@@ -21,7 +21,7 @@ export default function PricingClient() {
   }, []);
 
   return (
-    <div style={{ background: 'var(--bg)', color: '#E5E2E1', minHeight: '100vh', fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif' }}>
+    <div style={{ background: 'var(--bg)', color: 'var(--text)', minHeight: '100vh', fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif' }}>
       
       <div style={{ paddingTop: '160px' }}>
         <div style={{ textAlign: 'center', marginBottom: 60, padding: '0 24px' }}>
@@ -44,7 +44,7 @@ export default function PricingClient() {
             border: '1px solid rgba(0,245,212,0.15)',
             borderRadius: 24
           }}>
-            <h2 style={{ fontSize: 32, fontWeight: 800, color: '#FFF', marginBottom: 16 }}>Ready to see the ROI in person?</h2>
+            <h2 style={{ fontSize: 32, fontWeight: 800, color: 'var(--text)', marginBottom: 16 }}>Ready to see the ROI in person?</h2>
             <p style={{ color: MUTED, fontSize: 18, maxWidth: 600, margin: '0 auto' }}>
               Book a strategy call to map out your infrastructure needs and get a custom quote.
             </p>
