@@ -457,6 +457,291 @@ export default function HomePage() {
         </div>
       </Section>
 
+      {/* ── NICHE TILES ── */}
+      <Section>
+        <Tag>Built For Your Industry</Tag>
+        <h2 style={{
+          fontSize: 'clamp(28px, 4vw, 38px)',
+          fontWeight: 900,
+          letterSpacing: '-0.03em',
+          marginBottom: 32,
+          color: 'var(--text)',
+        }}>
+          Precision-built for your niche.
+        </h2>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 16 }}>
+          {[
+            { label: 'MedSpa', icon: '💆', href: 'https://medspa.vervemindai.com', desc: 'Missed calls, reactivation, booking AI' },
+            { label: 'Dental', icon: '🦷', href: 'https://dental.vervemindai.com', desc: 'Recall campaigns, no-show reduction' },
+            { label: 'HVAC',   icon: '❄️', href: 'https://hvac.vervemindai.com',   desc: 'Emergency dispatch, seasonal campaigns' },
+            { label: 'Roofing',icon: '🏠', href: 'https://roofing.vervemindai.com',desc: 'Storm lead capture, quote follow-up' },
+          ].map(({ label, icon, href, desc }) => (
+            <a
+              key={label}
+              href={href}
+              style={{
+                background: 'var(--surface)',
+                border: '1px solid var(--border)',
+                borderRadius: 'var(--r-lg)',
+                padding: '20px',
+                textDecoration: 'none',
+                color: 'var(--text)',
+                display: 'block',
+                transition: 'border-color 0.15s',
+              }}
+              onMouseEnter={e => (e.currentTarget.style.borderColor = 'var(--primary)')}
+              onMouseLeave={e => (e.currentTarget.style.borderColor = 'var(--border)')}
+            >
+              <div style={{ fontSize: 24, marginBottom: 10 }}>{icon}</div>
+              <div style={{ fontSize: 15, fontWeight: 800, marginBottom: 6 }}>{label}</div>
+              <div style={{ fontSize: 12, color: 'var(--text-muted)', lineHeight: 1.5, marginBottom: 14 }}>{desc}</div>
+              <div style={{ fontSize: 12, color: 'var(--primary)', fontWeight: 700 }}>Learn more →</div>
+            </a>
+          ))}
+        </div>
+      </Section>
+
+      {/* ── TESTIMONIAL ── */}
+      <Section alt>
+        <div style={{
+          background: 'var(--surface)',
+          border: '1px solid var(--border)',
+          borderRadius: 'var(--r-xl)',
+          padding: '40px',
+          display: 'grid',
+          gridTemplateColumns: '1fr auto',
+          gap: 40,
+          alignItems: 'center',
+        }}>
+          <div>
+            <Tag>Client Result</Tag>
+            <blockquote style={{
+              fontSize: 'clamp(20px, 3vw, 28px)',
+              fontWeight: 800,
+              lineHeight: 1.3,
+              letterSpacing: '-0.02em',
+              color: 'var(--text)',
+              margin: '0 0 20px',
+              fontStyle: 'normal',
+            }}>
+              "VerveMind recovered $14,000 in dormant revenue for our MedSpa in the first 30 days. The AI handles every after-hours call — we wake up to a full booking sheet."
+            </blockquote>
+            <div style={{ fontSize: 13, color: 'var(--text-muted)' }}>
+              <strong style={{ color: 'var(--text)' }}>iVolve MedSpa</strong> · Founder client
+            </div>
+          </div>
+          <div style={{
+            borderLeft: '1px solid var(--border)',
+            paddingLeft: 40,
+            textAlign: 'center',
+            minWidth: 160,
+          }}>
+            <div style={{
+              fontSize: 40,
+              fontWeight: 900,
+              color: 'var(--positive)',
+              fontFamily: 'var(--font-manrope), Manrope, sans-serif',
+              letterSpacing: '-0.03em',
+            }}>
+              $14K
+            </div>
+            <div style={{ fontSize: 11, color: 'var(--text-muted)', marginTop: 4 }}>recovered in 30 days</div>
+          </div>
+        </div>
+      </Section>
+
+      {/* ── PRICING ── */}
+      <Section id="pricing">
+        <div style={{ textAlign: 'center', marginBottom: 40 }}>
+          <Tag>Pricing</Tag>
+          <h2 style={{
+            fontSize: 'clamp(28px, 4vw, 42px)',
+            fontWeight: 900,
+            letterSpacing: '-0.03em',
+            color: 'var(--text)',
+            marginBottom: 8,
+          }}>
+            Lock in before we raise prices.
+          </h2>
+          <p style={{ color: 'var(--text-muted)', fontSize: 15 }}>
+            Founder rate locked in forever. 10 slots total — 1 taken.
+          </p>
+        </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20, maxWidth: 800, margin: '0 auto 32px' }}>
+          {[
+            {
+              name: 'Starter',
+              monthly: '$177',
+              setup: '$497',
+              features: [
+                { label: 'Unlimited AI Calls',          included: true },
+                { label: 'Calendar Integration',        included: true },
+                { label: 'After-Hours Coverage',        included: true },
+                { label: 'Reactivation Engine',         included: false },
+                { label: 'Weekly Performance Dashboard',included: false },
+                { label: 'Monthly Strategy Call',       included: false },
+                { label: 'First Month Free',            included: false },
+              ],
+            },
+            {
+              name: 'Growth',
+              monthly: '$297',
+              setup: '$797',
+              highlight: true,
+              features: [
+                { label: 'Unlimited AI Calls',          included: true },
+                { label: 'Calendar Integration',        included: true },
+                { label: 'After-Hours Coverage',        included: true },
+                { label: 'Reactivation Engine',         included: true },
+                { label: 'Weekly Performance Dashboard',included: true },
+                { label: 'Monthly Strategy Call',       included: true },
+                { label: 'First Month Free',            included: true },
+              ],
+            },
+          ].map(({ name, monthly, setup, highlight, features }) => (
+            <div key={name} style={{
+              background: highlight ? 'rgba(0,245,212,0.04)' : 'var(--surface)',
+              border: `1px solid ${highlight ? 'rgba(0,245,212,0.25)' : 'var(--border)'}`,
+              borderRadius: 'var(--r-xl)',
+              padding: '28px',
+            }}>
+              <div style={{ marginBottom: 20 }}>
+                <div style={{
+                  display: 'inline-block',
+                  fontSize: 9,
+                  fontWeight: 700,
+                  letterSpacing: '0.12em',
+                  textTransform: 'uppercase',
+                  color: 'var(--primary)',
+                  background: 'var(--primary-dim)',
+                  border: '1px solid var(--primary-border)',
+                  borderRadius: 3,
+                  padding: '2px 8px',
+                  marginBottom: 10,
+                }}>
+                  Founder rate — locked forever
+                </div>
+                <div style={{ fontSize: 16, fontWeight: 800, color: 'var(--text)', marginBottom: 4 }}>{name}</div>
+                <div style={{ display: 'flex', alignItems: 'baseline', gap: 4 }}>
+                  <span style={{ fontSize: 36, fontWeight: 900, fontFamily: 'var(--font-manrope), Manrope, sans-serif', color: 'var(--text)' }}>
+                    {monthly}
+                  </span>
+                  <span style={{ fontSize: 12, color: 'var(--text-muted)' }}>/mo</span>
+                </div>
+                <div style={{ fontSize: 12, color: 'var(--text-muted)', marginTop: 2 }}>+ {setup} one-time setup</div>
+              </div>
+
+              <div style={{ borderTop: '1px solid var(--border)', paddingTop: 16, marginBottom: 20 }}>
+                {features.map(({ label, included }) => (
+                  <div key={label} style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: 8,
+                    padding: '5px 0',
+                    fontSize: 12,
+                    color: included ? 'var(--text)' : 'var(--text-faint)',
+                  }}>
+                    <span style={{ color: included ? 'var(--positive)' : 'var(--text-faint)', fontWeight: 700, flexShrink: 0 }}>
+                      {included ? '✓' : '✗'}
+                    </span>
+                    {label}
+                  </div>
+                ))}
+              </div>
+
+              <a
+                href="https://calendly.com/vervemindai/lead"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  display: 'block',
+                  textAlign: 'center',
+                  padding: '11px',
+                  borderRadius: 'var(--r)',
+                  background: highlight ? 'linear-gradient(135deg, #00f5d4, #00c2a8)' : 'transparent',
+                  border: highlight ? 'none' : '1px solid var(--border-strong)',
+                  color: highlight ? '#001a14' : 'var(--text)',
+                  fontSize: 12,
+                  fontWeight: 800,
+                  textDecoration: 'none',
+                }}
+              >
+                Get Started →
+              </a>
+            </div>
+          ))}
+        </div>
+
+        <div style={{ textAlign: 'center', marginBottom: 24 }}>
+          <Pips taken={1} />
+          <p style={{ fontSize: 12, color: 'var(--text-faint)', marginTop: 8 }}>1 of 10 founder slots taken</p>
+        </div>
+        <div style={{ textAlign: 'center' }}>
+          <a href="/contact" style={{ fontSize: 13, color: 'var(--text-muted)', textDecoration: 'underline' }}>
+            Multiple locations? Let's talk →
+          </a>
+        </div>
+      </Section>
+
+      {/* ── CTA BAND ── */}
+      <section style={{ padding: 'var(--section-py) 32px' }}>
+        <div style={{
+          maxWidth: 'var(--max-w)',
+          margin: '0 auto',
+          background: 'var(--surface)',
+          border: '1px solid var(--border)',
+          borderRadius: 'var(--r-xl)',
+          padding: '56px 48px',
+          textAlign: 'center',
+          position: 'relative',
+          overflow: 'hidden',
+        }}>
+          {/* single static teal top glow */}
+          <div style={{
+            position: 'absolute',
+            top: -60,
+            left: '50%',
+            transform: 'translateX(-50%)',
+            width: 500,
+            height: 200,
+            background: 'radial-gradient(circle, rgba(0,245,212,0.08) 0%, transparent 70%)',
+            pointerEvents: 'none',
+          }} />
+          <h2 style={{
+            fontSize: 'clamp(28px, 4vw, 40px)',
+            fontWeight: 900,
+            letterSpacing: '-0.03em',
+            color: 'var(--text)',
+            marginBottom: 12,
+            position: 'relative',
+          }}>
+            Stop losing leads while you sleep.
+          </h2>
+          <p style={{ color: 'var(--text-muted)', fontSize: 15, marginBottom: 28, position: 'relative' }}>
+            Book a free 20-minute audit. We'll show you exactly where your revenue is leaking and how to fix it in 48 hours.
+          </p>
+          <a
+            href="https://calendly.com/vervemindai/lead"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              display: 'inline-block',
+              background: 'linear-gradient(135deg, #00f5d4, #00c2a8)',
+              color: '#001a14',
+              fontSize: 13,
+              fontWeight: 800,
+              padding: '13px 28px',
+              borderRadius: 'var(--r)',
+              textDecoration: 'none',
+              position: 'relative',
+            }}
+          >
+            Book My Free Audit →
+          </a>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );
