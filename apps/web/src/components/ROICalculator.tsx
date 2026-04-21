@@ -11,7 +11,7 @@ export default function ROICalculator() {
   const [recoveredRevenue, setRecoveredRevenue] = useState(0);
 
   // VerveMind monthly cost
-  const softwareCost = 297; 
+  const softwareCost = 177;
 
   useEffect(() => {
     // Math: If AI answers 100% of missed calls, and we assume an 80% qualification rate 
@@ -34,7 +34,7 @@ export default function ROICalculator() {
           <Calculator size={32} color="#00F5D4" />
         </div>
         <h2 style={{ fontSize: 32, fontWeight: 800, color: '#FFF', margin: '0 0 12px' }}>Calculate Your Lost Revenue</h2>
-        <p style={{ color: '#A1A1AA', fontSize: 16, margin: 0 }}>Every missed call is a patient or customer walking away. See what happens when VerveMind picks up 100% of the time.</p>
+        <p style={{ color: 'var(--text-muted)', fontSize: 16, margin: 0 }}>Every missed call is a patient or customer walking away. See what happens when VerveMind picks up 100% of the time.</p>
       </div>
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 40 }}>
@@ -87,8 +87,8 @@ export default function ROICalculator() {
         </div>
 
         {/* Results output */}
-        <div style={{ background: '#121215', borderRadius: 20, padding: 32, border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-          <div style={{ fontSize: 14, color: '#A1A1AA', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 8 }}>
+        <div style={{ background: 'var(--surface)', borderRadius: 20, padding: 32, border: '1px solid rgba(255,255,255,0.05)', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+          <div style={{ fontSize: 14, color: 'var(--text-muted)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: 8 }}>
             New Monthly Revenue
           </div>
           <div style={{ fontSize: 'clamp(40px, 5vw, 56px)', fontWeight: 800, color: '#FFF', letterSpacing: '-0.04em', marginBottom: 24 }}>
@@ -100,7 +100,7 @@ export default function ROICalculator() {
             <span style={{ color: '#00F5D4', fontWeight: 800, fontSize: 18 }}>${softwareCost}/mo</span>
           </div>
 
-          <div style={{ fontSize: 14, color: '#71717A', lineHeight: 1.6 }}>
+          <div style={{ fontSize: 14, color: 'var(--text-muted)', lineHeight: 1.6 }}>
             * This assumes VerveMind intercepts {missedCalls * 4} voicemails a month, successfully pre-qualifies 80% of them, and routes them back into your pipeline closing at {closeRate}%.
           </div>
         </div>

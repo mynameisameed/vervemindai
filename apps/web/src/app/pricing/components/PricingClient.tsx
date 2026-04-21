@@ -7,7 +7,7 @@ import ROICalculator from '@/components/ROICalculator';
 
 const TEAL = '#00F5D4';
 const BORDER = 'rgba(255,255,255,0.06)';
-const MUTED = '#A1A1AA';
+const MUTED = 'var(--text-muted)';
 
 export default function PricingClient() {
   // Load Calendly widget script once
@@ -21,14 +21,13 @@ export default function PricingClient() {
   }, []);
 
   return (
-    <div style={{ background: '#09090B', color: '#E5E2E1', minHeight: '100vh', fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif' }}>
+    <div style={{ background: 'var(--bg)', color: '#E5E2E1', minHeight: '100vh', fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif' }}>
       
       <div style={{ paddingTop: '160px' }}>
         <div style={{ textAlign: 'center', marginBottom: 60, padding: '0 24px' }}>
-          <h1 style={{ fontSize: 'clamp(40px, 5vw, 56px)', fontWeight: 800, color: '#FFF', letterSpacing: '-0.03em', marginBottom: 16 }}>Autonomous Economics.</h1>
+          <h1 style={{ fontSize: 'clamp(40px, 5vw, 56px)', fontWeight: 800, color: 'var(--text)', letterSpacing: '-0.03em', marginBottom: 16 }}>Lock in before we raise prices.</h1>
           <p style={{ color: MUTED, fontSize: 20, maxWidth: 600, margin: '0 auto' }}>
-            Scale infinitely. Only pay for the infrastructure you consume. 
-            No payroll taxes, no sick days, no training curves.
+            Founder rate: first 10 clients lock in current pricing forever. Two plans, zero contracts.
           </p>
         </div>
         
