@@ -1,43 +1,64 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 :root {
-  --vm-base: #131315;
-  --vm-primary: #00F5D4;
-  --vm-primary-dim: rgba(0, 245, 212, 0.1);
-  --vm-secondary: #d2bbff;
-  --vm-text: #E5E7EB;
-  --vm-text-muted: #9CA3AF;
-  --vm-positive: #10B981;
+  /* Background */
+  --bg: #131313;
+  --surface: #1a1a1a;
+
+  /* Borders */
+  --border: rgba(255, 255, 255, 0.07);
+  --border-strong: rgba(255, 255, 255, 0.11);
+
+  /* Text */
+  --text: #E5E2E1;
+  --text-muted: rgba(229, 226, 225, 0.45);
+  --text-faint: rgba(229, 226, 225, 0.25);
+
+  /* Brand */
+  --primary: #00F5D4;
+  --primary-dim: rgba(0, 245, 212, 0.08);
+  --primary-border: rgba(0, 245, 212, 0.18);
+  --secondary: #d2bbff;
+  --positive: #34D399;
+  --amber: #FBBF24;
+
+  /* Radius */
+  --r: 6px;
+  --r-lg: 10px;
+  --r-xl: 14px;
+
+  /* Layout */
+  --max-w: 1160px;
+  --section-py: 80px;
 }
 
-@layer base {
-  body {
-    @apply bg-vm-base text-vm-text;
-    font-family: 'Inter', sans-serif;
-  }
-  
-  h1, h2, h3, h4 {
-    font-family: 'Manrope', sans-serif;
-  }
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
 }
 
-@layer components {
-  .glass-panel {
-    @apply bg-white/[0.03] backdrop-blur-xl border border-white/5;
-  }
-  
-  .glow-cyan {
-    box-shadow: 0 0 40px rgba(0, 245, 212, 0.2);
-  }
-
-  .glow-purple {
-    box-shadow: 0 0 40px rgba(210, 187, 255, 0.2);
-  }
+html {
+  color-scheme: dark;
 }
 
-.bg-vm-base { background-color: var(--vm-base); }
-.text-vm-primary { color: var(--vm-primary); }
-.text-vm-secondary { color: var(--vm-secondary); }
-.text-vm-text-muted { color: var(--vm-text-muted); }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-inter), Inter, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-manrope), Manrope, sans-serif;
+}
+
+a {
+  color: inherit;
+}
