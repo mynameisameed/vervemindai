@@ -2,6 +2,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Metadata } from 'next';
 import { Inter, Manrope } from 'next/font/google';
+import './globals.css';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -124,14 +125,7 @@ export default function RootLayout({
           }
         }) }} />
       </head>
-      <body style={{ 
-        margin: 0, 
-        padding: 0, 
-        background: '#131313', 
-        color: '#E5E2E1', 
-        fontFamily: 'var(--font-inter), system-ui, sans-serif',
-        overflowX: 'hidden'
-      }}>
+      <body>
         {/* Noise Overlay */}
         <div style={{
           position: 'fixed',

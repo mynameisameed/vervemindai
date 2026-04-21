@@ -1,0 +1,41 @@
+/* apps/web/src/app/globals.css */
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+  --bg: #131313;
+  --surface: #1a1a1a;
+  --border: rgba(255,255,255,0.07);
+  --border-strong: rgba(255,255,255,0.11);
+  --text: #E5E2E1;
+  --text-muted: rgba(229,226,225,0.45);
+  --text-faint: rgba(229,226,225,0.25);
+  --primary: #00F5D4;
+  --primary-dim: rgba(0,245,212,0.08);
+  --primary-border: rgba(0,245,212,0.18);
+  --secondary: #d2bbff;
+  --positive: #34D399;
+  --amber: #FBBF24;
+  --r: 6px;
+  --r-lg: 10px;
+  --r-xl: 14px;
+  --max-w: 1160px;
+  --section-py: 80px;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-inter), Inter, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-manrope), Manrope, sans-serif;
+}
