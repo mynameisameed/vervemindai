@@ -36,26 +36,6 @@
   ],
   "rewrites": [
     {
-      "source": "/(.*)",
-      "has": [{ "type": "host", "value": "medspa.vervemindai.com" }],
-      "destination": "https://medspa.vervemindai.com/$1"
-    },
-    {
-      "source": "/(.*)",
-      "has": [{ "type": "host", "value": "dental.vervemindai.com" }],
-      "destination": "https://dental.vervemindai.com/$1"
-    },
-    {
-      "source": "/(.*)",
-      "has": [{ "type": "host", "value": "hvac.vervemindai.com" }],
-      "destination": "https://hvac.vervemindai.com/$1"
-    },
-    {
-      "source": "/(.*)",
-      "has": [{ "type": "host", "value": "roofing.vervemindai.com" }],
-      "destination": "https://roofing.vervemindai.com/$1"
-    },
-    {
       "source": "/blitz(.*)",
       "destination": "/blitz/index.html"
     },

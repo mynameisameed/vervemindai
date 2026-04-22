@@ -6,12 +6,6 @@
   "outputDirectory": ".next",
   "framework": "nextjs",
   "regions": ["iad1"],
-  "rewrites": [
-    { "source": "/medspa", "destination": "/medspa" },
-    { "source": "/dental", "destination": "/dental" },
-    { "source": "/hvac", "destination": "/hvac" },
-    { "source": "/roofing", "destination": "/roofing" }
-  ],
   "headers": [
     {
       "source": "/(.*)",
