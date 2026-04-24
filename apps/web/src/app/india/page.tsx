@@ -79,7 +79,7 @@ const verticals = [
 
 const cities = ['Hyderabad', 'Bengaluru', 'Mumbai', 'Chennai', 'Delhi NCR', 'Pune'];
 
-const WHATSAPP_LINK = 'https://wa.me/+15555550000?text=Hi%20VerveMind%2C%20I%27d%20like%20a%20demo%20for%20my%20Indian%20business';
+const WHATSAPP_LINK = 'https://wa.me/917995851271?text=Hi%20VerveMind%2C%20I%27d%20like%20a%20demo%20for%20my%20Indian%20business';
 
 export default function IndiaPage() {
   return (

@@ -19,7 +19,7 @@ const Section = ({
     style={{
       padding: 'var(--section-py) 32px',
       background: alt ? 'rgba(255,255,255,0.015)' : 'var(--bg)',
-      borderTop:    alt ? '1px solid var(--border)' : undefined,
+      borderTop: alt ? '1px solid var(--border)' : undefined,
       borderBottom: alt ? '1px solid var(--border)' : undefined,
     }}
   >
@@ -172,7 +172,7 @@ export default function HomePage() {
             {/* CTAs */}
             <div style={{ display: 'flex', gap: 12, marginBottom: 28 }}>
               <a
-                href="https://calendly.com/vervemindai/lead"
+                href="https://calendly.com/vervemindai/lead?utm_source=vervemindai.com&utm_medium=website&utm_campaign=main_site&utm_content=hero_primary_cta"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
@@ -248,9 +248,9 @@ export default function HomePage() {
 
             {/* Metric rows */}
             {[
-              { label: 'Leads Captured',     value: '47K+',   pct: 78, color: 'var(--primary)' },
-              { label: 'Revenue Recovered',  value: '$2.1M',  pct: 62, color: 'var(--secondary)' },
-              { label: 'Client ROI',         value: '380%',   pct: 90, color: 'var(--positive)' },
+              { label: 'Leads Captured', value: '47K+', pct: 78, color: 'var(--primary)' },
+              { label: 'Revenue Recovered', value: '$2.1M', pct: 62, color: 'var(--secondary)' },
+              { label: 'Client ROI', value: '380%', pct: 90, color: 'var(--positive)' },
             ].map(({ label, value, pct, color }) => (
               <div key={label} style={{ marginBottom: 14 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 5 }}>
@@ -271,7 +271,7 @@ export default function HomePage() {
               Live Agent Feed
             </div>
             {[
-              { icon: '📞', text: 'Call captured — Riverside MedSpa', time: '2s ago',   color: 'var(--primary)' },
+              { icon: '📞', text: 'Call captured — Riverside MedSpa', time: '2s ago', color: 'var(--primary)' },
               { icon: '📅', text: 'Appointment booked — Dr Chen Dental', time: '18s ago', color: 'var(--secondary)' },
               { icon: '💬', text: 'Reactivation sent — Peak HVAC lead', time: '41s ago', color: 'var(--positive)' },
             ].map(({ icon, text, time, color }) => (
@@ -301,10 +301,10 @@ export default function HomePage() {
           gridTemplateColumns: 'repeat(4, 1fr)',
         }}>
           {[
-            { value: '47K+',   label: 'Leads Captured',     color: 'var(--primary)' },
-            { value: '$2.1M',  label: 'Revenue Recovered',  color: 'var(--secondary)' },
-            { value: '380%',   label: 'Average ROI',        color: 'var(--positive)' },
-            { value: '99.8%',  label: 'Uptime',             color: 'var(--amber)' },
+            { value: '47K+', label: 'Leads Captured', color: 'var(--primary)' },
+            { value: '$2.1M', label: 'Revenue Recovered', color: 'var(--secondary)' },
+            { value: '380%', label: 'Average ROI', color: 'var(--positive)' },
+            { value: '99.8%', label: 'Uptime', color: 'var(--amber)' },
           ].map(({ value, label, color }, i) => (
             <div key={label} style={{
               padding: '32px 24px',
@@ -473,8 +473,8 @@ export default function HomePage() {
           {[
             { label: 'MedSpa', icon: '💆', href: 'https://medspa.vervemindai.com', desc: 'Missed calls, reactivation, booking AI' },
             { label: 'Dental', icon: '🦷', href: 'https://dental.vervemindai.com', desc: 'Recall campaigns, no-show reduction' },
-            { label: 'HVAC',   icon: '❄️', href: 'https://hvac.vervemindai.com',   desc: 'Emergency dispatch, seasonal campaigns' },
-            { label: 'Roofing',icon: '🏠', href: 'https://roofing.vervemindai.com',desc: 'Storm lead capture, quote follow-up' },
+            { label: 'HVAC', icon: '❄️', href: 'https://hvac.vervemindai.com', desc: 'Emergency dispatch, seasonal campaigns' },
+            { label: 'Roofing', icon: '🏠', href: 'https://roofing.vervemindai.com', desc: 'Storm lead capture, quote follow-up' },
           ].map(({ label, icon, href, desc }) => (
             <a
               key={label}
@@ -575,13 +575,13 @@ export default function HomePage() {
               monthly: '$177',
               setup: '$497',
               features: [
-                { label: 'Unlimited AI Calls',          included: true },
-                { label: 'Calendar Integration',        included: true },
-                { label: 'After-Hours Coverage',        included: true },
-                { label: 'Reactivation Engine',         included: false },
-                { label: 'Weekly Performance Dashboard',included: false },
-                { label: 'Monthly Strategy Call',       included: false },
-                { label: 'First Month Free',            included: false },
+                { label: 'Unlimited AI Calls', included: true },
+                { label: 'Calendar Integration', included: true },
+                { label: 'After-Hours Coverage', included: true },
+                { label: 'Reactivation Engine', included: false },
+                { label: 'Weekly Performance Dashboard', included: false },
+                { label: 'Monthly Strategy Call', included: false },
+                { label: 'First Month Free', included: false },
               ],
             },
             {
@@ -590,13 +590,13 @@ export default function HomePage() {
               setup: '$797',
               highlight: true,
               features: [
-                { label: 'Unlimited AI Calls',          included: true },
-                { label: 'Calendar Integration',        included: true },
-                { label: 'After-Hours Coverage',        included: true },
-                { label: 'Reactivation Engine',         included: true },
-                { label: 'Weekly Performance Dashboard',included: true },
-                { label: 'Monthly Strategy Call',       included: true },
-                { label: 'First Month Free',            included: true },
+                { label: 'Unlimited AI Calls', included: true },
+                { label: 'Calendar Integration', included: true },
+                { label: 'After-Hours Coverage', included: true },
+                { label: 'Reactivation Engine', included: true },
+                { label: 'Weekly Performance Dashboard', included: true },
+                { label: 'Monthly Strategy Call', included: true },
+                { label: 'First Month Free', included: true },
               ],
             },
           ].map(({ name, monthly, setup, highlight, features }) => (

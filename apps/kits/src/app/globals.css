@@ -6,9 +6,14 @@
   --vm-base: #131315;
   --vm-primary: #00F5D4;
   --vm-primary-dim: rgba(0, 245, 212, 0.1);
+  --vm-primary-glow: rgba(0, 245, 212, 0.25);
   --vm-secondary: #d2bbff;
+  --vm-accent: #F59E0B;
+  --vm-positive: #34D399;
   --vm-text: #E5E7EB;
+  --vm-text-secondary: #b9cac4;
   --vm-text-muted: #9CA3AF;
+  --vm-border: rgba(131, 148, 143, 0.15);
 }
 
 @layer base {
@@ -26,13 +31,18 @@
   .glass-panel {
     @apply bg-white/[0.03] backdrop-blur-xl border border-white/5;
   }
-  
+
   .glow-cyan {
     box-shadow: 0 0 40px rgba(0, 245, 212, 0.2);
   }
 
   .glow-purple {
     box-shadow: 0 0 40px rgba(210, 187, 255, 0.2);
+  }
+
+  .terminal-text {
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 0.08em;
   }
 }
 

@@ -20,7 +20,7 @@ import {
 
 export default function StarterKitPage() {
   return (
-    <div className="min-h-screen selection:bg-primary selection:text-base font-body text-text-secondary pb-32">
+    <div className="min-h-screen font-body text-text-secondary pb-32">
       
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 bg-base/40 backdrop-blur-3xl border-b border-white/[0.03]">

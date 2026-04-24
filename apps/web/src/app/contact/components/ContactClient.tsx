@@ -77,7 +77,7 @@ export default function ContactClient() {
                 Indian businesses can reach us directly on WhatsApp for a demo in Telugu, Hindi, or English.
               </p>
               <a
-                href="https://wa.me/+15555550000?text=Hi%20VerveMind%2C%20I%27d%20like%20a%20demo"
+                href="https://wa.me/917995851271?text=Hi%20VerveMind%2C%20I%27d%20like%20a%20demo"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: '#25D366', color: '#000', fontWeight: 700, textDecoration: 'none', padding: '10px 20px', borderRadius: 10, fontSize: 14 }}

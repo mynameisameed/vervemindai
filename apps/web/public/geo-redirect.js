@@ -7,6 +7,13 @@
   const regionOverride = urlParams.get('region');
   const savedRegion = localStorage.getItem('vervemind-region');
   
+  // 0. Disable for subdomains (niche pages)
+  const hostParts = window.location.hostname.split('.');
+  if (hostParts.length > 2 && !window.location.hostname.includes('www.')) {
+    console.log('Niche subdomain detected, skipping geo-redirection.');
+    return;
+  }
+
   // Respect user choice if explicitly set
   if (savedRegion) {
     if (savedRegion === 'IN' && !window.location.pathname.startsWith('/in')) {

@@ -2,7 +2,9 @@
 module.exports = {
   content: [
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/app/(dashboard)/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/utils/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
@@ -30,6 +32,7 @@ module.exports = {
       fontFamily: {
         sans: ['var(--font-inter)', 'Inter', 'sans-serif'],
         manrope: ['var(--font-manrope)', 'sans-serif'],
+        body: ['var(--font-inter)', 'Inter', 'sans-serif'],
       },
     },
   },

@@ -11,43 +11,6 @@
   "env": {
     "VERVEMIND_ENV": "production"
   },
-  "redirects": [
-    {
-      "source": "/",
-      "has": [
-        {
-          "type": "header",
-          "key": "x-vercel-ip-country",
-          "value": "IN"
-        },
-        {
-          "type": "host",
-          "value": "(www\\.)?vervemindai\\.com"
-        }
-      ],
-      "destination": "/india",
-      "permanent": false
-    },
-    {
-      "source": "/in",
-      "destination": "/india",
-      "permanent": true
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/blitz(.*)",
-      "destination": "/blitz/index.html"
-    },
-    {
-      "source": "/seo(.*)",
-      "destination": "/seo/index.html"
-    },
-    {
-      "source": "/voice(.*)",
-      "destination": "/voice/index.html"
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",

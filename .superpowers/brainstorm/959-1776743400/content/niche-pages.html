@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>VerveMind — Niche Landing Pages</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #131313; --surface: #1a1a1a; --border: rgba(255,255,255,0.07);
+  --border-strong: rgba(255,255,255,0.11); --text: #E5E2E1;
+  --text-muted: rgba(229,226,225,0.45); --text-faint: rgba(229,226,225,0.25);
+  --r: 6px; --r-lg: 10px; --r-xl: 14px;
+}
+html { scroll-behavior: smooth; }
+body { background: #0e0e0e; color: var(--text); font-family: 'Inter', sans-serif; font-size: 14px; -webkit-font-smoothing: antialiased; }
+h1,h2,h3,h4 { font-family: 'Manrope', sans-serif; }
+@keyframes pulse-dot { 0%,100%{opacity:1} 50%{opacity:0.3} }
+.pulse { animation: pulse-dot 1.8s ease-in-out infinite; }
+
+/* ── PALETTE SWITCHER ── */
+.page-tabs { display: flex; gap: 8px; padding: 20px 24px; background: #0e0e0e; border-bottom: 1px solid rgba(255,255,255,0.07); position: sticky; top: 0; z-index: 200; }
+.tab { padding: 7px 18px; border-radius: var(--r); font-size: 12px; font-weight: 700; cursor: pointer; border: 1px solid rgba(255,255,255,0.1); color: var(--text-muted); background: transparent; transition: all 0.15s; letter-spacing: 0.04em; }
+.tab.active { color: #0a0a0a; border-color: transparent; }
+
+/* ── NICHE PAGE WRAPPER ── */
+.niche-page { display: none; }
+.niche-page.visible { display: block; }
+
+/* ── NAV ── */
+nav { background: rgba(19,19,19,0.9); border-bottom: 1px solid var(--border); padding: 0 32px; height: 56px; display: flex; align-items: center; justify-content: space-between; }
+.nav-back { color: var(--text-faint); font-size: 12px; text-decoration: none; display: flex; align-items: center; gap: 6px; transition: color 0.15s; }
+.nav-back:hover { color: var(--text-muted); }
+.nav-logo { font-family: 'Manrope', sans-serif; font-weight: 900; font-size: 16px; letter-spacing: -0.03em; }
+.btn-nav { font-size: 12px; font-weight: 700; padding: 7px 16px; border-radius: var(--r); text-decoration: none; color: #00201a; }
+
+/* ── HERO ── */
+.hero { max-width: 1160px; margin: 0 auto; padding: 72px 32px 60px; display: grid; grid-template-columns: 1fr 1fr; gap: 52px; align-items: center; }
+.niche-badge { display: inline-flex; align-items: center; gap: 8px; border-radius: 4px; padding: 5px 12px; margin-bottom: 22px; border: 1px solid; }
+.niche-badge .dot { width: 6px; height: 6px; border-radius: 50%; }
+.niche-badge span { font-size: 10px; font-weight: 700; letter-spacing: 0.12em; }
+.hero-title { font-size: 46px; font-weight: 900; line-height: 1.0; letter-spacing: -0.04em; margin-bottom: 18px; }
+.hero-sub { color: var(--text-muted); font-size: 16px; line-height: 1.65; max-width: 440px; margin-bottom: 30px; }
+.hero-ctas { display: flex; gap: 10px; margin-bottom: 28px; }
+.btn-cta { font-size: 13px; font-weight: 800; padding: 12px 24px; border-radius: var(--r); text-decoration: none; display: inline-block; color: #00201a; transition: opacity 0.15s; }
+.btn-cta:hover { opacity: 0.88; }
+.btn-outline { background: transparent; border: 1px solid var(--border-strong); color: var(--text); font-size: 13px; font-weight: 600; padding: 11px 20px; border-radius: var(--r); text-decoration: none; transition: background 0.15s; }
+.btn-outline:hover { background: rgba(255,255,255,0.04); }
+.avatars { display: flex; align-items: center; gap: 10px; }
+.avatar-stack { display: flex; }
+.avatar { width: 28px; height: 28px; border-radius: 50%; border: 2px solid var(--bg); margin-right: -8px; font-size: 10px; font-weight: 700; display: flex; align-items: center; justify-content: center; }
+.avatar-text { color: var(--text-muted); font-size: 12px; padding-left: 16px; }
+
+/* Hero right: booking widget (Stitch-inspired) */
+.booking-panel { background: var(--surface); border: 1px solid var(--border-strong); border-radius: var(--r-xl); overflow: hidden; }
+.bp-header { padding: 18px 20px 14px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+.bp-title { font-family: 'Manrope', sans-serif; font-size: 13px; font-weight: 700; }
+.live-badge { display: flex; align-items: center; gap: 5px; border-radius: 4px; padding: 3px 8px; }
+.live-badge .ldot { width: 5px; height: 5px; border-radius: 50%; }
+.live-badge span { font-size: 10px; font-weight: 700; letter-spacing: 0.08em; }
+.bp-body { padding: 16px 20px; }
+
+/* Notification card (Stitch-inspired floating booking alert) */
+.notif-card { border-radius: var(--r-lg); padding: 14px 16px; margin-bottom: 10px; display: flex; align-items: flex-start; gap: 12px; border: 1px solid; }
+.notif-icon { width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+.notif-body { flex: 1; }
+.notif-title { font-size: 12px; font-weight: 700; margin-bottom: 3px; }
+.notif-sub { color: var(--text-muted); font-size: 11px; }
+.notif-badge { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 3px; flex-shrink: 0; }
+
+/* Mini stats row */
+.stats-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; margin-top: 12px; }
+.stat-mini { background: rgba(255,255,255,0.025); border: 1px solid var(--border); border-radius: var(--r); padding: 10px 12px; }
+.stat-mini-val { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 17px; margin-bottom: 2px; }
+.stat-mini-lbl { color: var(--text-muted); font-size: 10px; letter-spacing: 0.04em; }
+
+/* Feed */
+.feed { background: rgba(0,0,0,0.2); border-radius: var(--r); padding: 10px 12px; margin-top: 12px; }
+.feed-hd { color: var(--text-faint); font-size: 9px; letter-spacing: 0.15em; font-weight: 700; margin-bottom: 8px; }
+.feed-row { display: flex; justify-content: space-between; align-items: center; padding: 4px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
+.feed-row:last-child { border-bottom: none; }
+.feed-act { color: var(--text-muted); font-size: 10px; flex: 1; }
+.feed-t { color: var(--text-faint); font-size: 9px; margin-left: 8px; }
+
+/* ── PAIN POINTS ── */
+.section { max-width: 1160px; margin: 0 auto; padding: 64px 32px; }
+.section.alt { max-width: 100%; background: rgba(255,255,255,0.015); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.section.alt .inner { max-width: 1160px; margin: 0 auto; padding: 64px 32px; }
+.s-tag { display: inline-block; border-radius: 4px; border: 1px solid; font-size: 10px; font-weight: 700; letter-spacing: 0.12em; padding: 4px 10px; margin-bottom: 14px; }
+.s-title { font-size: 34px; font-weight: 900; letter-spacing: -0.04em; line-height: 1.08; margin-bottom: 12px; }
+.s-sub { color: var(--text-muted); font-size: 15px; max-width: 520px; line-height: 1.6; margin-bottom: 36px; }
+.cards-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
+.p-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-lg); padding: 22px; }
+.p-num { font-family: 'Manrope', sans-serif; font-weight: 900; font-size: 40px; color: rgba(255,255,255,0.05); letter-spacing: -0.05em; margin-bottom: 10px; }
+.p-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 7px; }
+.p-card p { color: var(--text-muted); font-size: 12px; line-height: 1.6; }
+.p-stat { display: inline-flex; align-items: center; margin-top: 12px; border-radius: 4px; padding: 4px 10px; font-size: 11px; font-weight: 700; border: 1px solid; }
+
+/* ── RESULTS ── */
+.results-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 14px; }
+.result-big { background: var(--surface); border: 1px solid; border-radius: var(--r-xl); padding: 28px; display: flex; flex-direction: column; justify-content: space-between; }
+.result-big-num { font-family: 'Manrope', sans-serif; font-weight: 900; font-size: 52px; letter-spacing: -0.05em; line-height: 1; }
+.result-big-lbl { color: var(--text-muted); font-size: 13px; margin-top: 6px; line-height: 1.5; }
+.result-big-quote { color: var(--text-muted); font-size: 13px; font-style: italic; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--border); }
+.results-mini { display: grid; grid-template-rows: 1fr 1fr; gap: 14px; }
+.result-mini { background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-xl); padding: 22px; display: grid; grid-template-columns: auto 1fr; gap: 16px; align-items: center; }
+.result-mini-num { font-family: 'Manrope', sans-serif; font-weight: 900; font-size: 32px; letter-spacing: -0.04em; }
+.result-mini-lbl { color: var(--text-muted); font-size: 13px; line-height: 1.5; }
+
+/* CTA STRIP */
+.cta-strip { background: var(--surface); border: 1px solid var(--border-strong); border-radius: var(--r-xl); padding: 40px; text-align: center; margin: 0 32px 64px; max-width: 1096px; margin-left: auto; margin-right: auto; }
+.cta-strip h2 { font-size: 30px; font-weight: 900; letter-spacing: -0.04em; margin-bottom: 10px; }
+.cta-strip p { color: var(--text-muted); font-size: 15px; margin-bottom: 24px; }
+</style>
+</head>
+<body>
+
+<!-- TAB SWITCHER -->
+<div class="page-tabs">
+  <button class="tab active" id="tab-medspa" onclick="showPage('medspa')" style="background:#F0ABFC;color:#3b0764;">💆 MedSpa</button>
+  <button class="tab" id="tab-dental" onclick="showPage('dental')" style="">🦷 Dental</button>
+  <button class="tab" id="tab-hvac" onclick="showPage('hvac')" style="">❄️ HVAC</button>
+  <button class="tab" id="tab-roofing" onclick="showPage('roofing')" style="">🏠 Roofing</button>
+</div>
+
+<!-- ════════════════ MEDSPA ════════════════ -->
+<div class="niche-page visible" id="page-medspa" style="background:#131313;">
+
+  <nav>
+    <a href="#" class="nav-back">← vervemindai.com</a>
+    <div class="nav-logo" style="color:#E5E2E1;">VerveMind <span style="color:#F0ABFC;">MedSpa</span></div>
+    <a href="#" class="btn-nav" style="background:linear-gradient(135deg,#fae8ff,#e879f9);">Book Free Audit</a>
+  </nav>
+
+  <div class="hero">
+    <div>
+      <div class="niche-badge" style="background:rgba(240,171,252,0.08);border-color:rgba(240,171,252,0.2);">
+        <span class="dot pulse" style="background:#F0ABFC;animation:pulse-dot 1.8s ease-in-out infinite;"></span>
+        <span style="color:#F0ABFC;">MEDSPA AI SYSTEM</span>
+      </div>
+      <h1 class="hero-title">Luxury Care.<br/><span style="background:linear-gradient(135deg,#F0ABFC,#c026d3);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Automated.</span></h1>
+      <p class="hero-sub">Your AI receptionist handles every botox inquiry, filler consultation, and reactivation text — so your staff focuses on the treatment room, not the phone.</p>
+      <div class="hero-ctas">
+        <a href="#" class="btn-cta" style="background:linear-gradient(135deg,#fae8ff,#e879f9);color:#3b0764;">Book Free MedSpa Audit →</a>
+        <a href="#" class="btn-outline">Watch Demo</a>
+      </div>
+      <div class="avatars">
+        <div class="avatar-stack">
+          <div class="avatar" style="background:#4a044e;color:#F0ABFC;">S</div>
+          <div class="avatar" style="background:#6b21a8;color:#e879f9;">M</div>
+          <div class="avatar" style="background:#7e22ce;color:#d8b4fe;">J</div>
+        </div>
+        <span class="avatar-text">Trusted by MedSpas across the US</span>
+      </div>
+    </div>
+    <div class="booking-panel">
+      <div class="bp-header">
+        <span class="bp-title">Live Patient Activity</span>
+        <div class="live-badge" style="background:rgba(240,171,252,0.08);border:1px solid rgba(240,171,252,0.2);">
+          <span class="ldot pulse" style="background:#F0ABFC;animation:pulse-dot 1.8s ease-in-out infinite;"></span>
+          <span style="color:#F0ABFC;">LIVE</span>
+        </div>
+      </div>
+      <div class="bp-body">
+        <!-- Stitch-inspired booking notification -->
+        <div class="notif-card" style="background:rgba(240,171,252,0.05);border-color:rgba(240,171,252,0.15);">
+          <div class="notif-icon" style="background:rgba(240,171,252,0.1);">📅</div>
+          <div class="notif-body">
+            <div class="notif-title">New Appointment Request</div>
+            <div class="notif-sub">Sarah J. — Premium Botox Filler · Tomorrow 2:00 PM</div>
+          </div>
+          <div class="notif-badge" style="background:rgba(240,171,252,0.1);color:#F0ABFC;">High Value</div>
+        </div>
+        <div class="notif-card" style="background:rgba(52,211,153,0.04);border-color:rgba(52,211,153,0.12);">
+          <div class="notif-icon" style="background:rgba(52,211,153,0.1);">💬</div>
+          <div class="notif-body">
+            <div class="notif-title">Reactivation — Responded</div>
+            <div class="notif-sub">Michelle K. — "Yes! Book me in for next week"</div>
+          </div>
+          <div class="notif-badge" style="background:rgba(52,211,153,0.1);color:#34D399;">Booked</div>
+        </div>
+        <div class="stats-row">
+          <div class="stat-mini"><div class="stat-mini-val" style="color:#F0ABFC;">$4,850</div><div class="stat-mini-lbl">Recovered this week</div></div>
+          <div class="stat-mini"><div class="stat-mini-val" style="color:#34D399;">73%</div><div class="stat-mini-lbl">Reactivation rate</div></div>
+          <div class="stat-mini"><div class="stat-mini-val" style="color:#E5E2E1;">600ms</div><div class="stat-mini-lbl">Response time</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section alt"><div class="inner">
+    <div class="s-tag" style="background:rgba(240,171,252,0.08);border-color:rgba(240,171,252,0.18);color:#F0ABFC;">THE PROBLEM</div>
+    <h2 class="s-title">Your MedSpa is leaving<br/>money on the table</h2>
+    <p class="s-sub">Most MedSpas lose 40–60% of potential revenue to three specific gaps that AI eliminates overnight.</p>
+    <div class="cards-3">
+      <div class="p-card"><div class="p-num">01</div><h3>After-Hours Enquiries Lost</h3><p>Most Botox and filler inquiries come in evenings and weekends. Without 24/7 AI, they book your competitor instead.</p><div class="p-stat" style="background:rgba(251,191,36,0.07);border-color:rgba(251,191,36,0.15);color:#FBBF24;">⚠ 58% of enquiries: evenings</div></div>
+      <div class="p-card"><div class="p-num">02</div><h3>Dormant VIP Clients Forgotten</h3><p>Clients who haven't returned in 90+ days represent $800–1,200 each in lifetime value. Nobody's following up.</p><div class="p-stat" style="background:rgba(251,191,36,0.07);border-color:rgba(251,191,36,0.15);color:#FBBF24;">⚠ Avg 68% never re-book</div></div>
+      <div class="p-card"><div class="p-num">03</div><h3>No-Shows Cost You Twice</h3><p>Unfilled slots and no-shows drain revenue and time. Automated reminder sequences cut no-shows by up to 60%.</p><div class="p-stat" style="background:rgba(251,191,36,0.07);border-color:rgba(251,191,36,0.15);color:#FBBF24;">⚠ 30% avg no-show rate</div></div>
+    </div>
+  </div></div>
+
+  <div class="section">
+    <div class="s-tag" style="background:rgba(240,171,252,0.08);border-color:rgba(240,171,252,0.18);color:#F0ABFC;">RESULTS</div>
+    <h2 class="s-title">What MedSpas see<br/>in the first 30 days</h2>
+    <div class="results-grid">
+      <div class="result-big" style="border-color:rgba(240,171,252,0.2);">
+        <div><div class="result-big-num" style="color:#F0ABFC;">$14K</div><div class="result-big-lbl">revenue recovered from dormant patients in first 30 days</div></div>
+        <div class="result-big-quote">"VerveMind handles our after-hours calls completely. We didn't change a single workflow." — iVolve MedSpa</div>
+      </div>
+      <div class="results-mini">
+        <div class="result-mini"><div class="result-mini-num" style="color:#F0ABFC;">73%</div><div class="result-mini-lbl">of reactivation messages get a response within 24 hours</div></div>
+        <div class="result-mini"><div class="result-mini-num" style="color:#34D399;">48hr</div><div class="result-mini-lbl">average time from onboarding call to system going live</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-strip">
+    <h2>Ready to automate your MedSpa?</h2>
+    <p>Book a free 20-minute audit. We'll map exactly what you're losing and show you how to recover it.</p>
+    <a href="#" class="btn-cta" style="background:linear-gradient(135deg,#fae8ff,#e879f9);color:#3b0764;font-size:14px;padding:14px 28px;">Book My Free MedSpa Audit →</a>
+  </div>
+</div>
+
+<!-- ════════════════ DENTAL ════════════════ -->
+<div class="niche-page" id="page-dental" style="background:#131313;">
+
+  <nav>
+    <a href="#" class="nav-back">← vervemindai.com</a>
+    <div class="nav-logo">VerveMind <span style="color:#7DD3FC;">Dental</span></div>
+    <a href="#" class="btn-nav" style="background:linear-gradient(135deg,#e0f2fe,#38bdf8);color:#0c4a6e;">Book Free Audit</a>
+  </nav>
+
+  <div class="hero">
+    <div>
+      <div class="niche-badge" style="background:rgba(125,211,252,0.08);border-color:rgba(125,211,252,0.2);">
+        <span class="dot pulse" style="background:#7DD3FC;animation:pulse-dot 1.8s ease-in-out infinite;"></span>
+        <span style="color:#7DD3FC;">DENTAL AI SYSTEM</span>
+      </div>
+      <h1 class="hero-title">Full Chair.<br/><span style="background:linear-gradient(135deg,#7DD3FC,#0284c7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Zero No-Shows.</span></h1>
+      <p class="hero-sub">Your AI receptionist handles new patient intake, recall campaigns, and emergency call routing — around the clock — so your front desk focuses on the patients in the chair.</p>
+      <div class="hero-ctas">
+        <a href="#" class="btn-cta" style="background:linear-gradient(135deg,#e0f2fe,#38bdf8);color:#0c4a6e;">Book Free Dental Audit →</a>
+        <a href="#" class="btn-outline">Watch Demo</a>
+      </div>
+      <div class="avatars">
+        <div class="avatar-stack">
+          <div class="avatar" style="background:#0c4a6e;color:#7DD3FC;">D</div>
+          <div class="avatar" style="background:#075985;color:#38bdf8;">R</div>
+          <div class="avatar" style="background:#0369a1;color:#bae6fd;">K</div>
+        </div>
+        <span class="avatar-text">Trusted by dental practices across the US</span>
+      </div>
+    </div>
+    <div class="booking-panel">
+      <div class="bp-header">
+        <span class="bp-title">Live Patient Activity</span>
+        <div class="live-badge" style="background:rgba(125,211,252,0.08);border:1px solid rgba(125,211,252,0.2);">
+          <span class="ldot pulse" style="background:#7DD3FC;animation:pulse-dot 1.8s ease-in-out infinite;"></span>
+          <span style="color:#7DD3FC;">LIVE</span>
+        </div>
+      </div>
+      <div class="bp-body">
+        <div class="notif-card" style="background:rgba(125,211,252,0.05);border-color:rgba(125,211,252,0.15);">
+          <div class="notif-icon" style="background:rgba(125,211,252,0.1);">🦷</div>
+          <div class="notif-body">
+            <div class="notif-title">New Patient — Emergency</div>
+            <div class="notif-sub">James R. — Tooth pain, after hours · Triaged & booked</div>
+          </div>
+          <div class="notif-badge" style="background:rgba(125,211,252,0.1);color:#7DD3FC;">Captured</div>
+        </div>
+        <div class="notif-card" style="background:rgba(52,211,153,0.04);border-color:rgba(52,211,153,0.12);">
+          <div class="notif-icon" style="background:rgba(52,211,153,0.1);">📋</div>
+          <div class="notif-body">
+            <div class="notif-title">6-Month Recall — Confirmed</div>
+            <div class="notif-sub">Lisa M. — "Tuesday at 10am works great!"</div>
+          </div>
+          <div class="notif-badge" style="background:rgba(52,211,153,0.1);color:#34D399;">Booked</div>
+        </div>
+        <div class="stats-row">
+          <div class="stat-mini"><div class="stat-mini-val" style="color:#7DD3FC;">94%</div><div class="stat-mini-lbl">Recall success rate</div></div>
+          <div class="stat-mini"><div class="stat-mini-val" style="color:#34D399;">-62%</div><div class="stat-mini-lbl">No-show reduction</div></div>
+          <div class="stat-mini"><div class="stat-mini-val" style="color:#E5E2E1;">24/7</div><div class="stat-mini-lbl">Emergency routing</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section alt"><div class="inner">
+    <div class="s-tag" style="background:rgba(125,211,252,0.08);border-color:rgba(125,211,252,0.18);color:#7DD3FC;">THE PROBLEM</div>
+    <h2 class="s-title">Patients are slipping through<br/>every single day</h2>
+    <p class="s-sub">The average dental practice loses $8,000–12,000/month to three preventable gaps.</p>
+    <div class="cards-3">
+      <div class="p-card"><div class="p-num">01</div><h3>Missed Emergency Calls</h3><p>Patients with tooth pain call after hours. If you don't answer, they book the first practice that does — and they stay there.</p><div class="p-stat" style="background:rgba(251,191,36,0.07);border-color:rgba(251,191,36,0.15);color:#FBBF24;">⚠ 44% of emergencies: after-hours</div></div>
+      <div class="p-card"><div class="p-num">02</div><h3>Recall Patients Drift Away</h3><p>Patients due for their 6-month checkup need to be chased. Without automated recall, up to 40% of your active patient base drifts silent.</p><div class="p-stat" style="background:rgba(251,191,36,0.07);border-color:rgba(251,191,36,0.15);color:#FBBF24;">⚠ 40% never self-reschedule</div></div>
+      <div class="p-card"><div class="p-num">03</div><h3>No-Shows Drain the Schedule</h3><p>Each unfilled chair slot costs $150–$400. AI reminder sequences cut no-show rates by over 60% automatically.</p><div class="p-stat" style="background:rgba(251,191,36,0.07);border-color:rgba(251,191,36,0.15);color:#FBBF24;">⚠ $3,800/mo avg no-show cost</div></div>
+    </div>
+  </div></div>
+
+  <div class="cta-strip">
+    <h2>Ready to fill your chairs?</h2>
+    <p>Book a free 20-minute audit and see exactly how many patients your practice is losing every month.</p>
+    <a href="#" class="btn-cta" style="background:linear-gradient(135deg,#e0f2fe,#38bdf8);color:#0c4a6e;font-size:14px;padding:14px 28px;">Book My Free Dental Audit →</a>
+  </div>
+</div>
+
+<!-- ════════════════ HVAC ════════════════ -->
+<div class="niche-page" id="page-hvac" style="background:#131313;">
+
+  <nav>
+    <a href="#" class="nav-back">← vervemindai.com</a>
+    <div class="nav-logo">VerveMind <span style="color:#FB923C;">HVAC</span></div>
+    <a href="#" class="btn-nav" style="background:linear-gradient(135deg,#ffedd5,#f97316);color:#431407;">Book Free Audit</a>
+  </nav>
+
+  <div class="hero">
+    <div>
+      <div class="niche-badge" style="background:rgba(251,146,60,0.08);border-color:rgba(251,146,60,0.2);">
+        <span class="dot pulse" style="background:#FB923C;animation:pulse-dot 1.8s ease-in-out infinite;"></span>
+        <span style="color:#FB923C;">HVAC AI SYSTEM</span>
+      </div>
+      <h1 class="hero-title">Never Miss an<br/><span style="background:linear-gradient(135deg,#FB923C,#ea580c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Emergency Call.</span></h1>
+      <p class="hero-sub">Your AI dispatcher answers every emergency, qualifies leads, and books tune-up campaigns automatically — even during peak summer and winter demand.</p>
+      <div class="hero-ctas">
+        <a href="#" class="btn-cta" style="background:linear-gradient(135deg,#ffedd5,#f97316);color:#431407;">Book Free HVAC Audit →</a>
+        <a href="#" class="btn-outline">Watch Demo</a>
+      </div>
+      <div class="avatars">
+        <div class="avatar-stack">
+          <div class="avatar" style="background:#431407;color:#FB923C;">T</div>
+          <div class="avatar" style="background:#7c2d12;color:#f97316;">B</div>
+          <div class="avatar" style="background:#9a3412;color:#fdba74;">R</div>
+        </div>
+        <span class="avatar-text">Trusted by HVAC companies across the US</span>
+      </div>
+    </div>
+    <div class="booking-panel">
+      <div class="bp-header">
+        <span class="bp-title">Live Dispatch Activity</span>
+        <div class="live-badge" style="background:rgba(251,146,60,0.08);border:1px solid rgba(251,146,60,0.2);">
+          <span class="ldot pulse" style="background:#FB923C;animation:pulse-dot 1.8s ease-in-out infinite;"></span>
+          <span style="color:#FB923C;">LIVE</span>
+        </div>
+      </div>
+      <div class="bp-body">
+        <div class="notif-card" style="background:rgba(251,146,60,0.05);border-color:rgba(251,146,60,0.15);">
+          <div class="notif-icon" style="background:rgba(251,146,60,0.1);">🚨</div>
+          <div class="notif-body">
+            <div class="notif-title">Emergency — AC Down</div>
+            <div class="notif-sub">Carlos M. — Residential, high priority · Dispatch scheduled</div>
+          </div>
+          <div class="notif-badge" style="background:rgba(251,146,60,0.1);color:#FB923C;">Urgent</div>
+        </div>
+        <div class="notif-card" style="background:rgba(52,211,153,0.04);border-color:rgba(52,211,153,0.12);">
+          <div class="notif-icon" style="background:rgba(52,211,153,0.1);">📅</div>
+          <div class="notif-body">
+            <div class="notif-title">Seasonal Tune-Up — Booked</div>
+            <div class="notif-sub">Patel Residence — Pre-summer AC service · Friday AM</div>
+          </div>
+          <div class="notif-badge" style="background:rgba(52,211,153,0.1);color:#34D399;">Confirmed</div>
+        </div>
+        <div class="stats-row">
+          <div class="stat-mini"><div class="stat-mini-val" style="color:#FB923C;">$6.2K</div><div class="stat-mini-lbl">Recovered this week</div></div>
+          <div class="stat-mini"><div class="stat-mini-val" style="color:#34D399;">100%</div><div class="stat-mini-lbl">Calls answered</div></div>
+          <div class="stat-mini"><div class="stat-mini-val" style="color:#E5E2E1;">24/7</div><div class="stat-mini-lbl">Emergency dispatch</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-strip">
+    <h2>Ready to capture every emergency call?</h2>
+    <p>Book a free audit and we'll show you how many service calls your HVAC business is losing after hours.</p>
+    <a href="#" class="btn-cta" style="background:linear-gradient(135deg,#ffedd5,#f97316);color:#431407;font-size:14px;padding:14px 28px;">Book My Free HVAC Audit →</a>
+  </div>
+</div>
+
+<!-- ════════════════ ROOFING ════════════════ -->
+<div class="niche-page" id="page-roofing" style="background:#131313;">
+
+  <nav>
+    <a href="#" class="nav-back">← vervemindai.com</a>
+    <div class="nav-logo">VerveMind <span style="color:#86EFAC;">Roofing</span></div>
+    <a href="#" class="btn-nav" style="background:linear-gradient(135deg,#dcfce7,#4ade80);color:#14532d;">Book Free Audit</a>
+  </nav>
+
+  <div class="hero">
+    <div>
+      <div class="niche-badge" style="background:rgba(134,239,172,0.08);border-color:rgba(134,239,172,0.2);">
+        <span class="dot pulse" style="background:#86EFAC;animation:pulse-dot 1.8s ease-in-out infinite;"></span>
+        <span style="color:#86EFAC;">ROOFING AI SYSTEM</span>
+      </div>
+      <h1 class="hero-title">Capture Every<br/><span style="background:linear-gradient(135deg,#86EFAC,#16a34a);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Storm Lead.</span></h1>
+      <p class="hero-sub">Your AI captures every storm-season inquiry, follows up on every quote, and runs insurance claim sequences automatically — so no lead goes cold.</p>
+      <div class="hero-ctas">
+        <a href="#" class="btn-cta" style="background:linear-gradient(135deg,#dcfce7,#4ade80);color:#14532d;">Book Free Roofing Audit →</a>
+        <a href="#" class="btn-outline">Watch Demo</a>
+      </div>
+    </div>
+    <div class="booking-panel">
+      <div class="bp-header">
+        <span class="bp-title">Live Lead Activity</span>
+        <div class="live-badge" style="background:rgba(134,239,172,0.08);border:1px solid rgba(134,239,172,0.2);">
+          <span class="ldot pulse" style="background:#86EFAC;animation:pulse-dot 1.8s ease-in-out infinite;"></span>
+          <span style="color:#86EFAC;">LIVE</span>
+        </div>
+      </div>
+      <div class="bp-body">
+        <div class="notif-card" style="background:rgba(134,239,172,0.05);border-color:rgba(134,239,172,0.15);">
+          <div class="notif-icon" style="background:rgba(134,239,172,0.1);">🌩️</div>
+          <div class="notif-body">
+            <div class="notif-title">Storm Damage — New Lead</div>
+            <div class="notif-sub">Thompson Residence — Hail damage, quote requested · Qualified</div>
+          </div>
+          <div class="notif-badge" style="background:rgba(134,239,172,0.1);color:#86EFAC;">Hot Lead</div>
+        </div>
+        <div class="notif-card" style="background:rgba(52,211,153,0.04);border-color:rgba(52,211,153,0.12);">
+          <div class="notif-icon" style="background:rgba(52,211,153,0.1);">📄</div>
+          <div class="notif-body">
+            <div class="notif-title">Quote Follow-Up — Responded</div>
+            <div class="notif-sub">Davis Property — "Let's move forward with the estimate"</div>
+          </div>
+          <div class="notif-badge" style="background:rgba(52,211,153,0.1);color:#34D399;">Closing</div>
+        </div>
+        <div class="stats-row">
+          <div class="stat-mini"><div class="stat-mini-val" style="color:#86EFAC;">$8.4K</div><div class="stat-mini-lbl">Pipeline added</div></div>
+          <div class="stat-mini"><div class="stat-mini-val" style="color:#34D399;">81%</div><div class="stat-mini-lbl">Quote response rate</div></div>
+          <div class="stat-mini"><div class="stat-mini-val" style="color:#E5E2E1;">24/7</div><div class="stat-mini-lbl">Lead capture</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-strip">
+    <h2>Ready to close more roofing jobs?</h2>
+    <p>Book a free audit and we'll show you exactly how many storm leads and quotes your business is losing.</p>
+    <a href="#" class="btn-cta" style="background:linear-gradient(135deg,#dcfce7,#4ade80);color:#14532d;font-size:14px;padding:14px 28px;">Book My Free Roofing Audit →</a>
+  </div>
+</div>
+
+<script>
+function showPage(niche) {
+  document.querySelectorAll('.niche-page').forEach(p => p.classList.remove('visible'));
+  document.querySelectorAll('.tab').forEach(t => {
+    t.classList.remove('active');
+    t.style.background = 'transparent';
+    t.style.color = 'rgba(229,226,225,0.45)';
+  });
+  document.getElementById('page-' + niche).classList.add('visible');
+  const tab = document.getElementById('tab-' + niche);
+  tab.classList.add('active');
+  const colors = { medspa: ['#F0ABFC','#3b0764'], dental: ['#7DD3FC','#0c4a6e'], hvac: ['#FB923C','#431407'], roofing: ['#86EFAC','#14532d'] };
+  tab.style.background = colors[niche][0];
+  tab.style.color = colors[niche][1];
+  if (window.__sp_record) window.__sp_record({ type: 'click', choice: niche, text: niche });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>VerveMind AI — Homepage Mockup (Option C)</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #131313;
+    --surface: rgba(255,255,255,0.025);
+    --surface-hover: rgba(255,255,255,0.04);
+    --border: rgba(255,255,255,0.07);
+    --border-strong: rgba(255,255,255,0.12);
+    --text: #E5E2E1;
+    --text-muted: rgba(229,226,225,0.45);
+    --text-faint: rgba(229,226,225,0.25);
+    --primary: #00F5D4;
+    --primary-dim: rgba(0,245,212,0.1);
+    --primary-border: rgba(0,245,212,0.2);
+    --secondary: #d2bbff;
+    --positive: #34D399;
+    --amber: #FBBF24;
+    --radius: 6px;
+    --radius-lg: 10px;
+    --radius-xl: 14px;
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+  h1,h2,h3,h4 { font-family: 'Manrope', sans-serif; }
+
+  /* ── NAV ── */
+  nav { position: sticky; top: 0; z-index: 100; background: rgba(19,19,19,0.75); backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
+  .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 32px; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+  .nav-logo { font-family: 'Manrope', sans-serif; font-weight: 900; font-size: 17px; color: var(--text); letter-spacing: -0.03em; }
+  .nav-logo span { color: var(--primary); }
+  .nav-links { display: flex; gap: 32px; }
+  .nav-links a { color: var(--text-muted); font-size: 13px; font-weight: 500; text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--text); }
+  .nav-actions { display: flex; gap: 12px; align-items: center; }
+  .btn-ghost { color: var(--text-muted); font-size: 13px; font-weight: 500; text-decoration: none; padding: 6px 14px; border-radius: var(--radius); transition: all 0.2s; }
+  .btn-ghost:hover { color: var(--text); background: var(--surface-hover); }
+  .btn-primary { background: linear-gradient(135deg, #D7FFF3 0%, #00DFC1 100%); color: #00201a; font-size: 13px; font-weight: 700; padding: 8px 18px; border-radius: var(--radius); border: none; cursor: pointer; text-decoration: none; white-space: nowrap; transition: opacity 0.2s; }
+  .btn-primary:hover { opacity: 0.9; }
+
+  /* ── HERO ── */
+  .hero { max-width: 1200px; margin: 0 auto; padding: 80px 32px 72px; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--primary-dim); border: 1px solid var(--primary-border); border-radius: 4px; padding: 5px 12px; margin-bottom: 24px; }
+  .hero-badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--primary); animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+  .hero-badge span { color: var(--primary); font-size: 10px; font-weight: 700; letter-spacing: 0.12em; }
+  .hero-title { font-size: 52px; font-weight: 900; line-height: 1.0; letter-spacing: -0.04em; margin-bottom: 20px; }
+  .hero-title .accent { background: linear-gradient(135deg, var(--primary) 0%, #00A884 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  .hero-subtitle { color: var(--text-muted); font-size: 17px; line-height: 1.65; max-width: 460px; margin-bottom: 36px; }
+  .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 40px; }
+  .btn-cta-primary { background: linear-gradient(135deg, #D7FFF3 0%, #00DFC1 100%); color: #00201a; font-size: 14px; font-weight: 800; padding: 14px 28px; border-radius: var(--radius); border: none; cursor: pointer; text-decoration: none; display: inline-block; transition: opacity 0.2s; }
+  .btn-cta-primary:hover { opacity: 0.88; }
+  .btn-cta-secondary { background: var(--surface); border: 1px solid var(--border-strong); color: var(--text); font-size: 14px; font-weight: 600; padding: 14px 28px; border-radius: var(--radius); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: background 0.2s; }
+  .btn-cta-secondary:hover { background: var(--surface-hover); }
+  .hero-trust { display: flex; gap: 24px; align-items: center; }
+  .trust-item { display: flex; align-items: center; gap: 7px; color: var(--text-muted); font-size: 12px; }
+  .trust-icon { color: var(--positive); font-size: 14px; }
+
+  /* Hero right: metrics panel */
+  .metrics-panel { background: var(--surface); border: 1px solid var(--border-strong); border-radius: var(--radius-xl); padding: 24px; }
+  .metrics-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding-bottom: 16px; border-bottom: 1px solid var(--border); }
+  .metrics-title { font-family: 'Manrope', sans-serif; font-size: 13px; font-weight: 700; }
+  .status-badge { display: flex; align-items: center; gap: 5px; background: rgba(52,211,153,0.1); border: 1px solid rgba(52,211,153,0.2); border-radius: 4px; padding: 3px 8px; }
+  .status-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--positive); animation: pulse 1.5s infinite; }
+  .status-badge span { color: var(--positive); font-size: 10px; font-weight: 700; letter-spacing: 0.08em; }
+  .metric-row { margin-bottom: 16px; }
+  .metric-row-top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; }
+  .metric-label { color: var(--text-muted); font-size: 12px; }
+  .metric-value { font-family: 'Manrope', sans-serif; font-weight: 800; font-size: 18px; }
+  .metric-value.teal { color: var(--primary); }
+  .metric-value.purple { color: var(--secondary); }
+  .metric-value.green { color: var(--positive); }
+  .metric-value.amber { color: var(--amber); }
+  .progress-bar { height: 4px; background: var(--border); border-radius: 2px; overflow: hidden; }
+  .progress-fill { height: 100%; border-radius: 2px; }
+  .progress-fill.teal { background: linear-gradient(90deg, var(--primary), #00A884); }
+  .progress-fill.purple { background: linear-gradient(90deg, var(--secondary), #a78bfa); }
+  .progress-fill.green { background: linear-gradient(90deg, var(--positive), #059669); }
+  .live-feed { background: rgba(0,0,0,0.3); border-radius: var(--radius); padding: 12px; margin-top: 8px; }
+  .feed-title { color: var(--text-faint); font-size: 9px; letter-spacing: 0.15em; font-weight: 700; margin-bottom: 8px; }
+  .feed-item { display: flex; justify-content: space-between; align-items: center; padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
+  .feed-item:last-child { border-bottom: none; }
+  .feed-module { color: var(--primary); font-size: 10px; font-weight: 600; font-family: 'Manrope', sans-serif; }
+  .feed-action { color: var(--text-muted); font-size: 10px; }
+  .feed-time { color: var(--text-faint); font-size: 9px; }
+
+  /* ── DIVIDER ── */
+  .section-divider { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+  .divider-line { height: 1px; background: var(--border); }
+
+  /* ── SOCIAL PROOF ── */
+  .social-proof { max-width: 1200px; margin: 0 auto; padding: 32px 32px; }
+  .proof-label { text-align: center; color: var(--text-faint); font-size: 11px; letter-spacing: 0.15em; font-weight: 700; margin-bottom: 20px; }
+  .proof-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; }
+  .proof-stat { background: var(--bg); padding: 20px 24px; text-align: center; }
+  .proof-stat-num { font-family: 'Manrope', sans-serif; font-weight: 900; font-size: 28px; letter-spacing: -0.03em; margin-bottom: 4px; }
+  .proof-stat-label { color: var(--text-muted); font-size: 12px; }
+
+  /* ── SECTION ── */
+  section { max-width: 1200px; margin: 0 auto; padding: 80px 32px; }
+  .section-tag { display: inline-block; background: var(--primary-dim); border: 1px solid var(--primary-border); border-radius: 4px; color: var(--primary); font-size: 10px; font-weight: 700; letter-spacing: 0.12em; padding: 4px 10px; margin-bottom: 16px; }
+  .section-title { font-size: 40px; font-weight: 900; letter-spacing: -0.04em; line-height: 1.1; margin-bottom: 16px; }
+  .section-subtitle { color: var(--text-muted); font-size: 17px; max-width: 560px; line-height: 1.6; margin-bottom: 48px; }
+
+  /* ── PROBLEM ── */
+  .problem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .problem-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 24px; position: relative; overflow: hidden; transition: border-color 0.2s; }
+  .problem-card:hover { border-color: var(--border-strong); }
+  .problem-number { font-family: 'Manrope', sans-serif; font-weight: 900; font-size: 48px; color: var(--border-strong); letter-spacing: -0.05em; line-height: 1; margin-bottom: 12px; }
+  .problem-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+  .problem-card p { color: var(--text-muted); font-size: 14px; line-height: 1.6; }
+  .problem-stat { display: inline-flex; align-items: center; gap: 6px; margin-top: 16px; background: rgba(251,191,36,0.08); border: 1px solid rgba(251,191,36,0.15); border-radius: 4px; padding: 4px 10px; }
+  .problem-stat span { color: var(--amber); font-size: 11px; font-weight: 700; }
+
+  /* ── HOW IT WORKS ── */
+  .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .step-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 28px; position: relative; }
+  .step-number { width: 32px; height: 32px; border-radius: 4px; background: var(--primary-dim); border: 1px solid var(--primary-border); display: flex; align-items: center; justify-content: center; color: var(--primary); font-family: 'Manrope', sans-serif; font-weight: 900; font-size: 13px; margin-bottom: 20px; }
+  .step-card h3 { font-size: 18px; font-weight: 800; margin-bottom: 10px; letter-spacing: -0.02em; }
+  .step-card p { color: var(--text-muted); font-size: 14px; line-height: 1.65; }
+  .step-connector { display: none; }
+
+  /* ── NICHES ── */
+  .niches-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 16px; }
+  .niche-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 20px; cursor: pointer; transition: all 0.2s; text-decoration: none; color: var(--text); }
+  .niche-card:hover { border-color: var(--primary-border); background: rgba(0,245,212,0.03); }
+  .niche-icon { font-size: 24px; margin-bottom: 12px; }
+  .niche-card h3 { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+  .niche-card p { color: var(--text-muted); font-size: 12px; line-height: 1.5; }
+  .niche-arrow { color: var(--text-faint); font-size: 16px; margin-top: 14px; transition: color 0.2s; }
+  .niche-card:hover .niche-arrow { color: var(--primary); }
+
+  /* ── TESTIMONIAL ── */
+  .testimonial-bar { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: 32px 40px; display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center; }
+  .testimonial-quote { font-size: 20px; font-family: 'Manrope', sans-serif; font-weight: 700; letter-spacing: -0.02em; line-height: 1.4; margin-bottom: 16px; }
+  .testimonial-quote::before { content: '"'; color: var(--primary); margin-right: 2px; }
+  .testimonial-quote::after { content: '"'; color: var(--primary); margin-left: 2px; }
+  .testimonial-author { color: var(--text-muted); font-size: 13px; }
+  .testimonial-author strong { color: var(--text); }
+  .testimonial-metric { text-align: center; padding: 0 32px; border-left: 1px solid var(--border); }
+  .testimonial-metric-num { font-family: 'Manrope', sans-serif; font-weight: 900; font-size: 40px; color: var(--primary); letter-spacing: -0.04em; }
+  .testimonial-metric-label { color: var(--text-muted); font-size: 12px; max-width: 120px; line-height: 1.4; margin-top: 4px; }
+
+  /* ── PRICING ── */
+  .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 760px; margin: 0 auto; }
+  .pricing-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-xl); padding: 32px; }
+  .pricing-card.featured { border-color: var(--primary-border); background: rgba(0,245,212,0.03); }
+  .pricing-badge { display: inline-block; background: var(--primary); color: #00201a; font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 4px; margin-bottom: 12px; letter-spacing: 0.06em; }
+  .pricing-name { font-size: 22px; font-weight: 800; margin-bottom: 4px; }
+  .pricing-price { font-family: 'Manrope', sans-serif; font-size: 40px; font-weight: 900; letter-spacing: -0.04em; margin: 16px 0 4px; }
+  .pricing-period { color: var(--text-muted); font-size: 13px; margin-bottom: 24px; }
+  .pricing-features { list-style: none; margin-bottom: 28px; display: flex; flex-direction: column; gap: 10px; }
+  .pricing-features li { display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--text-muted); }
+  .pricing-features li::before { content: '✓'; color: var(--primary); font-weight: 700; font-size: 12px; flex-shrink: 0; }
+
+  /* ── CTA SECTION ── */
+  .cta-section { max-width: 1200px; margin: 0 auto 80px; padding: 0 32px; }
+  .cta-inner { background: var(--surface); border: 1px solid var(--border-strong); border-radius: var(--radius-xl); padding: 64px 48px; text-align: center; position: relative; overflow: hidden; }
+  .cta-inner::before { content: ''; position: absolute; top: -80px; left: 50%; transform: translateX(-50%); width: 500px; height: 200px; background: radial-gradient(circle, rgba(0,245,212,0.08) 0%, transparent 70%); filter: blur(40px); pointer-events: none; }
+  .cta-title { font-size: 44px; font-weight: 900; letter-spacing: -0.04em; margin-bottom: 16px; position: relative; }
+  .cta-sub { color: var(--text-muted); font-size: 18px; max-width: 480px; margin: 0 auto 36px; line-height: 1.6; position: relative; }
+  .cta-inner .btn-cta-primary { font-size: 16px; padding: 16px 36px; position: relative; }
+
+  /* ── FOOTER ── */
+  footer { border-top: 1px solid var(--border); }
+  .footer-inner { max-width: 1200px; margin: 0 auto; padding: 48px 32px 32px; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
+  .footer-brand p { color: var(--text-muted); font-size: 13px; line-height: 1.6; margin-top: 10px; max-width: 260px; }
+  .footer-col h4 { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; color: var(--text-faint); margin-bottom: 14px; }
+  .footer-col a { display: block; color: var(--text-muted); font-size: 13px; text-decoration: none; margin-bottom: 8px; transition: color 0.2s; }
+  .footer-col a:hover { color: var(--text); }
+  .footer-bottom { max-width: 1200px; margin: 0 auto; padding: 20px 32px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+  .footer-bottom p { color: var(--text-faint); font-size: 12px; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-logo">VerveMind <span>AI</span></div>
+    <div class="nav-links">
+      <a href="#">Solutions</a>
+      <a href="#">How It Works</a>
+      <a href="#">Pricing</a>
+      <a href="#">Blog</a>
+      <a href="#">About</a>
+    </div>
+    <div class="nav-actions">
+      <a href="#" class="btn-ghost">Login</a>
+      <a href="#" class="btn-primary">Book Free Audit</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <!-- Left -->
+  <div>
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      <span>AI AUTOMATION PLATFORM</span>
+    </div>
+    <h1 class="hero-title">The Autonomous<br/><span class="accent">Operating System</span><br/>for Local Business</h1>
+    <p class="hero-subtitle">Deploy specialized AI voice agents that answer every call, book appointments 24/7, and reactivate dormant patients — with zero staff required.</p>
+    <div class="hero-ctas">
+      <a href="#" class="btn-cta-primary">Book Free Strategy Call →</a>
+      <a href="#" class="btn-cta-secondary">
+        <svg width="14" height="14" fill="none" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/><path d="M10 8l6 4-6 4V8z" fill="currentColor"/></svg>
+        Watch 2-min Demo
+      </a>
+    </div>
+    <div class="hero-trust">
+      <div class="trust-item"><span class="trust-icon">✓</span> No contracts</div>
+      <div class="trust-item"><span class="trust-icon">✓</span> Live in 48hrs</div>
+      <div class="trust-item"><span class="trust-icon">✓</span> First month free</div>
+    </div>
+  </div>
+  <!-- Right: Live metrics panel -->
+  <div class="metrics-panel">
+    <div class="metrics-header">
+      <span class="metrics-title">System Activity</span>
+      <div class="status-badge">
+        <span class="status-dot"></span>
+        <span>LIVE</span>
+      </div>
+    </div>
+    <div class="metric-row">
+      <div class="metric-row-top">
+        <span class="metric-label">Calls Handled (This Month)</span>
+        <span class="metric-value teal">12,440</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill teal" style="width:78%"></div></div>
+    </div>
+    <div class="metric-row">
+      <div class="metric-row-top">
+        <span class="metric-label">Revenue Recovered</span>
+        <span class="metric-value purple">$142,850</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill purple" style="width:62%"></div></div>
+    </div>
+    <div class="metric-row">
+      <div class="metric-row-top">
+        <span class="metric-label">Avg Response Latency</span>
+        <span class="metric-value green">600ms</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill green" style="width:95%"></div></div>
+    </div>
+    <div class="live-feed">
+      <div class="feed-title">LIVE AGENT LOG</div>
+      <div class="feed-item">
+        <span class="feed-module">Voice.MedSpa</span>
+        <span class="feed-action">Booked: Sarah K. — Botox consult</span>
+        <span class="feed-time">just now</span>
+      </div>
+      <div class="feed-item">
+        <span class="feed-module">SMS.Reactivation</span>
+        <span class="feed-action">47 winback messages dispatched</span>
+        <span class="feed-time">2m ago</span>
+      </div>
+      <div class="feed-item">
+        <span class="feed-module">Voice.HVAC</span>
+        <span class="feed-action">Overflow call captured → CRM</span>
+        <span class="feed-time">5m ago</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SOCIAL PROOF BAR -->
+<div class="section-divider"><div class="divider-line"></div></div>
+<div class="social-proof">
+  <div class="proof-label">TRUSTED BY LOCAL BUSINESSES ACROSS 4 NICHES</div>
+  <div class="proof-stats">
+    <div class="proof-stat">
+      <div class="proof-stat-num" style="color:var(--primary)">47K+</div>
+      <div class="proof-stat-label">Leads Captured</div>
+    </div>
+    <div class="proof-stat">
+      <div class="proof-stat-num" style="color:var(--secondary)">$2.1M</div>
+      <div class="proof-stat-label">Revenue Recovered</div>
+    </div>
+    <div class="proof-stat">
+      <div class="proof-stat-num" style="color:var(--positive)">380%</div>
+      <div class="proof-stat-label">Average Client ROI</div>
+    </div>
+    <div class="proof-stat">
+      <div class="proof-stat-num" style="color:var(--amber)">99.8%</div>
+      <div class="proof-stat-label">System Uptime</div>
+    </div>
+  </div>
+</div>
+<div class="section-divider"><div class="divider-line"></div></div>
+
+<!-- PROBLEM -->
+<section>
+  <div class="section-tag">THE PROBLEM</div>
+  <h2 class="section-title">Your business is losing<br/>revenue every single day</h2>
+  <p class="section-subtitle">Most local businesses lose 30–50% of their potential revenue to three invisible leaks — none of which require more staff to fix.</p>
+  <div class="problem-grid">
+    <div class="problem-card">
+      <div class="problem-number">01</div>
+      <h3>Missed Calls = Missed Money</h3>
+      <p>The average SMB misses 35% of inbound calls. Each one is a patient, booking, or lead that goes straight to your competitor.</p>
+      <div class="problem-stat"><span>⚠ $3,200/mo average loss</span></div>
+    </div>
+    <div class="problem-card">
+      <div class="problem-number">02</div>
+      <h3>Dormant Patients Forgotten</h3>
+      <p>60–70% of your past customers haven't returned — not because they left, but because no one followed up. They're waiting to be asked.</p>
+      <div class="problem-stat"><span>⚠ 68% never re-contact</span></div>
+    </div>
+    <div class="problem-card">
+      <div class="problem-number">03</div>
+      <h3>After-Hours = Dead Zones</h3>
+      <p>Most bookings happen evenings and weekends. Your competitors who run 24/7 AI are capturing those leads while you sleep.</p>
+      <div class="problem-stat"><span>⚠ 42% of bookings: after-hours</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section style="background:rgba(255,255,255,0.01);border-top:1px solid var(--border);border-bottom:1px solid var(--border);max-width:100%;padding:80px 0;">
+  <div style="max-width:1200px;margin:0 auto;padding:0 32px;">
+    <div class="section-tag">HOW IT WORKS</div>
+    <h2 class="section-title">Live in 48 hours.<br/>Running forever.</h2>
+    <p class="section-subtitle">Three steps to a fully autonomous front desk — no dev team, no months of setup.</p>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-number">01</div>
+        <h3>We Map Your Business</h3>
+        <p>30-minute onboarding call. We learn your services, scripts, objections, and booking flow. Our AI is trained on your exact voice and process.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">02</div>
+        <h3>We Deploy Your AI Workforce</h3>
+        <p>Your AI receptionist, reactivation engine, and SMS follow-up system go live. Integrated with your existing CRM, phone system, and calendar.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-number">03</div>
+        <h3>You Watch Revenue Grow</h3>
+        <p>Real-time dashboard shows every call, booking, and recovery. Monthly reports track ROI. We optimize continuously — you just run your business.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NICHES -->
+<section>
+  <div class="section-tag">BUILT FOR YOUR INDUSTRY</div>
+  <h2 class="section-title">Specialized for your niche.<br/>Not generic AI.</h2>
+  <p class="section-subtitle">Each deployment is purpose-built with industry-specific scripts, objection handling, and booking flows.</p>
+  <div class="niches-grid">
+    <a href="#" class="niche-card">
+      <div class="niche-icon">💆</div>
+      <h3>MedSpa</h3>
+      <p>Botox, filler, laser & aesthetic bookings handled with luxury-level service.</p>
+      <div class="niche-arrow">→</div>
+    </a>
+    <a href="#" class="niche-card">
+      <div class="niche-icon">🦷</div>
+      <h3>Dental</h3>
+      <p>New patient intake, recall campaigns, and emergency call routing — 24/7.</p>
+      <div class="niche-arrow">→</div>
+    </a>
+    <a href="#" class="niche-card">
+      <div class="niche-icon">❄️</div>
+      <h3>HVAC</h3>
+      <p>Emergency dispatch, seasonal tune-up campaigns, and quote follow-ups automated.</p>
+      <div class="niche-arrow">→</div>
+    </a>
+    <a href="#" class="niche-card">
+      <div class="niche-icon">🏠</div>
+      <h3>Roofing</h3>
+      <p>Storm-season lead capture, quote recovery, and insurance claim follow-ups.</p>
+      <div class="niche-arrow">→</div>
+    </a>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section style="padding-top:0">
+  <div class="testimonial-bar">
+    <div>
+      <div class="testimonial-quote">VerveMind handles our after-hours calls and reactivation completely. We recovered $14,200 in dormant patients in the first 30 days — without touching our front desk workflow.</div>
+      <div class="testimonial-author"><strong>iVolve MedSpa</strong> — First VerveMind Client · Live since April 2026</div>
+    </div>
+    <div class="testimonial-metric">
+      <div class="testimonial-metric-num">$14K</div>
+      <div class="testimonial-metric-label">recovered in first 30 days</div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section>
+  <div style="text-align:center;margin-bottom:48px;">
+    <div class="section-tag" style="margin-bottom:16px;">PRICING</div>
+    <h2 class="section-title" style="margin-bottom:12px;">Simple, transparent pricing</h2>
+    <p style="color:var(--text-muted);font-size:17px;">No long-term contracts. Cancel any time.</p>
+  </div>
+  <div class="pricing-grid">
+    <div class="pricing-card">
+      <div class="pricing-name">Starter</div>
+      <div class="pricing-price">$97<span style="font-size:18px;color:var(--text-muted);font-weight:400;">/mo</span></div>
+      <div class="pricing-period">+ $49 one-time setup</div>
+      <ul class="pricing-features">
+        <li>AI voice receptionist (100 calls/mo)</li>
+        <li>SMS follow-up sequences</li>
+        <li>CRM integration (GHL)</li>
+        <li>Monthly performance report</li>
+        <li>Email support</li>
+      </ul>
+      <a href="#" class="btn-cta-secondary" style="width:100%;justify-content:center;">Get Started</a>
+    </div>
+    <div class="pricing-card featured">
+      <div class="pricing-badge">MOST POPULAR</div>
+      <div class="pricing-name">Growth</div>
+      <div class="pricing-price" style="color:var(--primary)">$177<span style="font-size:18px;color:var(--text-muted);font-weight:400;">/mo</span></div>
+      <div class="pricing-period">+ $99 one-time setup</div>
+      <ul class="pricing-features">
+        <li>Everything in Starter</li>
+        <li>Unlimited calls</li>
+        <li>Reactivation campaigns</li>
+        <li>Multi-niche scripts</li>
+        <li>Weekly ROI dashboard</li>
+        <li>Priority support + monthly call</li>
+      </ul>
+      <a href="#" class="btn-cta-primary" style="width:100%;text-align:center;display:block;">Book Strategy Call →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<div class="cta-section">
+  <div class="cta-inner">
+    <h2 class="cta-title">Stop losing leads<br/>while you sleep.</h2>
+    <p class="cta-sub">Book a free 20-minute audit and we'll show you exactly how many calls, leads, and patients your business is losing every week.</p>
+    <a href="#" class="btn-cta-primary">Book My Free Audit →</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="nav-logo">VerveMind <span style="color:var(--primary)">AI</span></div>
+      <p>The autonomous operating system for local businesses. AI voice agents, reactivation engines, and 24/7 coverage — without the overhead.</p>
+    </div>
+    <div class="footer-col">
+      <h4>SOLUTIONS</h4>
+      <a href="#">MedSpa AI</a>
+      <a href="#">Dental AI</a>
+      <a href="#">HVAC AI</a>
+      <a href="#">Roofing AI</a>
+    </div>
+    <div class="footer-col">
+      <h4>COMPANY</h4>
+      <a href="#">About</a>
+      <a href="#">Blog</a>
+      <a href="#">Pricing</a>
+      <a href="#">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>LEGAL</h4>
+      <a href="#">Privacy</a>
+      <a href="#">Terms</a>
+      <a href="#">Refund Policy</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 VerveMind AI. All rights reserved.</p>
+    <p style="color:var(--primary);font-size:12px;">Built with AI. Powered by results.</p>
+  </div>
+</footer>
+
+</body>
+</html>
