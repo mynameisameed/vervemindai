@@ -42,9 +42,8 @@ export function middleware(request: NextRequest) {
       return NextResponse.redirect(new URL('/', request.url))
     }
 
-    // Rewrite to the specific folder/file in public/
-    // Append /index.html if path is root to ensure static resolution
-    const internalPath = url.pathname === '/' ? '/index.html' : url.pathname
+    // Rewrite to the specific route in Next.js App Router
+    const internalPath = url.pathname === '/' ? '' : url.pathname
     
     // Prevent recursive rewrites
     if (url.pathname.startsWith(`/${subdomain}`)) {
