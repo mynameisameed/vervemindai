@@ -33,7 +33,6 @@ export default function MedSpaPage() {
       }}>
         {/* Left copy */}
         <div>
-          {/* Badge */}
           <div style={{
             display: 'inline-flex',
             alignItems: 'center',
@@ -51,7 +50,7 @@ export default function MedSpaPage() {
               animation: 'pulse-dot 1.8s ease-in-out infinite',
             }} />
             <span style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.12em', color: ACCENT }}>
-              MEDSPA AI SYSTEM
+              MEDSPA ENGINE OS.1
             </span>
           </div>
 
@@ -64,13 +63,13 @@ export default function MedSpaPage() {
             marginBottom: '18px',
             color: 'var(--text)',
           }}>
-            Luxury Care.<br />
+            Fill Your MedSpa&apos;s Calendar<br />
             <span style={{
               background: 'linear-gradient(135deg, #F0ABFC, #c026d3)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
             }}>
-              Automated.
+              Autonomously
             </span>
           </h1>
 
@@ -82,7 +81,7 @@ export default function MedSpaPage() {
             maxWidth: '440px',
             marginBottom: '30px',
           }}>
-            Your AI receptionist handles every botox inquiry, filler consultation, and reactivation text — so your staff focuses on the treatment room, not the phone.
+            Deploy conversational AI that answers calls, handles objections, and reactivates dormant patients 24/7. Stop losing leads to voicemail.
           </p>
 
           {/* CTAs */}
@@ -101,12 +100,10 @@ export default function MedSpaPage() {
                 color: ACCENT_TEXT,
               }}
             >
-              Book Free MedSpa Audit →
+              Deploy Engine Now →
             </a>
             <a
-              href="https://calendly.com/vervemindai/lead"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/pricing"
               style={{
                 background: 'transparent',
                 border: '1px solid var(--border-strong)',
@@ -118,7 +115,7 @@ export default function MedSpaPage() {
                 textDecoration: 'none',
               }}
             >
-              Watch Demo
+              Calculate ROI
             </a>
           </div>
 

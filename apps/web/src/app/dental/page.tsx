@@ -43,7 +43,7 @@ export default function DentalPage() {
               animation: 'pulse-dot 1.8s ease-in-out infinite',
             }} />
             <span style={{ fontSize: '10px', fontWeight: 700, letterSpacing: '0.12em', color: ACCENT }}>
-              DENTAL AI SYSTEM
+              DENTAL ENGINE OS.1
             </span>
           </div>
 
@@ -52,17 +52,17 @@ export default function DentalPage() {
             lineHeight: 1.0, letterSpacing: '-0.04em',
             marginBottom: '18px', color: 'var(--text)',
           }}>
-            Full Chair.<br />
+            Automate Your<br />
             <span style={{
               background: 'linear-gradient(135deg, #7DD3FC, #0284c7)',
               WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
             }}>
-              Zero No-Shows.
-            </span>
+              Dental Front Desk
+            </span> 24/7
           </h1>
 
           <p style={{ color: 'var(--text-muted)', fontSize: '16px', lineHeight: 1.65, maxWidth: '440px', marginBottom: '30px' }}>
-            Your AI receptionist handles new patient intake, recall campaigns, and emergency call routing — around the clock — so your front desk focuses on the patients in the chair.
+            Deploy AI that handles insurance FAQs, qualifies new patients, and fills your hygiene schedule automatically. Zero missed patients. Zero receptionist burnout.
           </p>
 
           <div style={{ display: 'flex', gap: '10px', marginBottom: '28px', flexWrap: 'wrap' }}>
@@ -71,14 +71,14 @@ export default function DentalPage() {
               borderRadius: 'var(--r)', textDecoration: 'none',
               background: ACCENT_GRADIENT, color: ACCENT_TEXT,
             }}>
-              Book Free Dental Audit →
+              Deploy Receptionist Now →
             </a>
-            <a href="https://calendly.com/vervemindai/lead" target="_blank" rel="noopener noreferrer" style={{
+            <a href="/pricing" style={{
               background: 'transparent', border: '1px solid var(--border-strong)',
               color: 'var(--text)', fontSize: '13px', fontWeight: 600,
               padding: '11px 20px', borderRadius: 'var(--r)', textDecoration: 'none',
             }}>
-              Watch Demo
+              Calculate ROI
             </a>
           </div>
 
