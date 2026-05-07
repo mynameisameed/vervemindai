@@ -5,7 +5,9 @@ import Link from 'next/link';
 const links = [
   { href: '/#how-it-works', label: 'How It Works' },
   { href: '/#pricing',      label: 'Pricing' },
+  { href: '/faq',           label: 'FAQ' },
   { href: '/about',         label: 'About' },
+  { href: '/contact',       label: 'Contact' },
   { href: '/blog',          label: 'Blog' },
 ];
 
@@ -56,7 +58,7 @@ export default function Nav() {
             </Link>
           ))}
           <a
-            href="https://calendly.com/vervemindai/lead"
+            href="https://calendly.com/vervemindai/lead?utm_source=vervemindai.com&utm_medium=website&utm_campaign=nav&utm_content=nav_cta"
             target="_blank"
             rel="noopener noreferrer"
             style={{

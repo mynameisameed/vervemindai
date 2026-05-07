@@ -2,6 +2,7 @@ import React from 'react';
 import { Metadata } from 'next';
 import NicheLayout from '../../components/NicheLayout';
 import BookingPanel from '../../components/BookingPanel';
+import VoiceDemoPlayer from '../../components/VoiceDemoPlayer';
 
 export const metadata: Metadata = {
   title: 'VerveMind AI for HVAC | Never Miss an Emergency Call',
@@ -41,7 +42,7 @@ export default function HVACPage() {
           </p>
 
           <div style={{ display: 'flex', gap: '10px', marginBottom: '28px', flexWrap: 'wrap' }}>
-            <a href="https://calendly.com/vervemindai/lead" target="_blank" rel="noopener noreferrer" style={{ fontSize: '13px', fontWeight: 800, padding: '12px 24px', borderRadius: 'var(--r)', textDecoration: 'none', background: ACCENT_GRADIENT, color: ACCENT_TEXT }}>
+            <a href="https://calendly.com/vervemindai/lead?utm_source=vervemindai.com&utm_medium=website&utm_campaign=hvac&utm_content=hero_cta" target="_blank" rel="noopener noreferrer" style={{ fontSize: '13px', fontWeight: 800, padding: '12px 24px', borderRadius: 'var(--r)', textDecoration: 'none', background: ACCENT_GRADIENT, color: ACCENT_TEXT }}>
               Deploy Dispatch AI Now →
             </a>
             <a href="/pricing" style={{ background: 'transparent', border: '1px solid var(--border-strong)', color: 'var(--text)', fontSize: '13px', fontWeight: 600, padding: '11px 20px', borderRadius: 'var(--r)', textDecoration: 'none' }}>
@@ -63,6 +64,8 @@ export default function HVACPage() {
             </div>
             <span style={{ color: 'var(--text-muted)', fontSize: '12px', paddingLeft: '16px' }}>Trusted by HVAC companies across the US</span>
           </div>
+
+          <VoiceDemoPlayer audioUrl="/assets/audio/hvac_demo_stitched.mp3" title="Listen: HVAC Dispatch AI" />
         </div>
 
         <BookingPanel
@@ -96,7 +99,7 @@ export default function HVACPage() {
             {[
               { num: '01', title: 'Emergency Calls Go to Voicemail', body: 'When your team is on a job, new emergency calls go unanswered. Those homeowners book whoever picks up next.', stat: '⚠ 67% call 3+ companies' },
               { num: '02', title: 'Peak-Season Overflow Lost', body: 'July and August bring more calls than your team can handle. Without AI triage, you lose jobs you could have scheduled.', stat: '⚠ $4,200 avg lost per peak week' },
-              { num: '03', title: 'Follow-Up Quotes Ignored', body: 'Estimates sent without follow-up close at under 20%. Automated follow-up sequences 3x conversion rates.', stat: '⚠ 58% of quotes: no follow-up' },
+              { num: '03', title: 'Dormant Past Clients', body: 'You have a database of past installs and repairs. The AI automatically runs outbound Reactivation Blitz campaigns to book annual tune-ups from your existing list.', stat: '⚠ 68% never re-engaged' },
             ].map((card) => (
               <div key={card.num} style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 'var(--r-lg)', padding: '22px' }}>
                 <div style={{ fontFamily: 'var(--font-manrope), Manrope, sans-serif', fontWeight: 900, fontSize: '40px', color: 'rgba(255,255,255,0.05)', letterSpacing: '-0.05em', marginBottom: '10px' }}>{card.num}</div>
@@ -117,10 +120,14 @@ export default function HVACPage() {
           <h2 style={{ fontSize: '30px', fontWeight: 900, letterSpacing: '-0.04em', marginBottom: '10px', color: ACCENT }}>
             Ready to capture every job?
           </h2>
-          <p style={{ color: 'var(--text-muted)', fontSize: '15px', marginBottom: '24px' }}>
+          <p style={{ color: 'var(--text-muted)', fontSize: '15px', marginBottom: '12px' }}>
             Book a free 20-minute audit and see exactly what your HVAC company is losing to missed calls.
           </p>
-          <a href="https://calendly.com/vervemindai/lead" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', fontWeight: 800, padding: '14px 28px', borderRadius: 'var(--r)', textDecoration: 'none', display: 'inline-block', background: ACCENT_GRADIENT, color: ACCENT_TEXT }}>
+          <div style={{ fontSize: '13px', fontWeight: 600, color: ACCENT, marginBottom: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px' }}>
+            <span style={{ display: 'inline-block', width: '6px', height: '6px', borderRadius: '50%', background: ACCENT }}></span>
+            No contracts. Plans start at $177/mo.
+          </div>
+          <a href="https://calendly.com/vervemindai/lead?utm_source=vervemindai.com&utm_medium=website&utm_campaign=hvac&utm_content=cta_strip" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', fontWeight: 800, padding: '14px 28px', borderRadius: 'var(--r)', textDecoration: 'none', display: 'inline-block', background: ACCENT_GRADIENT, color: ACCENT_TEXT }}>
             Book My Free HVAC Audit →
           </a>
         </div>

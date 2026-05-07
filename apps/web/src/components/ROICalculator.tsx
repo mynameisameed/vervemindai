@@ -7,9 +7,10 @@ export default function ROICalculator() {
   const [missedCalls, setMissedCalls] = useState(15);
   const [avgTicket, setAvgTicket] = useState(450);
   const [closeRate, setCloseRate] = useState(40);
+  const [plan, setPlan] = useState<'starter' | 'growth'>('starter');
   
   // VerveMind monthly cost
-  const softwareCost = 177;
+  const softwareCost = plan === 'starter' ? 177 : 297;
 
   const weeksPerMonth = 4;
   const qualifiedLeads = missedCalls * weeksPerMonth * 0.8;
@@ -24,7 +25,7 @@ export default function ROICalculator() {
     }}>
       <div style={{ textAlign: 'center', marginBottom: 40 }}>
         <div style={{ width: 64, height: 64, borderRadius: 16, background: 'rgba(0,245,212,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px' }}>
-          <Calculator size={32} color="#00F5D4" />
+          <Calculator size={32} color="var(--primary)" />
         </div>
         <h2 style={{ fontSize: 32, fontWeight: 800, color: 'var(--text)', margin: '0 0 12px' }}>Calculate Your Lost Revenue</h2>
         <p style={{ color: 'var(--text-muted)', fontSize: 16, margin: 0 }}>Every missed call is a patient or customer walking away. See what happens when VerveMind picks up 100% of the time.</p>
@@ -40,12 +41,12 @@ export default function ROICalculator() {
               <label style={{ fontSize: 14, fontWeight: 600, color: 'var(--text)', display: 'flex', alignItems: 'center', gap: 8 }}>
                 <PhoneMissed size={16} color="#A1A1AA" /> Missed Calls per Week
               </label>
-              <span style={{ fontWeight: 700, color: '#00F5D4' }}>{missedCalls} calls</span>
+              <span style={{ fontWeight: 700, color: 'var(--primary)' }}>{missedCalls} calls</span>
             </div>
             <input 
               type="range" min="1" max="100" value={missedCalls} 
               onChange={(e) => setMissedCalls(parseInt(e.target.value))}
-              style={{ width: '100%', accentColor: '#00F5D4', cursor: 'grab' }}
+              style={{ width: '100%', accentColor: 'var(--primary)', cursor: 'grab' }}
             />
           </div>
 
@@ -54,12 +55,12 @@ export default function ROICalculator() {
               <label style={{ fontSize: 14, fontWeight: 600, color: 'var(--text)', display: 'flex', alignItems: 'center', gap: 8 }}>
                 <DollarSign size={16} color="#A1A1AA" /> Average Ticket/LTV
               </label>
-              <span style={{ fontWeight: 700, color: '#00F5D4' }}>${avgTicket.toLocaleString()}</span>
+              <span style={{ fontWeight: 700, color: 'var(--primary)' }}>${avgTicket.toLocaleString()}</span>
             </div>
             <input 
               type="range" min="50" max="5000" step="50" value={avgTicket} 
               onChange={(e) => setAvgTicket(parseInt(e.target.value))}
-              style={{ width: '100%', accentColor: '#00F5D4', cursor: 'grab' }}
+              style={{ width: '100%', accentColor: 'var(--primary)', cursor: 'grab' }}
             />
           </div>
 
@@ -68,12 +69,12 @@ export default function ROICalculator() {
               <label style={{ fontSize: 14, fontWeight: 600, color: 'var(--text)', display: 'flex', alignItems: 'center', gap: 8 }}>
                 <TrendingUp size={16} color="#A1A1AA" /> Expected Close Rate
               </label>
-              <span style={{ fontWeight: 700, color: '#00F5D4' }}>{closeRate}%</span>
+              <span style={{ fontWeight: 700, color: 'var(--primary)' }}>{closeRate}%</span>
             </div>
             <input 
               type="range" min="10" max="90" step="5" value={closeRate} 
               onChange={(e) => setCloseRate(parseInt(e.target.value))}
-              style={{ width: '100%', accentColor: '#00F5D4', cursor: 'grab' }}
+              style={{ width: '100%', accentColor: 'var(--primary)', cursor: 'grab' }}
             />
           </div>
 
@@ -88,9 +89,37 @@ export default function ROICalculator() {
             +${Math.round(recoveredRevenue).toLocaleString()}
           </div>
           
-          <div style={{ background: 'rgba(0,245,212,0.1)', border: '1px solid rgba(0,245,212,0.2)', padding: 16, borderRadius: 12, display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 24 }}>
-            <span style={{ color: '#00F5D4', fontWeight: 600, fontSize: 14 }}>VerveMind Cost</span>
-            <span style={{ color: '#00F5D4', fontWeight: 800, fontSize: 18 }}>${softwareCost}/mo</span>
+          <div style={{ background: 'rgba(0,245,212,0.1)', border: '1px solid rgba(0,245,212,0.2)', padding: 16, borderRadius: 12, marginBottom: 24 }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 12 }}>
+              <span style={{ color: 'var(--primary)', fontWeight: 600, fontSize: 14 }}>VerveMind Cost</span>
+              <span style={{ color: 'var(--primary)', fontWeight: 800, fontSize: 18 }}>${softwareCost}/mo</span>
+            </div>
+            
+            {/* Plan Toggle */}
+            <div style={{ display: 'flex', background: 'rgba(0,0,0,0.2)', borderRadius: 8, padding: 4 }}>
+              <button
+                onClick={() => setPlan('starter')}
+                style={{
+                  flex: 1, padding: '6px 0', border: 'none', borderRadius: 6, fontSize: 12, fontWeight: 700, cursor: 'pointer',
+                  background: plan === 'starter' ? 'var(--primary)' : 'transparent',
+                  color: plan === 'starter' ? '#001a14' : 'var(--text-muted)',
+                  transition: 'all 0.2s'
+                }}
+              >
+                Starter ($177)
+              </button>
+              <button
+                onClick={() => setPlan('growth')}
+                style={{
+                  flex: 1, padding: '6px 0', border: 'none', borderRadius: 6, fontSize: 12, fontWeight: 700, cursor: 'pointer',
+                  background: plan === 'growth' ? 'var(--primary)' : 'transparent',
+                  color: plan === 'growth' ? '#001a14' : 'var(--text-muted)',
+                  transition: 'all 0.2s'
+                }}
+              >
+                Growth ($297)
+              </button>
+            </div>
           </div>
 
           <div style={{ fontSize: 14, color: 'var(--text-muted)', lineHeight: 1.6 }}>

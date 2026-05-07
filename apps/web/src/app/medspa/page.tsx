@@ -2,6 +2,7 @@ import React from 'react';
 import { Metadata } from 'next';
 import NicheLayout from '../../components/NicheLayout';
 import BookingPanel from '../../components/BookingPanel';
+import VoiceDemoPlayer from '../../components/VoiceDemoPlayer';
 
 export const metadata: Metadata = {
   title: 'VerveMind AI for MedSpas | Automate Bookings & Reactivate Patients',
@@ -87,7 +88,7 @@ export default function MedSpaPage() {
           {/* CTAs */}
           <div style={{ display: 'flex', gap: '10px', marginBottom: '28px', flexWrap: 'wrap' }}>
             <a
-              href="https://calendly.com/vervemindai/lead"
+              href="https://calendly.com/vervemindai/lead?utm_source=vervemindai.com&utm_medium=website&utm_campaign=medspa&utm_content=hero_cta"
               target="_blank"
               rel="noopener noreferrer"
               style={{
@@ -143,6 +144,8 @@ export default function MedSpaPage() {
               Trusted by MedSpas across the US
             </span>
           </div>
+
+          <VoiceDemoPlayer audioUrl="/assets/audio/medspa_demo_stitched.mp3" title="Listen: MedSpa Reactivation AI" />
         </div>
 
         {/* Right: BookingPanel */}
@@ -270,11 +273,15 @@ export default function MedSpaPage() {
           <h2 style={{ fontSize: '30px', fontWeight: 900, letterSpacing: '-0.04em', marginBottom: '10px', color: ACCENT }}>
             Ready to automate your MedSpa?
           </h2>
-          <p style={{ color: 'var(--text-muted)', fontSize: '15px', marginBottom: '24px' }}>
+          <p style={{ color: 'var(--text-muted)', fontSize: '15px', marginBottom: '12px' }}>
             Book a free 20-minute audit. We'll map exactly what you're losing and show you how to recover it.
           </p>
+          <div style={{ fontSize: '13px', fontWeight: 600, color: ACCENT, marginBottom: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px' }}>
+            <span style={{ display: 'inline-block', width: '6px', height: '6px', borderRadius: '50%', background: ACCENT }}></span>
+            No contracts. Plans start at $177/mo.
+          </div>
           <a
-            href="https://calendly.com/vervemindai/lead"
+            href="https://calendly.com/vervemindai/lead?utm_source=vervemindai.com&utm_medium=website&utm_campaign=medspa&utm_content=cta_strip"
             target="_blank"
             rel="noopener noreferrer"
             style={{

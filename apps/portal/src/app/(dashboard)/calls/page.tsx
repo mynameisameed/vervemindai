@@ -8,16 +8,30 @@ import {
   Activity, Shield, Mic, Zap, Database
 } from 'lucide-react';
 
-export default function CallsPage() {
-  const [selectedCall, setSelectedCall] = useState<any>(null);
+interface Call {
+  id: string;
+  name: string;
+  time: string;
+  phone: string;
+  intent: string;
+  sentiment: 'positive' | 'negative' | 'neutral';
+}
 
-  const callsList = [
+interface TranscriptMessage {
+  speaker: string;
+  text: string;
+}
+
+export default function CallsPage() {
+  const [selectedCall, setSelectedCall] = useState<string | null>(null);
+
+  const callsList: Call[] = [
     { id: '1', name: 'John Smith', time: '10:23 AM', phone: '+1 (555) 012-3456', intent: 'Schedule', sentiment: 'positive' },
     { id: '2', name: 'Sarah Jenkins', time: '09:45 AM', phone: '+1 (555) 987-6543', intent: 'Emergency', sentiment: 'negative' },
     { id: '3', name: 'Mike Davis', time: '08:15 AM', phone: '+1 (555) 234-5678', intent: 'Question', sentiment: 'neutral' }
   ];
 
-  const transcript = [
+  const transcript: TranscriptMessage[] = [
     { speaker: 'Caller', text: "Hi, I need to schedule a cleaning for next week if possible." },
     { speaker: 'AI', text: "I can absolutely help with that. Are you a new or existing patient?" },
     { speaker: 'Caller', text: "Existing. My name is John Smith." },

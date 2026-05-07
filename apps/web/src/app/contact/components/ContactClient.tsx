@@ -3,8 +3,8 @@
 import React, { useEffect } from 'react';
 import { Mail, MapPin } from 'lucide-react';
 
-const TEAL = '#00F5D4';
-const BORDER = 'rgba(255,255,255,0.06)';
+const TEAL = 'var(--primary)';
+const BORDER = 'var(--border)';
 const MUTED = 'var(--text-muted)';
 
 export default function ContactClient() {

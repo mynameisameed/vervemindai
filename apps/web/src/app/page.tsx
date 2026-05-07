@@ -188,7 +188,7 @@ export default function HomePage() {
                 Book Free Strategy Call →
               </a>
               <a
-                href="#demo"
+                href="#pricing"
                 style={{
                   background: 'transparent',
                   border: '1px solid var(--border-strong)',
@@ -203,13 +203,13 @@ export default function HomePage() {
                   gap: 7,
                 }}
               >
-                ▶ Watch 2-min Demo
+                See Pricing
               </a>
             </div>
 
             {/* Trust bullets */}
             <div style={{ display: 'flex', gap: 20 }}>
-              {['No contracts', 'Live in 48hrs', 'First month free'].map((t) => (
+              {['No contracts', 'Live in 48hrs', 'HIPAA-ready'].map((t) => (
                 <span key={t} style={{ fontSize: 12, color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: 5 }}>
                   <span style={{ color: 'var(--positive)', fontWeight: 700 }}>✓</span> {t}
                 </span>
@@ -651,7 +651,7 @@ export default function HomePage() {
               </div>
 
               <a
-                href="https://calendly.com/vervemindai/lead"
+                href="https://calendly.com/vervemindai/lead?utm_source=vervemindai.com&utm_medium=website&utm_campaign=main_site&utm_content=pricing_cta"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{
@@ -722,7 +722,7 @@ export default function HomePage() {
             Book a free 20-minute audit. We'll show you exactly where your revenue is leaking and how to fix it in 48 hours.
           </p>
           <a
-            href="https://calendly.com/vervemindai/lead"
+            href="https://calendly.com/vervemindai/lead?utm_source=vervemindai.com&utm_medium=website&utm_campaign=main_site&utm_content=cta_band"
             target="_blank"
             rel="noopener noreferrer"
             style={{

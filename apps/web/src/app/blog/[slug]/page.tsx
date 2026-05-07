@@ -134,7 +134,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         }}>
           <h3 style={{ fontSize: 24, fontWeight: 700, color: '#fff', margin: '0 0 12px' }}>Ready to see it in action?</h3>
           <p style={{ color: '#A1A1AA', fontSize: 16, margin: '0 0 24px' }}>Book a free 15-minute demo and see how VerveMind AI works for your business.</p>
-          <a href="https://calendly.com/vervemindai/lead" target="_blank" rel="noopener" style={{
+          <a href="https://calendly.com/vervemindai/lead?utm_source=vervemindai.com&utm_medium=website&utm_campaign=blog&utm_content=post_cta" target="_blank" rel="noopener" style={{
             display: 'inline-flex', alignItems: 'center', gap: 8, padding: '16px 36px',
             borderRadius: 12, fontWeight: 700, fontSize: 15, textDecoration: 'none',
             background: 'linear-gradient(135deg, #00DFC1, #00F5D4)', color: '#09090B',

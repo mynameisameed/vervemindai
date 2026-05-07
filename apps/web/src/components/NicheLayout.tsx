@@ -55,7 +55,7 @@ export default function NicheLayout({
         </div>
 
         <a
-          href="https://calendly.com/vervemindai/lead"
+          href="https://calendly.com/vervemindai/lead?utm_source=vervemindai.com&utm_medium=website&utm_campaign=niche_page&utm_content=niche_footer_cta"
           target="_blank"
           rel="noopener noreferrer"
           style={{

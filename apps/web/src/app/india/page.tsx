@@ -118,7 +118,7 @@ export default function IndiaPage() {
               style={{ display: 'inline-flex', alignItems: 'center', gap: 10, padding: '14px 28px', borderRadius: 12, fontWeight: 700, textDecoration: 'none', fontSize: 15, background: '#25D366', color: '#000', boxShadow: '0 8px 24px rgba(37,211,102,0.25)' }}>
               💬 Chat on WhatsApp
             </a>
-            <a href="https://calendly.com/vervemindai/lead" target="_blank" rel="noopener noreferrer"
+            <a href="https://calendly.com/vervemindai/lead?utm_source=vervemindai.com&utm_medium=website&utm_campaign=india&utm_content=hero_cta" target="_blank" rel="noopener noreferrer"
               style={{ display: 'inline-flex', alignItems: 'center', gap: 10, padding: '14px 28px', borderRadius: 12, fontWeight: 600, textDecoration: 'none', fontSize: 15, background: 'rgba(255,255,255,0.04)', color: '#E5E2E1', border: '1px solid rgba(255,255,255,0.12)' }}>
               Book a Call
             </a>
@@ -243,7 +243,7 @@ export default function IndiaPage() {
               style={{ display: 'inline-flex', alignItems: 'center', gap: 10, padding: '14px 28px', borderRadius: 12, fontWeight: 700, textDecoration: 'none', background: '#25D366', color: '#000', boxShadow: '0 8px 24px rgba(37,211,102,0.25)' }}>
               💬 WhatsApp Us Now
             </a>
-            <a href="https://calendly.com/vervemindai/lead" target="_blank" rel="noopener noreferrer"
+            <a href="https://calendly.com/vervemindai/lead?utm_source=vervemindai.com&utm_medium=website&utm_campaign=india&utm_content=bottom_cta" target="_blank" rel="noopener noreferrer"
               style={{ display: 'inline-flex', alignItems: 'center', gap: 10, padding: '14px 28px', borderRadius: 12, fontWeight: 600, textDecoration: 'none', background: 'rgba(255,255,255,0.05)', color: '#E5E2E1', border: `1px solid ${BORDER}` }}>
               Book a Call
             </a>

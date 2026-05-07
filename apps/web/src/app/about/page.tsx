@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div style={{ background: 'var(--bg)', color: 'var(--text)', minHeight: '100vh', fontFamily: 'Inter, system-ui, sans-serif' }}>
+    <div style={{ background: 'var(--bg)', color: 'var(--text)', minHeight: '100vh', fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif' }}>
       
       {/* ═══ Header/Hero ═══ */}
       <section style={{ padding: '180px 24px 100px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
@@ -31,13 +31,13 @@ export default function AboutPage() {
       </section>
 
       {/* ═══ The Team ═══ */}
-      <section style={{ padding: '100px 24px', borderTop: '1px solid rgba(255,255,255,0.05)', backgroundColor: 'rgba(255,255,255,0.01)' }}>
+      <section style={{ padding: '100px 24px', borderTop: '1px solid var(--border)', backgroundColor: 'rgba(255,255,255,0.01)' }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
           <h2 style={{ fontSize: 36, fontWeight: 800, marginBottom: 60, textAlign: 'center', color: 'var(--text)' }}>The Leadership Team</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 32 }}>
             
             {/* Founder 1 */}
-            <div style={{ background: 'var(--surface)', borderRadius: 24, border: '1px solid rgba(255,255,255,0.05)', padding: 32, textAlign: 'left' }}>
+            <div style={{ background: 'var(--surface)', borderRadius: 24, border: '1px solid var(--border)', padding: 32, textAlign: 'left' }}>
               <div style={{ width: 80, height: 80, borderRadius: 20, background: 'rgba(0,245,212,0.2)', marginBottom: 24, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <Users size={32} color="#00F5D4" />
               </div>
@@ -50,7 +50,7 @@ export default function AboutPage() {
             </div>
 
             {/* AI Engineering Division */}
-            <div style={{ background: 'var(--surface)', borderRadius: 24, border: '1px solid rgba(255,255,255,0.05)', padding: 32, textAlign: 'left' }}>
+            <div style={{ background: 'var(--surface)', borderRadius: 24, border: '1px solid var(--border)', padding: 32, textAlign: 'left' }}>
               <div style={{ width: 80, height: 80, borderRadius: 20, background: 'rgba(56,189,248,0.2)', marginBottom: 24, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                 <Network size={32} color="#38BDF8" />
               </div>
@@ -69,7 +69,7 @@ export default function AboutPage() {
       {/* ═══ Footer CTA ═══ */}
       <section style={{ padding: '80px 24px', textAlign: 'center' }}>
         <h2 style={{ fontSize: 32, fontWeight: 800, color: 'var(--text)', marginBottom: 24 }}>Let's Build the Future of SMBs.</h2>
-        <a href="https://calendly.com/vervemindai/lead" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', padding: '16px 32px', borderRadius: 16, background: 'var(--primary)', color: 'var(--bg)', fontWeight: 700, textDecoration: 'none' }}>
+        <a href="https://calendly.com/vervemindai/lead?utm_source=vervemindai.com&utm_medium=website&utm_campaign=about&utm_content=cta" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', padding: '16px 32px', borderRadius: 16, background: 'var(--primary)', color: 'var(--bg)', fontWeight: 700, textDecoration: 'none' }}>
           Initialize Deployment
         </a>
       </section>

@@ -2,6 +2,7 @@ import React from 'react';
 import { Metadata } from 'next';
 import NicheLayout from '../../components/NicheLayout';
 import BookingPanel from '../../components/BookingPanel';
+import VoiceDemoPlayer from '../../components/VoiceDemoPlayer';
 
 export const metadata: Metadata = {
   title: 'VerveMind AI for Roofing | Capture Every Storm Lead',
@@ -41,7 +42,7 @@ export default function RoofingPage() {
           </p>
 
           <div style={{ display: 'flex', gap: '10px', marginBottom: '28px', flexWrap: 'wrap' }}>
-            <a href="https://calendly.com/vervemindai/lead" target="_blank" rel="noopener noreferrer" style={{ fontSize: '13px', fontWeight: 800, padding: '12px 24px', borderRadius: 'var(--r)', textDecoration: 'none', background: ACCENT_GRADIENT, color: ACCENT_TEXT }}>
+            <a href="https://calendly.com/vervemindai/lead?utm_source=vervemindai.com&utm_medium=website&utm_campaign=roofing&utm_content=hero_cta" target="_blank" rel="noopener noreferrer" style={{ fontSize: '13px', fontWeight: 800, padding: '12px 24px', borderRadius: 'var(--r)', textDecoration: 'none', background: ACCENT_GRADIENT, color: ACCENT_TEXT }}>
               Deploy Roofing AI Now →
             </a>
             <a href="/pricing" style={{ background: 'transparent', border: '1px solid var(--border-strong)', color: 'var(--text)', fontSize: '13px', fontWeight: 600, padding: '11px 20px', borderRadius: 'var(--r)', textDecoration: 'none' }}>
@@ -63,6 +64,8 @@ export default function RoofingPage() {
             </div>
             <span style={{ color: 'var(--text-muted)', fontSize: '12px', paddingLeft: '16px' }}>Trusted by roofing contractors across the US</span>
           </div>
+
+          <VoiceDemoPlayer audioUrl="/assets/audio/medspa_demo_stitched.mp3" title="Listen: Roofing Lead AI" />
         </div>
 
         <BookingPanel
@@ -96,7 +99,7 @@ export default function RoofingPage() {
             {[
               { num: '01', title: 'Storm Leads Expire in Hours', body: 'After a hail event, homeowners call every roofer on Google. The first company to answer books the job. Speed wins.', stat: '⚠ 78% choose first responder' },
               { num: '02', title: 'Quote Follow-Up Decays Fast', body: 'Estimates without follow-up close below 20%. Most contractors send the quote and wait. AI follows up automatically on day 2 and day 5.', stat: '⚠ 60% of quotes: no follow-up' },
-              { num: '03', title: 'Off-Season Pipeline Dries Up', body: 'Without proactive outreach to past customers, winter months go quiet. AI reactivation fills the gap with maintenance and inspection leads.', stat: '⚠ 40% revenue drop off-season' },
+              { num: '03', title: 'Dormant Past Clients', body: 'You have thousands of past clients. The AI automatically runs outbound Reactivation Blitz campaigns to offer free inspections and generate referrals from your existing list.', stat: '⚠ 68% never re-engaged' },
             ].map((card) => (
               <div key={card.num} style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 'var(--r-lg)', padding: '22px' }}>
                 <div style={{ fontFamily: 'var(--font-manrope), Manrope, sans-serif', fontWeight: 900, fontSize: '40px', color: 'rgba(255,255,255,0.05)', letterSpacing: '-0.05em', marginBottom: '10px' }}>{card.num}</div>
@@ -117,10 +120,14 @@ export default function RoofingPage() {
           <h2 style={{ fontSize: '30px', fontWeight: 900, letterSpacing: '-0.04em', marginBottom: '10px', color: ACCENT }}>
             Ready to capture more storm jobs?
           </h2>
-          <p style={{ color: 'var(--text-muted)', fontSize: '15px', marginBottom: '24px' }}>
+          <p style={{ color: 'var(--text-muted)', fontSize: '15px', marginBottom: '12px' }}>
             Book a free 20-minute audit and see exactly how many leads your roofing company is losing to slow response.
           </p>
-          <a href="https://calendly.com/vervemindai/lead" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', fontWeight: 800, padding: '14px 28px', borderRadius: 'var(--r)', textDecoration: 'none', display: 'inline-block', background: ACCENT_GRADIENT, color: ACCENT_TEXT }}>
+          <div style={{ fontSize: '13px', fontWeight: 600, color: ACCENT, marginBottom: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px' }}>
+            <span style={{ display: 'inline-block', width: '6px', height: '6px', borderRadius: '50%', background: ACCENT }}></span>
+            No contracts. Plans start at $177/mo.
+          </div>
+          <a href="https://calendly.com/vervemindai/lead?utm_source=vervemindai.com&utm_medium=website&utm_campaign=roofing&utm_content=cta_strip" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', fontWeight: 800, padding: '14px 28px', borderRadius: 'var(--r)', textDecoration: 'none', display: 'inline-block', background: ACCENT_GRADIENT, color: ACCENT_TEXT }}>
             Book My Free Roofing Audit →
           </a>
         </div>

@@ -2,6 +2,7 @@ import React from 'react';
 import { Metadata } from 'next';
 import NicheLayout from '../../components/NicheLayout';
 import BookingPanel from '../../components/BookingPanel';
+import VoiceDemoPlayer from '../../components/VoiceDemoPlayer';
 
 export const metadata: Metadata = {
   title: 'VerveMind AI for Dental | Fill Chairs & Eliminate No-Shows',
@@ -66,7 +67,7 @@ export default function DentalPage() {
           </p>
 
           <div style={{ display: 'flex', gap: '10px', marginBottom: '28px', flexWrap: 'wrap' }}>
-            <a href="https://calendly.com/vervemindai/lead" target="_blank" rel="noopener noreferrer" style={{
+            <a href="https://calendly.com/vervemindai/lead?utm_source=vervemindai.com&utm_medium=website&utm_campaign=dental&utm_content=hero_cta" target="_blank" rel="noopener noreferrer" style={{
               fontSize: '13px', fontWeight: 800, padding: '12px 24px',
               borderRadius: 'var(--r)', textDecoration: 'none',
               background: ACCENT_GRADIENT, color: ACCENT_TEXT,
@@ -104,6 +105,8 @@ export default function DentalPage() {
               Trusted by dental practices across the US
             </span>
           </div>
+
+          <VoiceDemoPlayer audioUrl="/assets/audio/dental_demo_stitched.mp3" title="Listen: Dental Receptionist AI" />
         </div>
 
         <BookingPanel
@@ -164,10 +167,14 @@ export default function DentalPage() {
           <h2 style={{ fontSize: '30px', fontWeight: 900, letterSpacing: '-0.04em', marginBottom: '10px', color: ACCENT }}>
             Ready to fill your chairs?
           </h2>
-          <p style={{ color: 'var(--text-muted)', fontSize: '15px', marginBottom: '24px' }}>
+          <p style={{ color: 'var(--text-muted)', fontSize: '15px', marginBottom: '12px' }}>
             Book a free 20-minute audit and see exactly how many patients your practice is losing every month.
           </p>
-          <a href="https://calendly.com/vervemindai/lead" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', fontWeight: 800, padding: '14px 28px', borderRadius: 'var(--r)', textDecoration: 'none', display: 'inline-block', background: ACCENT_GRADIENT, color: ACCENT_TEXT }}>
+          <div style={{ fontSize: '13px', fontWeight: 600, color: ACCENT, marginBottom: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px' }}>
+            <span style={{ display: 'inline-block', width: '6px', height: '6px', borderRadius: '50%', background: ACCENT }}></span>
+            No contracts. Plans start at $177/mo.
+          </div>
+          <a href="https://calendly.com/vervemindai/lead?utm_source=vervemindai.com&utm_medium=website&utm_campaign=dental&utm_content=cta_strip" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', fontWeight: 800, padding: '14px 28px', borderRadius: 'var(--r)', textDecoration: 'none', display: 'inline-block', background: ACCENT_GRADIENT, color: ACCENT_TEXT }}>
             Book My Free Dental Audit →
           </a>
         </div>

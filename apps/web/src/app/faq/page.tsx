@@ -3,9 +3,9 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 
-const TEAL = '#00F5D4';
+const TEAL = 'var(--primary)';
 const MUTED = 'var(--text-muted)';
-const BORDER = 'rgba(255,255,255,0.06)';
+const BORDER = 'var(--border)';
 
 const faqs = [
   {
@@ -14,11 +14,11 @@ const faqs = [
   },
   {
     q: 'How much does an AI receptionist cost?',
-    a: 'Our standard US plan starts at $297/month with no per-call fees. For Indian businesses, plans start at INR 8,000/month. There is a one-time setup fee depending on the complexity of your integrations. Visit our pricing page for a full breakdown and use our interactive ROI calculator to see your projected return.',
+    a: 'Plans start at $177/month for the Starter tier (AI calls, calendar integration, after-hours coverage) and $297/month for the Growth tier (adds the Reactivation Engine, weekly dashboard, monthly strategy call, and your first month free). No per-call fees on either plan. For Indian businesses, plans start at INR 8,000/month. There is a one-time setup fee depending on the complexity of your integrations. Visit our pricing page for a full breakdown and use our interactive ROI calculator to see your projected return.',
   },
   {
     q: 'How long does setup take?',
-    a: 'Most businesses are live within 48 to 72 hours. The onboarding wizard collects your clinic name, PMS system, calendar URL, and tone preferences. From there, our team provisions the AI agent, configures your Twilio number, and tests the full call flow before handoff.',
+    a: 'Most businesses are live within 48 hours. The onboarding wizard collects your clinic name, PMS system, calendar URL, and tone preferences. From there, our team provisions the AI agent, configures your Twilio number, and tests the full call flow before handoff.',
   },
   {
     q: 'Can the AI book appointments into my existing calendar?',
@@ -130,7 +130,7 @@ export default function FAQPage() {
   const toggle = (i: number) => setOpenIndex(openIndex === i ? null : i);
 
   return (
-    <div style={{ background: 'var(--bg)', color: 'var(--text)', minHeight: '100vh', fontFamily: 'Inter, system-ui, sans-serif' }}>
+    <div style={{ background: 'var(--bg)', color: 'var(--text)', minHeight: '100vh', fontFamily: 'var(--font-inter), Inter, system-ui, sans-serif' }}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
@@ -191,7 +191,7 @@ export default function FAQPage() {
             Book a 15-minute call and we will walk you through a live demo tailored to your business.
           </p>
           <a
-            href="https://calendly.com/vervemindai/lead"
+            href="https://calendly.com/vervemindai/lead?utm_source=vervemindai.com&utm_medium=website&utm_campaign=faq&utm_content=cta"
             target="_blank"
             rel="noopener noreferrer"
             style={{

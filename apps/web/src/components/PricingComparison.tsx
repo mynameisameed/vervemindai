@@ -43,7 +43,7 @@ export default function PricingComparison() {
             padding: '24px'
           }}>
             <div style={{ fontWeight: 600, color: 'var(--text-muted)' }}>Capabilities</div>
-            <div style={{ fontWeight: 800, color: '#00F5D4', fontSize: 18 }}>VerveMind AI</div>
+            <div style={{ fontWeight: 800, color: 'var(--primary)', fontSize: 18 }}>VerveMind AI</div>
             <div style={{ fontWeight: 600, color: 'var(--text)' }}>Answering Service</div>
             <div style={{ fontWeight: 600, color: 'var(--text)' }}>Human Receptionist</div>
           </div>
@@ -64,7 +64,7 @@ export default function PricingComparison() {
               <div style={{ color: 'var(--text)', fontSize: 15, fontWeight: 500 }}>{feature.name}</div>
               
               {/* VerveMind Column - Always Highlighted */}
-              <div style={{ display: 'flex', alignItems: 'center', gap: 8, color: '#00F5D4', fontWeight: 600, fontSize: 15 }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 8, color: 'var(--primary)', fontWeight: 600, fontSize: 15 }}>
                 {feature.verve === true ? <Check size={18} strokeWidth={3} /> : feature.verve === false ? <X size={18} color="#EF4444" /> : feature.verve}
               </div>
 
@@ -91,7 +91,7 @@ export default function PricingComparison() {
           }}>
             <div style={{ fontWeight: 800, color: 'var(--text)', fontSize: 16 }}>Monthly Investment</div>
             <div>
-              <div style={{ fontWeight: 800, color: '#00F5D4', fontSize: 24 }}>$177–$297 <span style={{ fontSize: 12, color: 'var(--text-muted)', fontWeight: 500 }}>/mo</span></div>
+              <div style={{ fontWeight: 800, color: 'var(--primary)', fontSize: 24 }}>$177–$297 <span style={{ fontSize: 12, color: 'var(--text-muted)', fontWeight: 500 }}>/mo</span></div>
               <div style={{ fontSize: 11, color: 'var(--text-muted)', marginTop: 2 }}>+ $497–$797 one-time setup</div>
             </div>
             <div style={{ fontWeight: 600, color: 'var(--text-muted)', fontSize: 18 }}>$3,500 <span style={{ fontSize: 12, fontWeight: 400 }}>/mo</span></div>
