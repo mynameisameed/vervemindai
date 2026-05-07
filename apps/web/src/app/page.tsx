@@ -3,6 +3,7 @@
 import React from 'react';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
+import VoiceDemoPlayer from '../components/VoiceDemoPlayer';
 
 /* ── shared helpers ── */
 const Section = ({
@@ -215,6 +216,8 @@ export default function HomePage() {
                 </span>
               ))}
             </div>
+            
+            <VoiceDemoPlayer audioUrl="/assets/audio/medspa_demo_stitched.mp3" title="Listen: VerveMind AI in Action" />
           </div>
 
           {/* Right — metrics panel */}

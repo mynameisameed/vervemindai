@@ -1,5 +1,6 @@
 import React from 'react';
 import { Metadata } from 'next';
+import VoiceDemoPlayer from '../../components/VoiceDemoPlayer';
 
 export const metadata: Metadata = {
   title: 'AI Automation for Indian Businesses | VerveMind AI',
@@ -113,7 +114,7 @@ export default function IndiaPage() {
           </div>
 
           {/* CTAs */}
-          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 16 }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 16, marginBottom: 40 }}>
             <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer"
               style={{ display: 'inline-flex', alignItems: 'center', gap: 10, padding: '14px 28px', borderRadius: 12, fontWeight: 700, textDecoration: 'none', fontSize: 15, background: '#25D366', color: '#000', boxShadow: '0 8px 24px rgba(37,211,102,0.25)' }}>
               💬 Chat on WhatsApp
@@ -122,6 +123,10 @@ export default function IndiaPage() {
               style={{ display: 'inline-flex', alignItems: 'center', gap: 10, padding: '14px 28px', borderRadius: 12, fontWeight: 600, textDecoration: 'none', fontSize: 15, background: 'rgba(255,255,255,0.04)', color: '#E5E2E1', border: '1px solid rgba(255,255,255,0.12)' }}>
               Book a Call
             </a>
+          </div>
+
+          <div style={{ maxWidth: 440, margin: '0 auto' }}>
+            <VoiceDemoPlayer audioUrl="/assets/audio/medspa_demo_stitched.mp3" title="Listen: Multilingual AI in Action" />
           </div>
         </div>
       </section>
