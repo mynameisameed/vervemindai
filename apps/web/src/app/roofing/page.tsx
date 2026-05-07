@@ -2,7 +2,9 @@ import React from 'react';
 import { Metadata } from 'next';
 import NicheLayout from '../../components/NicheLayout';
 import BookingPanel from '../../components/BookingPanel';
-import VoiceDemoPlayer from '../../components/VoiceDemoPlayer';
+import dynamic from 'next/dynamic';
+
+const VoiceDemoPlayer = dynamic(() => import('../../components/VoiceDemoPlayer'), { ssr: false });
 
 export const metadata: Metadata = {
   title: 'VerveMind AI for Roofing | Capture Every Storm Lead',

@@ -3,7 +3,9 @@
 import React from 'react';
 import Nav from '../components/Nav';
 import Footer from '../components/Footer';
-import VoiceDemoPlayer from '../components/VoiceDemoPlayer';
+import dynamic from 'next/dynamic';
+
+const VoiceDemoPlayer = dynamic(() => import('../components/VoiceDemoPlayer'), { ssr: false });
 
 /* ── shared helpers ── */
 const Section = ({
