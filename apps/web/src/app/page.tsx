@@ -219,7 +219,11 @@ export default function HomePage() {
               ))}
             </div>
             
-            <VoiceDemoPlayer audioUrl="/assets/audio/medspa_demo_stitched.mp3" title="Listen: VerveMind AI in Action" />
+            <VoiceDemoPlayer 
+              audioUrl="/assets/audio/medspa_demo_stitched.mp3" 
+              spanishAudioUrl="/assets/audio/medspa_demo_stitched_es.mp3"
+              title="Listen: VerveMind AI in Action" 
+            />
           </div>
 
           {/* Right — metrics panel */}
