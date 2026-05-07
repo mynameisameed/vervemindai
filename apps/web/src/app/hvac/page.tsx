@@ -67,7 +67,11 @@ export default function HVACPage() {
             <span style={{ color: 'var(--text-muted)', fontSize: '12px', paddingLeft: '16px' }}>Trusted by HVAC companies across the US</span>
           </div>
 
-          <VoiceDemoPlayer audioUrl="/assets/audio/hvac_demo_stitched.mp3" title="Listen: HVAC Dispatch AI" />
+          <VoiceDemoPlayer 
+            audioUrl="/assets/audio/hvac_demo_stitched.mp3" 
+            spanishAudioUrl="/assets/audio/hvac_demo_stitched_es.mp3"
+            title="Listen: HVAC Dispatch AI" 
+          />
         </div>
 
         <BookingPanel
