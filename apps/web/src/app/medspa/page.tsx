@@ -147,7 +147,11 @@ export default function MedSpaPage() {
             </span>
           </div>
 
-          <VoiceDemoPlayer audioUrl="/assets/audio/medspa_demo_stitched.mp3" title="Listen: MedSpa Reactivation AI" />
+          <VoiceDemoPlayer 
+            audioUrl="/assets/audio/medspa_demo_stitched.mp3" 
+            spanishAudioUrl="/assets/audio/medspa_demo_stitched_es.mp3"
+            title="Listen: MedSpa Reactivation AI" 
+          />
         </div>
 
         {/* Right: BookingPanel */}

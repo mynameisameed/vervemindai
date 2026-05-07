@@ -4,11 +4,22 @@ import React, { useEffect, useRef, useState } from 'react';
 import WaveSurfer from 'wavesurfer.js';
 import { Play, Pause, Volume2 } from 'lucide-react';
 
-export default function VoiceDemoPlayer({ audioUrl = "/assets/audio/medspa_demo_stitched.mp3", title = "Listen: Reactivation Engine AI" }) {
+export default function VoiceDemoPlayer({ 
+  audioUrl = "/assets/audio/medspa_demo_stitched.mp3", 
+  spanishAudioUrl,
+  title = "Listen: Reactivation Engine AI" 
+}: {
+  audioUrl?: string;
+  spanishAudioUrl?: string;
+  title?: string;
+}) {
   const waveformRef = useRef<HTMLDivElement>(null);
   const wavesurfer = useRef<WaveSurfer | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isReady, setIsReady] = useState(false);
+  const [language, setLanguage] = useState<'en' | 'es'>('en');
+  
+  const currentAudioUrl = language === 'en' ? audioUrl : (spanishAudioUrl || audioUrl);
 
   useEffect(() => {
     if (waveformRef.current && !wavesurfer.current) {
@@ -22,7 +33,7 @@ export default function VoiceDemoPlayer({ audioUrl = "/assets/audio/medspa_demo_
         barRadius: 3,
         height: 60,
         normalize: true,
-        url: audioUrl,
+        url: currentAudioUrl,
       });
 
       wavesurfer.current.on('ready', () => setIsReady(true));
@@ -37,7 +48,7 @@ export default function VoiceDemoPlayer({ audioUrl = "/assets/audio/medspa_demo_
         wavesurfer.current = null;
       }
     };
-  }, [audioUrl]);
+  }, [currentAudioUrl]);
 
   const togglePlay = () => {
     if (wavesurfer.current && isReady) {
@@ -68,7 +79,31 @@ export default function VoiceDemoPlayer({ audioUrl = "/assets/audio/medspa_demo_
           }}></div>
           <span style={{ color: '#E5E2E1', fontWeight: 600, fontSize: 15 }}>{title}</span>
         </div>
-        <Volume2 size={18} color="#A1A1AA" />
+        
+        {spanishAudioUrl && (
+          <div style={{ display: 'flex', background: 'rgba(0,0,0,0.4)', borderRadius: 20, padding: 4, border: '1px solid rgba(255,255,255,0.05)' }}>
+            <button
+              onClick={() => setLanguage('en')}
+              style={{
+                background: language === 'en' ? 'rgba(255,255,255,0.1)' : 'transparent',
+                color: language === 'en' ? '#fff' : '#a1a1aa',
+                border: 'none', borderRadius: 16, padding: '4px 12px', fontSize: 12, fontWeight: 500, cursor: 'pointer', transition: 'all 0.2s'
+              }}
+            >
+              English
+            </button>
+            <button
+              onClick={() => setLanguage('es')}
+              style={{
+                background: language === 'es' ? 'rgba(255,255,255,0.1)' : 'transparent',
+                color: language === 'es' ? '#fff' : '#a1a1aa',
+                border: 'none', borderRadius: 16, padding: '4px 12px', fontSize: 12, fontWeight: 500, cursor: 'pointer', transition: 'all 0.2s'
+              }}
+            >
+              Español
+            </button>
+          </div>
+        )}
       </div>
 
       <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>

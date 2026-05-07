@@ -108,7 +108,11 @@ export default function DentalPage() {
             </span>
           </div>
 
-          <VoiceDemoPlayer audioUrl="/assets/audio/dental_demo_stitched.mp3" title="Listen: Dental Receptionist AI" />
+          <VoiceDemoPlayer 
+            audioUrl="/assets/audio/dental_demo_stitched.mp3" 
+            spanishAudioUrl="/assets/audio/dental_demo_stitched_es.mp3"
+            title="Listen: Dental Receptionist AI" 
+          />
         </div>
 
         <BookingPanel

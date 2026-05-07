@@ -67,7 +67,11 @@ export default function RoofingPage() {
             <span style={{ color: 'var(--text-muted)', fontSize: '12px', paddingLeft: '16px' }}>Trusted by roofing contractors across the US</span>
           </div>
 
-          <VoiceDemoPlayer audioUrl="/assets/audio/medspa_demo_stitched.mp3" title="Listen: Roofing Lead AI" />
+          <VoiceDemoPlayer 
+            audioUrl="/assets/audio/medspa_demo_stitched.mp3" 
+            spanishAudioUrl="/assets/audio/roofing_demo_stitched_es.mp3"
+            title="Listen: Roofing Lead AI" 
+          />
         </div>
 
         <BookingPanel
