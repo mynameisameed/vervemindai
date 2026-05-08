@@ -25,7 +25,7 @@ export default function HVACPage() {
       accentGradient={ACCENT_GRADIENT}
     >
       {/* ── Hero ── */}
-      <div style={{ maxWidth: 'var(--max-w)', margin: '0 auto', padding: '72px 32px 60px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '52px', alignItems: 'center' }}>
+      <div style={{ maxWidth: 'var(--max-w)', margin: '0 auto', padding: '72px 32px 60px', position: 'relative' }}>
         <div>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', borderRadius: '4px', padding: '5px 12px', marginBottom: '22px', background: 'rgba(251,146,60,0.08)', border: '1px solid rgba(251,146,60,0.2)' }}>
             <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: ACCENT, display: 'inline-block', animation: 'pulse-dot 1.8s ease-in-out infinite' }} />
@@ -64,7 +64,7 @@ export default function HVACPage() {
                 </div>
               ))}
             </div>
-            <span style={{ color: 'var(--text-muted)', fontSize: '12px', paddingLeft: '16px' }}>Trusted by HVAC companies across the US</span>
+            <span style={{ color: 'var(--text-muted)', fontSize: '12px', paddingLeft: '16px' }}>Built for HVAC Companies. Proven at Ivolve.</span>
           </div>
 
           <VoiceDemoPlayer 
@@ -74,19 +74,7 @@ export default function HVACPage() {
           />
         </div>
 
-        <BookingPanel
-          panelTitle="Live HVAC Dispatch"
-          accentColor={ACCENT}
-          notifications={[
-            { icon: '❄️', title: 'AC Emergency — After Hours', subtitle: 'Tom B. — No cooling, 95°F outside · Dispatched immediately', badge: 'Dispatched', variant: 'accent' },
-            { icon: '🔧', title: 'Seasonal Tune-Up — Booked', subtitle: 'Davis family — Spring AC service · Thursday 10am', badge: 'Scheduled', variant: 'positive' },
-          ]}
-          stats={[
-            { value: '100%', label: 'Calls answered', color: ACCENT },
-            { value: '+38%', label: 'Peak-season jobs', color: '#34D399' },
-            { value: '90s', label: 'Dispatch speed' },
-          ]}
-        />
+
       </div>
 
       {/* ── Problem Section ── */}
@@ -131,7 +119,7 @@ export default function HVACPage() {
           </p>
           <div style={{ fontSize: '13px', fontWeight: 600, color: ACCENT, marginBottom: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px' }}>
             <span style={{ display: 'inline-block', width: '6px', height: '6px', borderRadius: '50%', background: ACCENT }}></span>
-            No contracts. Plans start at $177/mo.
+            No contracts. Pricing discussed on audit call.
           </div>
           <a href="https://calendly.com/vervemindai/lead?utm_source=vervemindai.com&utm_medium=website&utm_campaign=hvac&utm_content=cta_strip" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', fontWeight: 800, padding: '14px 28px', borderRadius: 'var(--r)', textDecoration: 'none', display: 'inline-block', background: ACCENT_GRADIENT, color: ACCENT_TEXT }}>
             Book My Free HVAC Audit →

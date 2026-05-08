@@ -108,14 +108,9 @@ export default function HomePage() {
           maxWidth: 'var(--max-w)',
           margin: '0 auto',
           padding: '80px 32px 72px',
-          display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          gap: 52,
-          alignItems: 'center',
           position: 'relative',
           zIndex: 1,
         }}>
-          {/* Left — copy */}
           <div>
             {/* Badge */}
             <div style={{
@@ -221,78 +216,6 @@ export default function HomePage() {
             
             <MultiNicheDemoPlayer />
           </div>
-
-          {/* Right — metrics panel */}
-          <div style={{
-            background: 'var(--surface)',
-            border: '1px solid var(--border)',
-            borderRadius: 'var(--r-xl)',
-            padding: '24px',
-          }}>
-            {/* Panel header */}
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 }}>
-              <span style={{ fontSize: 13, fontWeight: 700, color: 'var(--text)' }}>System Activity</span>
-              <div style={{
-                display: 'flex', alignItems: 'center', gap: 6,
-                background: 'rgba(0,245,212,0.08)',
-                border: '1px solid rgba(0,245,212,0.18)',
-                borderRadius: 4,
-                padding: '3px 9px',
-              }}>
-                <span style={{
-                  width: 5,
-                  height: 5,
-                  borderRadius: '50%',
-                  background: 'var(--primary)',
-                  animation: 'pulse-dot 1.8s ease-in-out infinite',
-                  display: 'block',
-                }} />
-                <span style={{ fontSize: 9, fontWeight: 700, letterSpacing: '0.1em', color: 'var(--primary)' }}>LIVE</span>
-              </div>
-            </div>
-
-            {/* Metric rows */}
-            {[
-              { label: 'Leads Captured', value: '47K+', pct: 78, color: 'var(--primary)' },
-              { label: 'Revenue Recovered', value: '$2.1M', pct: 62, color: 'var(--secondary)' },
-              { label: 'Client ROI', value: '380%', pct: 90, color: 'var(--positive)' },
-            ].map(({ label, value, pct, color }) => (
-              <div key={label} style={{ marginBottom: 14 }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 5 }}>
-                  <span style={{ fontSize: 11, color: 'var(--text-muted)' }}>{label}</span>
-                  <span style={{ fontSize: 13, fontWeight: 800, color, fontFamily: 'var(--font-manrope), Manrope, sans-serif' }}>{value}</span>
-                </div>
-                <div style={{ height: 3, background: 'var(--border)', borderRadius: 2 }}>
-                  <div style={{ width: `${pct}%`, height: '100%', background: color, borderRadius: 2 }} />
-                </div>
-              </div>
-            ))}
-
-            {/* Divider */}
-            <div style={{ borderTop: '1px solid var(--border)', margin: '16px 0' }} />
-
-            {/* Live agent feed */}
-            <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.1em', color: 'var(--text-faint)', textTransform: 'uppercase', marginBottom: 10 }}>
-              Live Agent Feed
-            </div>
-            {[
-              { icon: '📞', text: 'Call captured — Riverside MedSpa', time: '2s ago', color: 'var(--primary)' },
-              { icon: '📅', text: 'Appointment booked — Dr Chen Dental', time: '18s ago', color: 'var(--secondary)' },
-              { icon: '💬', text: 'Reactivation sent — Peak HVAC lead', time: '41s ago', color: 'var(--positive)' },
-            ].map(({ icon, text, time, color }) => (
-              <div key={text} style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: 10,
-                padding: '7px 0',
-                borderBottom: '1px solid var(--border)',
-              }}>
-                <span style={{ fontSize: 14 }}>{icon}</span>
-                <span style={{ flex: 1, fontSize: 11, color: 'var(--text-muted)' }}>{text}</span>
-                <span style={{ fontSize: 10, color: 'var(--text-faint)' }}>{time}</span>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -301,34 +224,18 @@ export default function HomePage() {
         <div style={{
           maxWidth: 'var(--max-w)',
           margin: '0 auto',
-          padding: '0 32px',
-          display: 'grid',
-          gridTemplateColumns: 'repeat(4, 1fr)',
+          padding: '24px 32px',
+          textAlign: 'center',
         }}>
-          {[
-            { value: '47K+', label: 'Leads Captured', color: 'var(--primary)' },
-            { value: '$2.1M', label: 'Revenue Recovered', color: 'var(--secondary)' },
-            { value: '380%', label: 'Average ROI', color: 'var(--positive)' },
-            { value: '99.8%', label: 'Uptime', color: 'var(--amber)' },
-          ].map(({ value, label, color }, i) => (
-            <div key={label} style={{
-              padding: '32px 24px',
-              borderRight: i < 3 ? '1px solid var(--border)' : undefined,
-              textAlign: 'center',
-            }}>
-              <div style={{
-                fontSize: 32,
-                fontWeight: 900,
-                letterSpacing: '-0.03em',
-                color,
-                fontFamily: 'var(--font-manrope), Manrope, sans-serif',
-                marginBottom: 4,
-              }}>
-                {value}
-              </div>
-              <div style={{ fontSize: 11, color: 'var(--text-muted)', fontWeight: 600 }}>{label}</div>
-            </div>
-          ))}
+          <div style={{
+            fontSize: 'clamp(20px, 3vw, 28px)',
+            fontWeight: 800,
+            letterSpacing: '-0.02em',
+            color: 'var(--text)',
+            fontFamily: 'var(--font-manrope), Manrope, sans-serif',
+          }}>
+            <span style={{ color: 'var(--primary)' }}>35 bookings recovered</span> in 30 days — Ivolve Medspa
+          </div>
         </div>
       </div>
 

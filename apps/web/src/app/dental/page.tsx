@@ -29,10 +29,7 @@ export default function DentalPage() {
         maxWidth: 'var(--max-w)',
         margin: '0 auto',
         padding: '72px 32px 60px',
-        display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
-        gap: '52px',
-        alignItems: 'center',
+        position: 'relative',
       }}>
         <div>
           <div style={{
@@ -104,7 +101,7 @@ export default function DentalPage() {
               ))}
             </div>
             <span style={{ color: 'var(--text-muted)', fontSize: '12px', paddingLeft: '16px' }}>
-              Trusted by dental practices across the US
+              Built for Dental Practices. Proven at Ivolve.
             </span>
           </div>
 
@@ -115,19 +112,7 @@ export default function DentalPage() {
           />
         </div>
 
-        <BookingPanel
-          panelTitle="Live Patient Activity"
-          accentColor={ACCENT}
-          notifications={[
-            { icon: '🦷', title: 'New Patient — Emergency', subtitle: 'James R. — Tooth pain, after hours · Triaged & booked', badge: 'Captured', variant: 'accent' },
-            { icon: '📋', title: '6-Month Recall — Confirmed', subtitle: 'Lisa M. — "Tuesday at 10am works great!"', badge: 'Booked', variant: 'positive' },
-          ]}
-          stats={[
-            { value: '94%', label: 'Recall success rate', color: ACCENT },
-            { value: '-62%', label: 'No-show reduction', color: '#34D399' },
-            { value: '24/7', label: 'Emergency routing' },
-          ]}
-        />
+
       </div>
 
       {/* ── Problem Section ── */}
@@ -178,7 +163,7 @@ export default function DentalPage() {
           </p>
           <div style={{ fontSize: '13px', fontWeight: 600, color: ACCENT, marginBottom: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px' }}>
             <span style={{ display: 'inline-block', width: '6px', height: '6px', borderRadius: '50%', background: ACCENT }}></span>
-            No contracts. Plans start at $177/mo.
+            No contracts. Pricing discussed on audit call.
           </div>
           <a href="https://calendly.com/vervemindai/lead?utm_source=vervemindai.com&utm_medium=website&utm_campaign=dental&utm_content=cta_strip" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', fontWeight: 800, padding: '14px 28px', borderRadius: 'var(--r)', textDecoration: 'none', display: 'inline-block', background: ACCENT_GRADIENT, color: ACCENT_TEXT }}>
             Book My Free Dental Audit →

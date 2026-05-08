@@ -29,10 +29,7 @@ export default function MedSpaPage() {
         maxWidth: 'var(--max-w)',
         margin: '0 auto',
         padding: '72px 32px 60px',
-        display: 'grid',
-        gridTemplateColumns: '1fr 1fr',
-        gap: '52px',
-        alignItems: 'center',
+        position: 'relative',
       }}>
         {/* Left copy */}
         <div>
@@ -103,10 +100,12 @@ export default function MedSpaPage() {
                 color: ACCENT_TEXT,
               }}
             >
-              Deploy Engine Now →
+              Book Free MedSpa Audit →
             </a>
             <a
-              href="/pricing"
+              href="https://form.typeform.com/to/XXXXXX" 
+              target="_blank"
+              rel="noopener noreferrer"
               style={{
                 background: 'transparent',
                 border: '1px solid var(--border-strong)',
@@ -118,8 +117,9 @@ export default function MedSpaPage() {
                 textDecoration: 'none',
               }}
             >
-              Calculate ROI
+              Get a Free 5-Min Loom Audit
             </a>
+
           </div>
 
           {/* Social proof */}
@@ -143,7 +143,7 @@ export default function MedSpaPage() {
               ))}
             </div>
             <span style={{ color: 'var(--text-muted)', fontSize: '12px', paddingLeft: '16px' }}>
-              Trusted by MedSpas across the US
+              Built for MedSpas. Proven at Ivolve.
             </span>
           </div>
 
@@ -154,32 +154,49 @@ export default function MedSpaPage() {
           />
         </div>
 
-        {/* Right: BookingPanel */}
-        <BookingPanel
-          panelTitle="Live Patient Activity"
-          accentColor={ACCENT}
-          notifications={[
-            {
-              icon: '📅',
-              title: 'New Appointment Request',
-              subtitle: 'Sarah J. — Premium Botox Filler · Tomorrow 2:00 PM',
-              badge: 'High Value',
-              variant: 'accent',
-            },
-            {
-              icon: '💬',
-              title: 'Reactivation — Responded',
-              subtitle: 'Michelle K. — "Yes! Book me in for next week"',
-              badge: 'Booked',
-              variant: 'positive',
-            },
-          ]}
-          stats={[
-            { value: '$4,850', label: 'Recovered this week', color: ACCENT },
-            { value: '73%', label: 'Reactivation rate', color: '#34D399' },
-            { value: '600ms', label: 'Response time' },
-          ]}
-        />
+        {/* Case Study Block */}
+        <div style={{
+          marginTop: '48px',
+          background: 'var(--surface)',
+          border: '1px solid var(--border)',
+          borderRadius: 'var(--r-xl)',
+          padding: '40px',
+          display: 'grid',
+          gridTemplateColumns: '1fr auto',
+          gap: '40px',
+          alignItems: 'center',
+        }}>
+          <div>
+            <div style={{
+              display: 'inline-block',
+              borderRadius: '4px',
+              padding: '4px 10px',
+              background: 'rgba(240,171,252,0.1)',
+              border: '1px solid rgba(240,171,252,0.2)',
+              color: ACCENT,
+              fontSize: '10px',
+              fontWeight: 700,
+              marginBottom: '16px',
+            }}>CASE STUDY</div>
+            <blockquote style={{
+              fontSize: '24px',
+              fontWeight: 800,
+              lineHeight: 1.3,
+              letterSpacing: '-0.02em',
+              color: 'var(--text)',
+              margin: '0 0 20px',
+            }}>
+              "VerveMind recovered 35 bookings in 30 days from after-hours and missed calls — including Spanish-speaking clients the front desk couldn't serve."
+            </blockquote>
+            <div style={{ fontSize: '13px', color: 'var(--text-muted)' }}>
+              — <strong style={{ color: 'var(--text)' }}>Ivolve Medspa</strong>, Founding Client
+            </div>
+          </div>
+          <div style={{ textAlign: 'center', borderLeft: '1px solid var(--border)', paddingLeft: '40px' }}>
+            <div style={{ fontSize: '40px', fontWeight: 900, color: '#34D399' }}>35</div>
+            <div style={{ fontSize: '11px', color: 'var(--text-muted)' }}>bookings recovered</div>
+          </div>
+        </div>
       </div>
 
       {/* ── Problem Section (alt bg) ── */}
@@ -284,7 +301,7 @@ export default function MedSpaPage() {
           </p>
           <div style={{ fontSize: '13px', fontWeight: 600, color: ACCENT, marginBottom: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px' }}>
             <span style={{ display: 'inline-block', width: '6px', height: '6px', borderRadius: '50%', background: ACCENT }}></span>
-            No contracts. Plans start at $177/mo.
+            No contracts. Pricing discussed on audit call.
           </div>
           <a
             href="https://calendly.com/vervemindai/lead?utm_source=vervemindai.com&utm_medium=website&utm_campaign=medspa&utm_content=cta_strip"

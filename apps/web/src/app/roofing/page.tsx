@@ -25,7 +25,7 @@ export default function RoofingPage() {
       accentGradient={ACCENT_GRADIENT}
     >
       {/* ── Hero ── */}
-      <div style={{ maxWidth: 'var(--max-w)', margin: '0 auto', padding: '72px 32px 60px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '52px', alignItems: 'center' }}>
+      <div style={{ maxWidth: 'var(--max-w)', margin: '0 auto', padding: '72px 32px 60px', position: 'relative' }}>
         <div>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', borderRadius: '4px', padding: '5px 12px', marginBottom: '22px', background: 'rgba(134,239,172,0.08)', border: '1px solid rgba(134,239,172,0.2)' }}>
             <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: ACCENT, display: 'inline-block', animation: 'pulse-dot 1.8s ease-in-out infinite' }} />
@@ -64,7 +64,7 @@ export default function RoofingPage() {
                 </div>
               ))}
             </div>
-            <span style={{ color: 'var(--text-muted)', fontSize: '12px', paddingLeft: '16px' }}>Trusted by roofing contractors across the US</span>
+            <span style={{ color: 'var(--text-muted)', fontSize: '12px', paddingLeft: '16px' }}>Built for Roofing Contractors. Proven at Ivolve.</span>
           </div>
 
           <VoiceDemoPlayer 
@@ -74,19 +74,7 @@ export default function RoofingPage() {
           />
         </div>
 
-        <BookingPanel
-          panelTitle="Live Roofing Activity"
-          accentColor={ACCENT}
-          notifications={[
-            { icon: '🏚️', title: 'Storm Damage — Hot Lead', subtitle: 'Mike P. — Hail damage, insurance claim · Inspection booked', badge: 'Qualified', variant: 'accent' },
-            { icon: '📝', title: 'Quote Follow-Up — Responded', subtitle: "Chen family — \"Yes, let's move forward with the quote\"", badge: 'Closed', variant: 'positive' },
-          ]}
-          stats={[
-            { value: '3x', label: 'Quote close rate', color: ACCENT },
-            { value: '< 60s', label: 'Lead response time', color: '#34D399' },
-            { value: '24/7', label: 'Storm capture' },
-          ]}
-        />
+
       </div>
 
       {/* ── Problem Section ── */}
@@ -131,7 +119,7 @@ export default function RoofingPage() {
           </p>
           <div style={{ fontSize: '13px', fontWeight: 600, color: ACCENT, marginBottom: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px' }}>
             <span style={{ display: 'inline-block', width: '6px', height: '6px', borderRadius: '50%', background: ACCENT }}></span>
-            No contracts. Plans start at $177/mo.
+            No contracts. Pricing discussed on audit call.
           </div>
           <a href="https://calendly.com/vervemindai/lead?utm_source=vervemindai.com&utm_medium=website&utm_campaign=roofing&utm_content=cta_strip" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', fontWeight: 800, padding: '14px 28px', borderRadius: 'var(--r)', textDecoration: 'none', display: 'inline-block', background: ACCENT_GRADIENT, color: ACCENT_TEXT }}>
             Book My Free Roofing Audit →
