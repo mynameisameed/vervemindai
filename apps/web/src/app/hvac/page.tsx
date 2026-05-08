@@ -74,7 +74,49 @@ export default function HVACPage() {
           />
         </div>
 
-
+        {/* Case Study Block */}
+        <div style={{
+          marginTop: '48px',
+          background: 'var(--surface)',
+          border: '1px solid var(--border)',
+          borderRadius: 'var(--r-xl)',
+          padding: '40px',
+          display: 'grid',
+          gridTemplateColumns: '1fr auto',
+          gap: '40px',
+          alignItems: 'center',
+        }}>
+          <div>
+            <div style={{
+              display: 'inline-block',
+              borderRadius: '4px',
+              padding: '4px 10px',
+              background: 'rgba(251,146,60,0.1)',
+              border: '1px solid rgba(251,146,60,0.2)',
+              color: ACCENT,
+              fontSize: '10px',
+              fontWeight: 700,
+              marginBottom: '16px',
+            }}>CASE STUDY</div>
+            <blockquote style={{
+              fontSize: '24px',
+              fontWeight: 800,
+              lineHeight: 1.3,
+              letterSpacing: '-0.02em',
+              color: 'var(--text)',
+              margin: '0 0 20px',
+            }}>
+              "VerveMind recovered 35 bookings in 30 days from after-hours and missed calls — including Spanish-speaking clients the front desk couldn't serve."
+            </blockquote>
+            <div style={{ fontSize: '13px', color: 'var(--text-muted)' }}>
+              — <strong style={{ color: 'var(--text)' }}>Ivolve Medspa</strong>, Founding Client
+            </div>
+          </div>
+          <div style={{ textAlign: 'center', borderLeft: '1px solid var(--border)', paddingLeft: '40px' }}>
+            <div style={{ fontSize: '40px', fontWeight: 900, color: '#34D399' }}>35</div>
+            <div style={{ fontSize: '11px', color: 'var(--text-muted)' }}>bookings recovered</div>
+          </div>
+        </div>
       </div>
 
       {/* ── Problem Section ── */}
