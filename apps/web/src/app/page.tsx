@@ -436,7 +436,7 @@ export default function HomePage() {
               margin: '0 0 20px',
               fontStyle: 'normal',
             }}>
-              "VerveMind recovered $14,000 in dormant revenue for our MedSpa in the first 30 days. The AI handles every after-hours call — we wake up to a full booking sheet."
+              "VerveMind recovered 35 bookings in 30 days from missed and after-hours calls. The AI handles every after-hours call — we wake up to a full booking sheet."
             </blockquote>
             <div style={{ fontSize: 13, color: 'var(--text-muted)' }}>
               <strong style={{ color: 'var(--text)' }}>iVolve MedSpa</strong> · Founder client
@@ -455,9 +455,9 @@ export default function HomePage() {
               fontFamily: 'var(--font-manrope), Manrope, sans-serif',
               letterSpacing: '-0.03em',
             }}>
-              $14K
+              35
             </div>
-            <div style={{ fontSize: 11, color: 'var(--text-muted)', marginTop: 4 }}>recovered in 30 days</div>
+            <div style={{ fontSize: 11, color: 'var(--text-muted)', marginTop: 4 }}>bookings recovered</div>
           </div>
         </div>
       </Section>
