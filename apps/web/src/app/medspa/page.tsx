@@ -1,7 +1,6 @@
 import React from 'react';
 import { Metadata } from 'next';
 import NicheLayout from '../../components/NicheLayout';
-import BookingPanel from '../../components/BookingPanel';
 import dynamic from 'next/dynamic';
 
 const VoiceDemoPlayer = dynamic(() => import('../../components/VoiceDemoPlayer'), { ssr: false });
@@ -120,31 +119,6 @@ export default function MedSpaPage() {
               Get a Free 5-Min Loom Audit
             </a>
 
-          </div>
-
-          {/* Social proof */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <div style={{ display: 'flex' }}>
-              {[
-                { bg: '#4a044e', color: '#F0ABFC', letter: 'S' },
-                { bg: '#6b21a8', color: '#e879f9', letter: 'M' },
-                { bg: '#7e22ce', color: '#d8b4fe', letter: 'J' },
-              ].map((a, i) => (
-                <div key={i} style={{
-                  width: '28px', height: '28px', borderRadius: '50%',
-                  border: '2px solid var(--bg)',
-                  marginRight: '-8px',
-                  fontSize: '10px', fontWeight: 700,
-                  display: 'flex', alignItems: 'center', justifyContent: 'center',
-                  background: a.bg, color: a.color,
-                }}>
-                  {a.letter}
-                </div>
-              ))}
-            </div>
-            <span style={{ color: 'var(--text-muted)', fontSize: '12px', paddingLeft: '16px' }}>
-              Built for MedSpas. Proven at Ivolve.
-            </span>
           </div>
 
           <VoiceDemoPlayer 
@@ -301,7 +275,7 @@ export default function MedSpaPage() {
           </p>
           <div style={{ fontSize: '13px', fontWeight: 600, color: ACCENT, marginBottom: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px' }}>
             <span style={{ display: 'inline-block', width: '6px', height: '6px', borderRadius: '50%', background: ACCENT }}></span>
-            No contracts. Pricing discussed on audit call.
+            No contracts. Cancel anytime.
           </div>
           <a
             href="https://calendly.com/vervemindai/lead?utm_source=vervemindai.com&utm_medium=website&utm_campaign=medspa&utm_content=cta_strip"

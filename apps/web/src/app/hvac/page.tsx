@@ -1,7 +1,6 @@
 import React from 'react';
 import { Metadata } from 'next';
 import NicheLayout from '../../components/NicheLayout';
-import BookingPanel from '../../components/BookingPanel';
 import dynamic from 'next/dynamic';
 
 const VoiceDemoPlayer = dynamic(() => import('../../components/VoiceDemoPlayer'), { ssr: false });
@@ -50,21 +49,6 @@ export default function HVACPage() {
             <a href="/pricing" style={{ background: 'transparent', border: '1px solid var(--border-strong)', color: 'var(--text)', fontSize: '13px', fontWeight: 600, padding: '11px 20px', borderRadius: 'var(--r)', textDecoration: 'none' }}>
               Calculate ROI
             </a>
-          </div>
-
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <div style={{ display: 'flex' }}>
-              {[
-                { bg: '#431407', color: '#FB923C', letter: 'M' },
-                { bg: '#7c2d12', color: '#f97316', letter: 'T' },
-                { bg: '#9a3412', color: '#fdba74', letter: 'R' },
-              ].map((a, i) => (
-                <div key={i} style={{ width: '28px', height: '28px', borderRadius: '50%', border: '2px solid var(--bg)', marginRight: '-8px', fontSize: '10px', fontWeight: 700, display: 'flex', alignItems: 'center', justifyContent: 'center', background: a.bg, color: a.color }}>
-                  {a.letter}
-                </div>
-              ))}
-            </div>
-            <span style={{ color: 'var(--text-muted)', fontSize: '12px', paddingLeft: '16px' }}>Built for HVAC Companies. Proven at Ivolve.</span>
           </div>
 
           <VoiceDemoPlayer 
@@ -161,7 +145,7 @@ export default function HVACPage() {
           </p>
           <div style={{ fontSize: '13px', fontWeight: 600, color: ACCENT, marginBottom: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px' }}>
             <span style={{ display: 'inline-block', width: '6px', height: '6px', borderRadius: '50%', background: ACCENT }}></span>
-            No contracts. Pricing discussed on audit call.
+            No contracts. Cancel anytime.
           </div>
           <a href="https://calendly.com/vervemindai/lead?utm_source=vervemindai.com&utm_medium=website&utm_campaign=hvac&utm_content=cta_strip" target="_blank" rel="noopener noreferrer" style={{ fontSize: '14px', fontWeight: 800, padding: '14px 28px', borderRadius: 'var(--r)', textDecoration: 'none', display: 'inline-block', background: ACCENT_GRADIENT, color: ACCENT_TEXT }}>
             Book My Free HVAC Audit →
