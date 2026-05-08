@@ -1,6 +1,7 @@
 // apps/web/src/components/Nav.tsx
 "use client";
 import Link from 'next/link';
+import TranslateWidget from './TranslateWidget';
 
 const links = [
   { href: '/#how-it-works', label: 'How It Works' },
@@ -57,6 +58,7 @@ export default function Nav() {
               {label}
             </Link>
           ))}
+          <TranslateWidget />
           <a
             href="https://calendly.com/vervemindai/lead?utm_source=vervemindai.com&utm_medium=website&utm_campaign=nav&utm_content=nav_cta"
             target="_blank"
