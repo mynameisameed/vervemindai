@@ -170,6 +170,50 @@ export default function DentalPage() {
         </div>
       </div>
 
+      {/* ── Pricing Section ── */}
+      <div style={{ maxWidth: 'var(--max-w)', margin: '0 auto', padding: '0 32px 64px' }}>
+        <div style={{
+          background: 'rgba(255,255,255,0.02)',
+          border: '1px solid var(--border)',
+          borderRadius: 'var(--r-xl)',
+          padding: '48px',
+          display: 'grid',
+          gridTemplateColumns: '1fr 0.8fr',
+          gap: '48px',
+          alignItems: 'center',
+        }}>
+          <div>
+            <h2 style={{ fontSize: '32px', fontWeight: 900, marginBottom: '20px', color: 'var(--text)' }}>
+              How Pricing Works
+            </h2>
+            <p style={{ color: 'var(--text-muted)', fontSize: '16px', lineHeight: 1.6, marginBottom: '24px' }}>
+              We price based on your practice&apos;s call volume and specialization. Most Dental clients run a 30-Day Reactivation Sprint first, then move to a monthly retainer.
+            </p>
+            <div style={{ fontSize: '20px', fontWeight: 800, color: ACCENT, marginBottom: '8px' }}>
+              Typical investment: $997–$1,497/month
+            </div>
+            <p style={{ color: 'var(--text-muted)', fontSize: '14px' }}>
+              No setup fees. No long-term contracts. Cancel anytime.
+            </p>
+          </div>
+          <div style={{ textAlign: 'right' }}>
+            <a
+              href="https://calendly.com/vervemindai/lead?utm_source=vervemindai.com&utm_medium=website&utm_campaign=dental&utm_content=pricing_section"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                fontSize: '15px', fontWeight: 800, padding: '16px 32px',
+                borderRadius: 'var(--r)', textDecoration: 'none',
+                background: ACCENT_GRADIENT, color: ACCENT_TEXT,
+                display: 'inline-block'
+              }}
+            >
+              Book a Free Audit Call →
+            </a>
+          </div>
+        </div>
+      </div>
+
       {/* ── CTA Strip ── */}
       <div style={{ maxWidth: 'var(--max-w)', margin: '0 auto', padding: '64px 32px' }}>
         <div style={{ background: 'var(--surface)', border: '1px solid var(--border-strong)', borderRadius: 'var(--r-xl)', padding: '40px', textAlign: 'center' }}>
