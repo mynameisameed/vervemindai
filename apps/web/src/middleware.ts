@@ -55,7 +55,7 @@ export function middleware(request: NextRequest) {
     
     const res = NextResponse.rewrite(rewriteUrl)
     res.headers.set('x-vervemind-ctx', `subdomain:${subdomain}`)
-    res.headers.set('x-antigravity-version', 'v1.0.1')
+    res.headers.set('x-antigravity-version', 'v1.0.2')
     return res
   }
 
