@@ -39,7 +39,7 @@ export default function TranslateWidget() {
         `}
       </Script>
       
-      <div style={{ display: 'flex', background: 'rgba(255,255,255,0.03)', borderRadius: '20px', padding: '4px', border: '1px solid rgba(255,255,255,0.1)' }}>
+      <div className="notranslate" style={{ display: 'flex', background: 'rgba(255,255,255,0.03)', borderRadius: '20px', padding: '4px', border: '1px solid rgba(255,255,255,0.1)' }}>
         <button 
           onClick={() => changeLanguage('en')}
           style={{ background: 'transparent', border: 'none', color: '#E5E2E1', fontSize: '13px', fontWeight: 600, padding: '4px 10px', borderRadius: '16px', cursor: 'pointer', opacity: 0.8 }}
