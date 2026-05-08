@@ -5,7 +5,7 @@ import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 import dynamic from 'next/dynamic';
 
-const VoiceDemoPlayer = dynamic(() => import('../components/VoiceDemoPlayer'), { ssr: false });
+const MultiNicheDemoPlayer = dynamic(() => import('../components/MultiNicheDemoPlayer'), { ssr: false });
 
 /* ── shared helpers ── */
 const Section = ({
@@ -219,11 +219,7 @@ export default function HomePage() {
               ))}
             </div>
             
-            <VoiceDemoPlayer 
-              audioUrl="/assets/audio/medspa_demo_stitched.mp3" 
-              spanishAudioUrl="/assets/audio/medspa_demo_stitched_es.mp3"
-              title="Listen: VerveMind AI in Action" 
-            />
+            <MultiNicheDemoPlayer />
           </div>
 
           {/* Right — metrics panel */}
