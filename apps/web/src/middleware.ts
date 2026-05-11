@@ -75,7 +75,7 @@ export function middleware(request: NextRequest) {
   // 5. Fallthrough
   const res = NextResponse.next()
   res.headers.set('x-vervemind-ctx', 'main-domain')
-  res.headers.set('x-antigravity-version', 'v1.0.1')
+  res.headers.set('x-antigravity-version', 'v1.0.4')
   return res
 }
 
