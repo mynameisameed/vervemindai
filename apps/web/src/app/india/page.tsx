@@ -23,55 +23,7 @@ const BORDER = 'rgba(255,255,255,0.06)';
 const MUTED = '#A1A1AA';
 const WHITE = '#FFFFFF';
 
-const plans = [
-  {
-    name: 'Starter',
-    inr: 'INR 8,000',
-    usd: '\u2248 $95 USD',
-    period: '/mo',
-    setup: 'INR 15,000 \u2013 25,000 one-time setup',
-    target: 'Solo clinics, individual brokers',
-    features: [
-      'Lead response automation',
-      'WhatsApp Business API',
-      'Basic CRM (Zoho / Kylas)',
-      'Calendar integration',
-    ],
-    popular: false,
-  },
-  {
-    name: 'Growth',
-    inr: 'INR 18,000',
-    usd: '\u2248 $215 USD',
-    period: '/mo',
-    setup: 'INR 35,000 \u2013 50,000 one-time setup',
-    target: 'Established practices & teams',
-    features: [
-      'Multi-channel workflows',
-      'AI lead scoring',
-      'Review automation',
-      'Analytics dashboard',
-      'Priority WhatsApp support',
-    ],
-    popular: true,
-  },
-  {
-    name: 'Enterprise',
-    inr: 'INR 45,000',
-    usd: '\u2248 $540 USD',
-    period: '/mo',
-    setup: 'INR 80,000 \u2013 1,50,000 one-time setup',
-    target: 'Multi-branch chains, developers',
-    features: [
-      'Custom AI chatbots',
-      'Multilingual (Te / HI / En)',
-      'Advanced analytics',
-      'API integrations',
-      'Dedicated account manager',
-    ],
-    popular: false,
-  },
-];
+
 
 const verticals = [
   { emoji: '\uD83E\uDDB7', title: 'Dental Clinics', desc: 'Automate recall campaigns, appointment booking, and review collection in Telugu and Hindi.' },
@@ -160,79 +112,49 @@ export default function IndiaPage() {
         </div>
       </section>
 
-      {/* INR PRICING */}
+      {/* ── PRICING SECTION ── */}
       <section style={{ padding: '80px 24px', borderTop: `1px solid ${BORDER}`, background: 'rgba(255,255,255,0.01)' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: 56 }}>
-            <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 40px)', fontWeight: 800, color: WHITE, letterSpacing: '-0.03em', marginBottom: 16 }}>
-              Pricing in INR — Zero Confusion
-            </h2>
-            <p style={{ color: MUTED, fontSize: 17, lineHeight: 1.6 }}>
-              Transparent monthly cost in Rupees with USD equivalent. All prices include GST.
-            </p>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 24, alignItems: 'start' }}>
-            {plans.map(plan => (
-              <div key={plan.name} style={{
-                position: 'relative',
-                background: CARD_BG,
-                border: `1px solid ${plan.popular ? 'rgba(0,245,212,0.35)' : BORDER}`,
-                borderRadius: 24, padding: 32,
-                backdropFilter: 'blur(20px)',
-                boxShadow: plan.popular
-                  ? `0 0 60px rgba(0,245,212,0.08), 0 20px 40px rgba(0,0,0,0.4)`
-                  : '0 4px 24px rgba(0,0,0,0.3)',
-                transform: plan.popular ? 'translateY(-8px)' : 'none',
-              }}>
-                {plan.popular && (
-                  <div style={{
-                    position: 'absolute', top: -12, left: '50%', transform: 'translateX(-50%)',
-                    background: `linear-gradient(135deg, #00DFC1, ${TEAL})`, color: '#000',
-                    fontSize: 11, fontWeight: 800, padding: '4px 16px', borderRadius: 999,
-                    letterSpacing: '0.05em', textTransform: 'uppercase', whiteSpace: 'nowrap',
-                  }}>
-                    Most Popular
-                  </div>
-                )}
-
-                <h3 style={{ fontSize: 20, fontWeight: 700, color: WHITE, marginBottom: 4 }}>{plan.name}</h3>
-                <p style={{ fontSize: 13, color: '#71717A', marginBottom: 24 }}>{plan.target}</p>
-
-                <div style={{ fontSize: 28, fontWeight: 800, color: plan.popular ? TEAL : WHITE, letterSpacing: '-0.02em', lineHeight: 1, marginBottom: 4 }}>
-                  {plan.inr}
-                </div>
-                <div style={{ fontSize: 13, color: '#71717A', marginBottom: 20 }}>{plan.usd} / month</div>
-
-                <div style={{ fontSize: 12, color: '#71717A', background: 'rgba(255,255,255,0.03)', padding: '10px 14px', borderRadius: 10, marginBottom: 24 }}>
-                  📦 {plan.setup}
-                </div>
-
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-                  {plan.features.map(f => (
-                    <li key={f} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '9px 0', fontSize: 14, color: MUTED, borderBottom: `1px solid ${BORDER}` }}>
-                      <span style={{ color: TEAL, fontWeight: 700, flexShrink: 0 }}>✓</span> {f}
-                    </li>
-                  ))}
-                </ul>
-
-                <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer"
-                  style={{
-                    display: 'block', textAlign: 'center', marginTop: 28, padding: '12px 20px', borderRadius: 12,
-                    fontWeight: 700, textDecoration: 'none', fontSize: 14,
-                    background: plan.popular ? `linear-gradient(135deg, #00DFC1, ${TEAL})` : 'rgba(255,255,255,0.06)',
-                    color: plan.popular ? '#09090B' : '#E5E2E1',
-                    border: plan.popular ? 'none' : `1px solid ${BORDER}`,
-                  }}>
-                  {plan.popular ? 'Get Started — WhatsApp Us' : 'Learn More'}
-                </a>
+          <div style={{
+            background: 'rgba(255,255,255,0.02)',
+            border: `1px solid ${BORDER}`,
+            borderRadius: 24,
+            padding: '48px',
+            display: 'grid',
+            gridTemplateColumns: '1fr 0.8fr',
+            gap: '48px',
+            alignItems: 'center',
+          }}>
+            <div>
+              <h2 style={{ fontSize: '32px', fontWeight: 900, marginBottom: '20px', color: WHITE }}>
+                How Pricing Works
+              </h2>
+              <p style={{ color: MUTED, fontSize: '16px', lineHeight: 1.6, marginBottom: '24px' }}>
+                We price based on your business call volume and specialization. Most Indian clients start with a 30-Day Reactivation Sprint to recover immediate ROI, then move to a monthly retainer.
+              </p>
+              <div style={{ fontSize: '20px', fontWeight: 800, color: TEAL, marginBottom: '8px' }}>
+                Typical investment: INR 80,000 – 1,20,000/month
               </div>
-            ))}
+              <p style={{ color: MUTED, fontSize: '14px' }}>
+                No setup fees. No long-term contracts. Cancel anytime.
+              </p>
+            </div>
+            <div style={{ textAlign: 'right' }}>
+              <a
+                href={WHATSAPP_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  fontSize: '15px', fontWeight: 800, padding: '16px 32px',
+                  borderRadius: 12, textDecoration: 'none',
+                  background: `linear-gradient(135deg, #00DFC1, ${TEAL})`, color: '#09090B',
+                  display: 'inline-block'
+                }}
+              >
+                Get Started — WhatsApp Us →
+              </a>
+            </div>
           </div>
-
-          <p style={{ textAlign: 'center', color: '#52525B', fontSize: 13, marginTop: 32 }}>
-            WhatsApp Business API and Twilio minutes billed separately at usage cost. GST included above.
-          </p>
         </div>
       </section>
 

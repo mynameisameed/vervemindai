@@ -20,11 +20,9 @@ export default function PricingComparison() {
       <div style={{ maxWidth: 1000, margin: '0 auto', padding: '0 24px' }}>
         
         <div style={{ textAlign: 'center', marginBottom: 64 }}>
-          <h2 style={{ fontSize: 'clamp(32px, 5vw, 48px)', fontWeight: 800, color: 'var(--text)', letterSpacing: '-0.03em', marginBottom: 16 }}>
-             The New Standard of Operations
-          </h2>
-          <p style={{ color: 'var(--text-muted)', fontSize: 18, maxWidth: 600, margin: '0 auto' }}>
-            Traditional answering services are message-takers. Hiring more staff kills your margins. Autonomous AI solves both.
+          <h1 style={{ fontSize: 'clamp(40px, 5vw, 56px)', fontWeight: 800, color: 'var(--text)', letterSpacing: '-0.03em', marginBottom: 16 }}>Autonomous Growth.</h1>
+          <p style={{ color: 'var(--text-muted)', fontSize: 20, maxWidth: 600, margin: '0 auto' }}>
+            Predictable investment: $997–$1,497 per month. Zero setup fees, zero contracts.
           </p>
         </div>
 
@@ -91,8 +89,8 @@ export default function PricingComparison() {
           }}>
             <div style={{ fontWeight: 800, color: 'var(--text)', fontSize: 16 }}>Monthly Investment</div>
             <div>
-              <div style={{ fontWeight: 800, color: 'var(--primary)', fontSize: 24 }}>$177–$297 <span style={{ fontSize: 12, color: 'var(--text-muted)', fontWeight: 500 }}>/mo</span></div>
-              <div style={{ fontSize: 11, color: 'var(--text-muted)', marginTop: 2 }}>+ $497–$797 one-time setup</div>
+              <div style={{ fontWeight: 800, color: 'var(--primary)', fontSize: 24 }}>$997–$1,497 <span style={{ fontSize: 12, color: 'var(--text-muted)', fontWeight: 500 }}>/mo</span></div>
+              <div style={{ fontSize: 11, color: 'var(--text-muted)', marginTop: 2 }}>Zero setup fees</div>
             </div>
             <div style={{ fontWeight: 600, color: 'var(--text-muted)', fontSize: 18 }}>$3,500 <span style={{ fontSize: 12, fontWeight: 400 }}>/mo</span></div>
             <div style={{ fontWeight: 600, color: 'var(--text-muted)', fontSize: 18 }}>$4,000+ <span style={{ fontSize: 12, fontWeight: 400 }}>/mo</span></div>

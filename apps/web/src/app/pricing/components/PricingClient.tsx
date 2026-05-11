@@ -23,9 +23,9 @@ export default function PricingClient() {
       
       <div style={{ paddingTop: '160px' }}>
         <div style={{ textAlign: 'center', marginBottom: 60, padding: '0 24px' }}>
-          <h1 style={{ fontSize: 'clamp(40px, 5vw, 56px)', fontWeight: 800, color: 'var(--text)', letterSpacing: '-0.03em', marginBottom: 16 }}>Lock in before we raise prices.</h1>
+          <h1 style={{ fontSize: 'clamp(40px, 5vw, 56px)', fontWeight: 800, color: 'var(--text)', letterSpacing: '-0.03em', marginBottom: 16 }}>Autonomous Growth.</h1>
           <p style={{ color: MUTED, fontSize: 20, maxWidth: 600, margin: '0 auto' }}>
-            Founder rate: first 10 clients lock in current pricing forever. Two plans, zero contracts.
+            Predictable investment: $997–$1,497 per month. Zero setup fees, zero contracts.
           </p>
         </div>
         
