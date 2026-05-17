@@ -207,7 +207,7 @@ export default function HomePage() {
 
             {/* Trust bullets */}
             <div style={{ display: 'flex', gap: 20 }}>
-              {['No contracts', 'Live in 48hrs', 'HIPAA-ready'].map((t) => (
+              {['No contracts', 'Live in 7 days', 'HIPAA-aware'].map((t) => (
                 <span key={t} style={{ fontSize: 12, color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: 5 }}>
                   <span style={{ color: 'var(--positive)', fontWeight: 700 }}>✓</span> {t}
                 </span>
@@ -234,7 +234,7 @@ export default function HomePage() {
             color: 'var(--text)',
             fontFamily: 'var(--font-manrope), Manrope, sans-serif',
           }}>
-            <span style={{ color: 'var(--primary)' }}>35 bookings recovered</span> in 30 days — Ivolve Medspa
+            <span style={{ color: 'var(--primary)' }}>100+ calls handled</span> in 2 months — iVolve MedSpa, Founding Client
           </div>
         </div>
       </div>
@@ -252,27 +252,27 @@ export default function HomePage() {
           You're losing revenue<br />every hour you're not online.
         </h2>
         <p style={{ color: 'var(--text-muted)', fontSize: 15, marginBottom: 48, maxWidth: 540 }}>
-          The average SMB loses $3,200/month to three preventable gaps. Here's where the money goes.
+          Most local businesses lose thousands every month to three preventable gaps. Here&apos;s where the money goes.
         </p>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
           {[
             {
               num: '01',
               headline: 'Missed Calls After Hours',
-              body: 'Every unanswered call is a lead that calls your competitor next. Most businesses miss 42% of calls that come in after 6pm.',
-              stat: '⚠ $3,200/mo in missed calls',
+              body: 'Every unanswered call is a lead that calls your competitor next. Industry data shows up to 62% of SMB calls go unanswered — and 80% of those callers never leave a voicemail.',
+              stat: '⚠ Up to 62% of calls missed',
             },
             {
               num: '02',
               headline: 'Dormant Patient Lists',
-              body: 'Your existing database is your cheapest source of new revenue. 68% of past clients never hear from you again after their last appointment.',
-              stat: '⚠ 68% never re-engaged',
+              body: 'Your existing database is your cheapest source of new revenue. Without proactive outreach, most past clients simply drift away — the average practice sees 10–17% annual patient attrition.',
+              stat: '⚠ Most never re-engaged',
             },
             {
               num: '03',
               headline: 'After-Hours Dead Zones',
-              body: "Emergencies and high-intent leads don't wait until Monday. 42% of your highest-value enquiries arrive when no one's available to answer.",
-              stat: '⚠ 42% after-hours loss rate',
+              body: "Emergencies and high-intent leads don't wait until Monday. A significant share of your highest-value enquiries arrive when no one's available to answer.",
+              stat: '⚠ After-hours = highest intent',
             },
           ].map(({ num, headline, body, stat }) => (
             <div key={num} style={{
@@ -321,7 +321,7 @@ export default function HomePage() {
           marginBottom: 48,
           color: 'var(--text)',
         }}>
-          Live in 48 hours. Results in 30 days.
+          Live in days. Results in weeks.
         </h2>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 20 }}>
           {[
@@ -333,7 +333,7 @@ export default function HomePage() {
             {
               step: '02',
               headline: 'Deploy',
-              body: 'Your AI agent goes live within 48 hours. We configure it to your tone, integrate with your calendar, and test the full call flow before handoff.',
+              body: 'Your AI agent goes live within one week. We configure it to your tone, integrate with your calendar, and test the full call flow before handoff.',
             },
             {
               step: '03',
@@ -436,10 +436,10 @@ export default function HomePage() {
               margin: '0 0 20px',
               fontStyle: 'normal',
             }}>
-              "VerveMind recovered 35 bookings in 30 days from missed and after-hours calls. The AI handles every after-hours call — we wake up to a full booking sheet."
+              "VerveMind has handled over 100 calls for us in two months — after-hours, missed calls, even Spanish-speaking patients. We wake up to a full booking sheet every morning."
             </blockquote>
             <div style={{ fontSize: 13, color: 'var(--text-muted)' }}>
-              <strong style={{ color: 'var(--text)' }}>iVolve MedSpa</strong> · Founder client
+              <strong style={{ color: 'var(--text)' }}>iVolve MedSpa</strong> · Founding Client
             </div>
           </div>
           <div style={{
@@ -455,9 +455,9 @@ export default function HomePage() {
               fontFamily: 'var(--font-manrope), Manrope, sans-serif',
               letterSpacing: '-0.03em',
             }}>
-              35
+              100+
             </div>
-            <div style={{ fontSize: 11, color: 'var(--text-muted)', marginTop: 4 }}>bookings recovered</div>
+            <div style={{ fontSize: 11, color: 'var(--text-muted)', marginTop: 4 }}>calls handled</div>
           </div>
         </div>
       </Section>
@@ -541,7 +541,7 @@ export default function HomePage() {
             Stop losing leads while you sleep.
           </h2>
           <p style={{ color: 'var(--text-muted)', fontSize: 15, marginBottom: 28, position: 'relative' }}>
-            Book a free 20-minute audit. We'll show you exactly where your revenue is leaking and how to fix it in 48 hours.
+            Book a free 20-minute audit. We&apos;ll show you exactly where your revenue is leaking — and how quickly we can plug it.
           </p>
           <a
             href="https://calendly.com/vervemindai/lead?utm_source=vervemindai.com&utm_medium=website&utm_campaign=main_site&utm_content=cta_band"

@@ -58,9 +58,43 @@ export default function RoofingPage() {
           />
         </div>
 
-        {/* Case Study Block */}
+        </div>
+      </div>
+
+      {/* ── Problem Section ── */}
+      <div style={{ background: 'rgba(255,255,255,0.015)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
+        <div style={{ maxWidth: 'var(--max-w)', margin: '0 auto', padding: '64px 32px' }}>
+          <div style={{ display: 'inline-block', borderRadius: '4px', border: '1px solid rgba(134,239,172,0.18)', fontSize: '10px', fontWeight: 700, letterSpacing: '0.12em', padding: '4px 10px', marginBottom: '14px', background: 'rgba(134,239,172,0.08)', color: ACCENT }}>
+            THE PROBLEM
+          </div>
+          <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 38px)', fontWeight: 900, letterSpacing: '-0.04em', lineHeight: 1.08, marginBottom: '12px', color: 'var(--text)' }}>
+            Storm season moves fast.<br />Slow follow-up kills revenue.
+          </h2>
+          <p style={{ color: 'var(--text-muted)', fontSize: '15px', maxWidth: '520px', lineHeight: 1.6, marginBottom: '36px' }}>
+            Roofing companies lose their best leads in the 24-hour window after a weather event.
+          </p>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '12px' }}>
+            {[
+              { num: '01', title: 'Storm Leads Expire in Hours', body: 'After a hail event, homeowners call every roofer on Google. The first company to answer books the job. Speed wins.', stat: '⚠ 78% choose first responder' },
+              { num: '02', title: 'Quote Follow-Up Decays Fast', body: 'Estimates without follow-up close below 20%. Most contractors send the quote and wait. AI follows up automatically on day 2 and day 5.', stat: '⚠ 60% of quotes: no follow-up' },
+              { num: '03', title: 'Dormant Past Clients', body: 'You have thousands of past clients. The AI automatically runs outbound Reactivation Blitz campaigns to offer free inspections and generate referrals from your existing list.', stat: '⚠ Most never re-engaged' },
+            ].map((card) => (
+              <div key={card.num} style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 'var(--r-lg)', padding: '22px' }}>
+                <div style={{ fontFamily: 'var(--font-manrope), Manrope, sans-serif', fontWeight: 900, fontSize: '40px', color: 'rgba(255,255,255,0.05)', letterSpacing: '-0.05em', marginBottom: '10px' }}>{card.num}</div>
+                <h3 style={{ fontSize: '15px', fontWeight: 700, marginBottom: '7px', color: 'var(--text)' }}>{card.title}</h3>
+                <p style={{ color: 'var(--text-muted)', fontSize: '12px', lineHeight: 1.6 }}>{card.body}</p>
+                <div style={{ display: 'inline-flex', alignItems: 'center', marginTop: '12px', borderRadius: '4px', padding: '4px 10px', fontSize: '11px', fontWeight: 700, background: 'rgba(251,191,36,0.07)', border: '1px solid rgba(251,191,36,0.15)', color: 'var(--amber)' }}>
+                  {card.stat}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Case Study Block */}
+      <div style={{ maxWidth: 'var(--max-w)', margin: '0 auto', padding: '0 32px 64px' }}>
         <div style={{
-          marginTop: '48px',
           background: 'var(--surface)',
           border: '1px solid var(--border)',
           borderRadius: 'var(--r-xl)',
@@ -90,46 +124,15 @@ export default function RoofingPage() {
               color: 'var(--text)',
               margin: '0 0 20px',
             }}>
-              "VerveMind recovered 35 bookings in 30 days from after-hours and missed calls — including Spanish-speaking clients the front desk couldn't serve."
+              "VerveMind has handled over 100 calls for us in two months — after-hours, missed calls, even Spanish-speaking patients. We wake up to a full booking sheet every morning."
             </blockquote>
             <div style={{ fontSize: '13px', color: 'var(--text-muted)' }}>
-              — <strong style={{ color: 'var(--text)' }}>Ivolve Medspa</strong>, Founding Client
+              — <strong style={{ color: 'var(--text)' }}>iVolve MedSpa</strong>, Founding Client
             </div>
           </div>
           <div style={{ textAlign: 'center', borderLeft: '1px solid var(--border)', paddingLeft: '40px' }}>
-            <div style={{ fontSize: '40px', fontWeight: 900, color: '#34D399' }}>35</div>
-            <div style={{ fontSize: '11px', color: 'var(--text-muted)' }}>bookings recovered</div>
-          </div>
-        </div>
-      </div>
-
-      {/* ── Problem Section ── */}
-      <div style={{ background: 'rgba(255,255,255,0.015)', borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)' }}>
-        <div style={{ maxWidth: 'var(--max-w)', margin: '0 auto', padding: '64px 32px' }}>
-          <div style={{ display: 'inline-block', borderRadius: '4px', border: '1px solid rgba(134,239,172,0.18)', fontSize: '10px', fontWeight: 700, letterSpacing: '0.12em', padding: '4px 10px', marginBottom: '14px', background: 'rgba(134,239,172,0.08)', color: ACCENT }}>
-            THE PROBLEM
-          </div>
-          <h2 style={{ fontSize: 'clamp(28px, 3.5vw, 38px)', fontWeight: 900, letterSpacing: '-0.04em', lineHeight: 1.08, marginBottom: '12px', color: 'var(--text)' }}>
-            Storm season moves fast.<br />Slow follow-up kills revenue.
-          </h2>
-          <p style={{ color: 'var(--text-muted)', fontSize: '15px', maxWidth: '520px', lineHeight: 1.6, marginBottom: '36px' }}>
-            Roofing companies lose their best leads in the 24-hour window after a weather event.
-          </p>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '12px' }}>
-            {[
-              { num: '01', title: 'Storm Leads Expire in Hours', body: 'After a hail event, homeowners call every roofer on Google. The first company to answer books the job. Speed wins.', stat: '⚠ 78% choose first responder' },
-              { num: '02', title: 'Quote Follow-Up Decays Fast', body: 'Estimates without follow-up close below 20%. Most contractors send the quote and wait. AI follows up automatically on day 2 and day 5.', stat: '⚠ 60% of quotes: no follow-up' },
-              { num: '03', title: 'Dormant Past Clients', body: 'You have thousands of past clients. The AI automatically runs outbound Reactivation Blitz campaigns to offer free inspections and generate referrals from your existing list.', stat: '⚠ 68% never re-engaged' },
-            ].map((card) => (
-              <div key={card.num} style={{ background: 'var(--surface)', border: '1px solid var(--border)', borderRadius: 'var(--r-lg)', padding: '22px' }}>
-                <div style={{ fontFamily: 'var(--font-manrope), Manrope, sans-serif', fontWeight: 900, fontSize: '40px', color: 'rgba(255,255,255,0.05)', letterSpacing: '-0.05em', marginBottom: '10px' }}>{card.num}</div>
-                <h3 style={{ fontSize: '15px', fontWeight: 700, marginBottom: '7px', color: 'var(--text)' }}>{card.title}</h3>
-                <p style={{ color: 'var(--text-muted)', fontSize: '12px', lineHeight: 1.6 }}>{card.body}</p>
-                <div style={{ display: 'inline-flex', alignItems: 'center', marginTop: '12px', borderRadius: '4px', padding: '4px 10px', fontSize: '11px', fontWeight: 700, background: 'rgba(251,191,36,0.07)', border: '1px solid rgba(251,191,36,0.15)', color: 'var(--amber)' }}>
-                  {card.stat}
-                </div>
-              </div>
-            ))}
+            <div style={{ fontSize: '40px', fontWeight: 900, color: '#34D399' }}>100+</div>
+            <div style={{ fontSize: '11px', color: 'var(--text-muted)' }}>calls handled</div>
           </div>
         </div>
       </div>

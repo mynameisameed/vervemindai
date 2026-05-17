@@ -14,11 +14,11 @@ const faqs = [
   },
   {
     q: 'How much does an AI receptionist cost?',
-    a: 'Plans start at $177/month for the Starter tier (AI calls, calendar integration, after-hours coverage) and $297/month for the Growth tier (adds the Reactivation Engine, weekly dashboard, monthly strategy call, and your first month free). No per-call fees on either plan. For Indian businesses, plans start at INR 8,000/month. There is a one-time setup fee depending on the complexity of your integrations. Visit our pricing page for a full breakdown and use our interactive ROI calculator to see your projected return.',
+    a: 'Typical investment is $997–$1,497/month depending on call volume and specialization. No per-call fees. No setup fees. No long-term contracts — cancel anytime. Most clients start with a 30-Day Reactivation Sprint to see immediate ROI, then move to a monthly retainer. For Indian businesses, plans start at INR 80,000/month. Visit our pricing page for a full breakdown and use our interactive ROI calculator to see your projected return.',
   },
   {
     q: 'How long does setup take?',
-    a: 'Most businesses are live within 48 hours. The onboarding wizard collects your clinic name, PMS system, calendar URL, and tone preferences. From there, our team provisions the AI agent, configures your Twilio number, and tests the full call flow before handoff.',
+    a: 'Most businesses are live within one week. The onboarding wizard collects your clinic name, PMS system, calendar URL, and tone preferences. From there, our team provisions the AI agent, configures your Twilio number, and tests the full call flow before handoff.',
   },
   {
     q: 'Can the AI book appointments into my existing calendar?',

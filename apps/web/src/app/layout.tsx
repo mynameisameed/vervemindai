@@ -119,8 +119,8 @@ export default function RootLayout({
           offers: {
             '@type': 'Offer',
             priceCurrency: 'USD',
-            price: '297',
-            priceSpecification: { '@type': 'UnitPriceSpecification', priceCurrency: 'USD', price: '297', unitText: 'MONTH' },
+            price: '997',
+            priceSpecification: { '@type': 'UnitPriceSpecification', priceCurrency: 'USD', price: '997', unitText: 'MONTH' },
             url: 'https://vervemindai.com/pricing'
           }
         }) }} />

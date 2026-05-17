@@ -88,48 +88,6 @@ export default function DentalPage() {
           />
         </div>
 
-        {/* Case Study Block */}
-        <div style={{
-          marginTop: '48px',
-          background: 'var(--surface)',
-          border: '1px solid var(--border)',
-          borderRadius: 'var(--r-xl)',
-          padding: '40px',
-          display: 'grid',
-          gridTemplateColumns: '1fr auto',
-          gap: '40px',
-          alignItems: 'center',
-        }}>
-          <div>
-            <div style={{
-              display: 'inline-block',
-              borderRadius: '4px',
-              padding: '4px 10px',
-              background: 'rgba(125,211,252,0.1)',
-              border: '1px solid rgba(125,211,252,0.2)',
-              color: ACCENT,
-              fontSize: '10px',
-              fontWeight: 700,
-              marginBottom: '16px',
-            }}>CASE STUDY</div>
-            <blockquote style={{
-              fontSize: '24px',
-              fontWeight: 800,
-              lineHeight: 1.3,
-              letterSpacing: '-0.02em',
-              color: 'var(--text)',
-              margin: '0 0 20px',
-            }}>
-              "VerveMind recovered 35 bookings in 30 days from after-hours and missed calls — including Spanish-speaking clients the front desk couldn't serve."
-            </blockquote>
-            <div style={{ fontSize: '13px', color: 'var(--text-muted)' }}>
-              — <strong style={{ color: 'var(--text)' }}>Ivolve Medspa</strong>, Founding Client
-            </div>
-          </div>
-          <div style={{ textAlign: 'center', borderLeft: '1px solid var(--border)', paddingLeft: '40px' }}>
-            <div style={{ fontSize: '40px', fontWeight: 900, color: '#34D399' }}>35</div>
-            <div style={{ fontSize: '11px', color: 'var(--text-muted)' }}>bookings recovered</div>
-          </div>
         </div>
       </div>
 
@@ -166,6 +124,51 @@ export default function DentalPage() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Case Study Block */}
+      <div style={{ maxWidth: 'var(--max-w)', margin: '0 auto', padding: '0 32px 64px' }}>
+        <div style={{
+          background: 'var(--surface)',
+          border: '1px solid var(--border)',
+          borderRadius: 'var(--r-xl)',
+          padding: '40px',
+          display: 'grid',
+          gridTemplateColumns: '1fr auto',
+          gap: '40px',
+          alignItems: 'center',
+        }}>
+          <div>
+            <div style={{
+              display: 'inline-block',
+              borderRadius: '4px',
+              padding: '4px 10px',
+              background: 'rgba(125,211,252,0.1)',
+              border: '1px solid rgba(125,211,252,0.2)',
+              color: ACCENT,
+              fontSize: '10px',
+              fontWeight: 700,
+              marginBottom: '16px',
+            }}>CASE STUDY</div>
+            <blockquote style={{
+              fontSize: '24px',
+              fontWeight: 800,
+              lineHeight: 1.3,
+              letterSpacing: '-0.02em',
+              color: 'var(--text)',
+              margin: '0 0 20px',
+            }}>
+              "VerveMind has handled over 100 calls for us in two months — after-hours, missed calls, even Spanish-speaking patients. We wake up to a full booking sheet every morning."
+            </blockquote>
+            <div style={{ fontSize: '13px', color: 'var(--text-muted)' }}>
+              — <strong style={{ color: 'var(--text)' }}>iVolve MedSpa</strong>, Founding Client
+            </div>
+          </div>
+          <div style={{ textAlign: 'center', borderLeft: '1px solid var(--border)', paddingLeft: '40px' }}>
+            <div style={{ fontSize: '40px', fontWeight: 900, color: '#34D399' }}>100+</div>
+            <div style={{ fontSize: '11px', color: 'var(--text-muted)' }}>calls handled</div>
           </div>
         </div>
       </div>

@@ -10,7 +10,7 @@ export default function ROICalculator() {
   const [plan, setPlan] = useState<'starter' | 'growth'>('starter');
   
   // VerveMind monthly cost
-  const softwareCost = plan === 'starter' ? 177 : 297;
+  const softwareCost = plan === 'starter' ? 997 : 1497;
 
   const weeksPerMonth = 4;
   const qualifiedLeads = missedCalls * weeksPerMonth * 0.8;
@@ -106,7 +106,7 @@ export default function ROICalculator() {
                   transition: 'all 0.2s'
                 }}
               >
-                Starter ($177)
+                Starter ($997)
               </button>
               <button
                 onClick={() => setPlan('growth')}
@@ -117,7 +117,7 @@ export default function ROICalculator() {
                   transition: 'all 0.2s'
                 }}
               >
-                Growth ($297)
+                Growth ($1,497)
               </button>
             </div>
           </div>
