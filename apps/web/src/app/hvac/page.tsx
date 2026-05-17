@@ -57,8 +57,6 @@ export default function HVACPage() {
             title="Listen: HVAC Dispatch AI" 
           />
         </div>
-
-        </div>
       </div>
 
       {/* ── Problem Section ── */}

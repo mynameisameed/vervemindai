@@ -87,8 +87,6 @@ export default function DentalPage() {
             title="Listen: Dental Receptionist AI" 
           />
         </div>
-
-        </div>
       </div>
 
       {/* ── Problem Section ── */}

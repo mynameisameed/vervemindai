@@ -57,8 +57,6 @@ export default function RoofingPage() {
             title="Listen: Roofing Dispatch AI" 
           />
         </div>
-
-        </div>
       </div>
 
       {/* ── Problem Section ── */}
