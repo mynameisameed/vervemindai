@@ -67,8 +67,12 @@ export function middleware(request: NextRequest) {
     }
   }
 
-  // Handle /in legacy path
-  if (url.pathname === '/in') {
+  // Handle /in and /india legacy & case-insensitive paths
+  const lowercasePath = url.pathname.toLowerCase()
+  if (lowercasePath === '/in' || lowercasePath === '/in/') {
+    return NextResponse.redirect(new URL('/india', request.url))
+  }
+  if (url.pathname !== '/india' && lowercasePath === '/india') {
     return NextResponse.redirect(new URL('/india', request.url))
   }
 
