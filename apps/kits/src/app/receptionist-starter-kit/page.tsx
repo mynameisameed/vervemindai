@@ -61,7 +61,7 @@ export default function StarterKitPage() {
           </p>
           
           <div className="flex flex-col md:flex-row items-center justify-center gap-8">
-            <a href="#pricing" className="w-full md:w-auto bg-primary text-base px-12 py-6 rounded-2xl font-black text-xl flex items-center justify-center gap-4 shadow-[0_20px_60px_rgba(0,245,212,0.3)] hover:shadow-[0_20px_80px_rgba(0,245,212,0.5)] hover:scale-[1.02] transition-all duration-500 group">
+            <a href="#pricing" className="w-full md:w-auto bg-primary text-[#131315] px-12 py-6 rounded-2xl font-black text-xl flex items-center justify-center gap-4 shadow-[0_20px_60px_rgba(0,245,212,0.3)] hover:shadow-[0_20px_80px_rgba(0,245,212,0.5)] hover:scale-[1.02] transition-all duration-500 group">
               Acquire Protocol <ArrowRight size={24} className="group-hover:translate-x-1 transition-transform" />
             </a>
             <div className="flex flex-col items-start gap-1">
@@ -179,7 +179,7 @@ export default function StarterKitPage() {
               </div>
 
               <div className="space-y-8">
-                <a href="https://buy.stripe.com/dRmaEWgweaSO2xv16Ag3603" className="w-full bg-primary text-base py-8 rounded-[32px] font-black text-3xl flex items-center justify-center gap-4 hover:scale-[1.02] hover:shadow-[0_20px_80px_rgba(0,245,212,0.4)] transition-all duration-500 group">
+                <a href="https://buy.stripe.com/dRmaEWgweaSO2xv16Ag3603" className="w-full bg-primary text-[#131315] py-8 rounded-[32px] font-black text-3xl flex items-center justify-center gap-4 hover:scale-[1.02] hover:shadow-[0_20px_80px_rgba(0,245,212,0.4)] transition-all duration-500 group">
                   Download Protocol <ArrowRight size={32} className="group-hover:translate-x-2 transition-transform duration-500" />
                 </a>
                 

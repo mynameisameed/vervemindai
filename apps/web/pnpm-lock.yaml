@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@11labs/client':
+        specifier: ^0.2.0
+        version: 0.2.0(@types/dom-mediacapture-record@1.0.22)
       '@mdx-js/loader':
         specifier: ^3.1.1
         version: 3.1.1
@@ -23,9 +26,6 @@ importers:
       '@vercel/speed-insights':
         specifier: ^2.0.0
         version: 2.0.0(next@14.2.35(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
-      framer-motion:
-        specifier: ^12.35.2
-        version: 12.38.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       gray-matter:
         specifier: ^4.0.3
         version: 4.0.3
@@ -59,6 +59,19 @@ importers:
         version: 5.9.3
 
 packages:
+
+  '@11labs/client@0.2.0':
+    resolution: {integrity: sha512-GBplAV4WDbcoThsIzdSDPN3xbcitK0ZZ4iJfJZKfltqvgvS6Uw8GZxHwVgiPwnQoA3uosYyY3L9TuPwmel18xQ==}
+    deprecated: This package is no longer maintained. Please use @elevenlabs/client for the latest version
+
+  '@bufbuild/protobuf@1.10.1':
+    resolution: {integrity: sha512-wJ8ReQbHxsAfXhrf9ixl0aYbZorRuOWpBNzm8pL8ftmSxQx/wnJD5Eg861NwJU/czy2VXFIebCeZnZrI9rktIQ==}
+
+  '@livekit/mutex@1.1.1':
+    resolution: {integrity: sha512-EsshAucklmpuUAfkABPxJNhzj9v2sG7JuzFDL4ML1oJQSV14sqrpTYnsaOudMAw9yOaW53NU3QQTlUQoRs4czw==}
+
+  '@livekit/protocol@1.45.8':
+    resolution: {integrity: sha512-Q+l57E7w/xxOBFVWzdX5rkAZO7ffyF+rlDzNUYq2SU114+5aTyCq+PK4unaEVDNd4952Af7wteKr3sOgasGuaA==}
 
   '@mdx-js/loader@3.1.1':
     resolution: {integrity: sha512-0TTacJyZ9mDmY+VefuthVshaNIyCGZHJG2fMnGaDttCt8HmjUF7SizlHJpaCDoGnN635nK1wpzfpx/Xx5S4WnQ==}
@@ -157,6 +170,9 @@ packages:
 
   '@types/debug@4.1.13':
     resolution: {integrity: sha512-KSVgmQmzMwPlmtljOomayoR89W4FynCAi3E8PPs7vmDVPe84hT+vGPKkJfThkmXs0x0jAaa9U8uW8bbfyS2fWw==}
+
+  '@types/dom-mediacapture-record@1.0.22':
+    resolution: {integrity: sha512-mUMZLK3NvwRLcAAT9qmcK+9p7tpU2FHdDsntR3YI4+GY88XrgG4XiE7u1Q2LAN2/FZOz/tdMDC3GQCR4T8nFuw==}
 
   '@types/estree-jsx@1.0.5':
     resolution: {integrity: sha512-52CcUVNFyfb1A2ALocQw/Dd1BQFNmSdkuC3BkZ6iqhdMfQz7JWOFRuJFloOzjk+6WijU56m9oKXFAXc7o3Towg==}
@@ -359,26 +375,16 @@ packages:
   estree-walker@3.0.3:
     resolution: {integrity: sha512-7RUKfXgSMMkzt6ZuXmqapOurLGPPfgj6l9uRZ7lRGolvk0y2yocc35LdcxKC5PQZdn2DMqioAQ2NoWcrTKmm6g==}
 
+  events@3.3.0:
+    resolution: {integrity: sha512-mQw+2fkQbALzQ7V0MY0IqdnXNOeTtP4r0lN9z7AAawCXgqea7bDii20AYrIBrFd/Hx0M2Ocz6S111CaFkUcb0Q==}
+    engines: {node: '>=0.8.x'}
+
   extend-shallow@2.0.1:
     resolution: {integrity: sha512-zCnTtlxNoAiDc3gqY2aYAWFx7XWWiasuF2K8Me5WbN8otHKTUKBwjPtNpRs/rbUZm7KxWAaNj7P1a/p52GbVug==}
     engines: {node: '>=0.10.0'}
 
   extend@3.0.2:
     resolution: {integrity: sha512-fjquC59cD7CyW6urNXK0FBufkZcoiGG80wTuPujX590cB5Ttln20E2UB4S/WARVqhXffZl2LNgS+gQdPIIim/g==}
-
-  framer-motion@12.38.0:
-    resolution: {integrity: sha512-rFYkY/pigbcswl1XQSb7q424kSTQ8q6eAC+YUsSKooHQYuLdzdHjrt6uxUC+PRAO++q5IS7+TamgIw1AphxR+g==}
-    peerDependencies:
-      '@emotion/is-prop-valid': '*'
-      react: ^18.0.0 || ^19.0.0
-      react-dom: ^18.0.0 || ^19.0.0
-    peerDependenciesMeta:
-      '@emotion/is-prop-valid':
-        optional: true
-      react:
-        optional: true
-      react-dom:
-        optional: true
 
   graceful-fs@4.2.11:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
@@ -419,6 +425,9 @@ packages:
     resolution: {integrity: sha512-+Pgi+vMuUNkJyExiMBt5IlFoMyKnr5zhJ4Uspz58WOhBF5QoIZkFyNHIbBAtHwzVAgk5RtndVNsDRN61/mmDqg==}
     engines: {node: '>=12'}
 
+  jose@6.2.3:
+    resolution: {integrity: sha512-YYVDInQKFJfR/xa3ojUTl8c2KoTwiL1R5Wg9YCydwH0x0B9grbzlg5HC7mMjCtUJjbQ/YnGEZIhI5tCgfTb4Hw==}
+
   js-tokens@4.0.0:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==}
 
@@ -429,6 +438,15 @@ packages:
   kind-of@6.0.3:
     resolution: {integrity: sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==}
     engines: {node: '>=0.10.0'}
+
+  livekit-client@2.19.0:
+    resolution: {integrity: sha512-aolY1XDAtx0nHKBNm29W9OhzBnSz1CP5kq3phvRhFfi1NbvMXs8tcACjAkZTnIKgihkp+BiJScZZ3tZv0Gz8sA==}
+    peerDependencies:
+      '@types/dom-mediacapture-record': ^1
+
+  loglevel@1.9.2:
+    resolution: {integrity: sha512-HgMmCqIJSAKqo68l0rS2AanEWfkxaZ5wNiEFb5ggm08lDs9Xl2KxBlX3PTcaD2chBM1gXAYf491/M2Rv8Jwayg==}
+    engines: {node: '>= 0.6.0'}
 
   longest-streak@3.1.0:
     resolution: {integrity: sha512-9Ri+o0JYgehTaVBBDoMqIl8GXtbWg711O3srftcHhZ0dqnETqLaoIK0x17fUw9rFSlK/0NlsKe0Ahhyl5pXE2g==}
@@ -557,12 +575,6 @@ packages:
   micromark@4.0.2:
     resolution: {integrity: sha512-zpe98Q6kvavpCr1NPVSCMebCKfD7CA2NqZ+rykeNhONIJBpc1tFKt9hucLGwha3jNTNI8lHpctWJWoimVF4PfA==}
 
-  motion-dom@12.38.0:
-    resolution: {integrity: sha512-pdkHLD8QYRp8VfiNLb8xIBJis1byQ9gPT3Jnh2jqfFtAsWUA3dEepDlsWe/xMpO8McV+VdpKVcp+E+TGJEtOoA==}
-
-  motion-utils@12.36.0:
-    resolution: {integrity: sha512-eHWisygbiwVvf6PZ1vhaHCLamvkSbPIeAYxWUuL3a2PD/TROgE7FvfHWTIH4vMl798QLfMw15nRqIaRDXTlYRg==}
-
   ms@2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
 
@@ -637,8 +649,18 @@ packages:
   remark-rehype@11.1.2:
     resolution: {integrity: sha512-Dh7l57ianaEoIpzbp0PC9UKAdCSVklD8E5Rpw7ETfbTl3FqcOOgq5q2LVDhgGCkaBv7p24JXikPdvhhmHvKMsw==}
 
+  rxjs@7.8.2:
+    resolution: {integrity: sha512-dhKf903U/PQZY6boNNtAGdWbG85WAbjT/1xYoZIC7FAY0yWapOBQVsVrDl58W86//e1VpMNBtRV4MaXfdMySFA==}
+
   scheduler@0.23.2:
     resolution: {integrity: sha512-UOShsPwz7NrMUqhR6t0hWjFduvOzbtv7toDH1/hIrfRNIDBnnBWd0CwJTGvTpngVlmwGCdP9/Zl/tVrDqcuYzQ==}
+
+  sdp-transform@2.15.0:
+    resolution: {integrity: sha512-KrOH82c/W+GYQ0LHqtr3caRpM3ITglq3ljGUIb8LTki7ByacJZ9z+piSGiwZDsRyhQbYBOBJgr2k6X4BZXi3Kw==}
+    hasBin: true
+
+  sdp@3.2.2:
+    resolution: {integrity: sha512-xZocWwfyp4hkbN4hLWxMjmv2Q8aNa9MhmOZ7L9aCZPT+dZsgRr6wZRrSYE3HTdyk/2pZKPSgqI7ns7Een1xMSA==}
 
   section-matter@1.0.0:
     resolution: {integrity: sha512-vfD3pmTzGpufjScBh50YHKzEu2lxBWhVEHsNGoEXmCmn2hKGfeNLYMzCJpe8cD7gqX7TJluOVpBkAequ6dgMmA==}
@@ -697,6 +719,9 @@ packages:
   tslib@2.8.1:
     resolution: {integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==}
 
+  typed-emitter@2.1.0:
+    resolution: {integrity: sha512-g/KzbYKbH5C2vPkaXGu8DJlHrGKHLsM25Zg9WuC9pMGfuvT+X25tZQWo5fK1BjBm8+UrVE9LDCvaY0CQk+fXDA==}
+
   typescript@5.9.3:
     resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
     engines: {node: '>=14.17'}
@@ -735,10 +760,28 @@ packages:
   wavesurfer.js@7.12.6:
     resolution: {integrity: sha512-zSxPgOFprtyJ31ppHQF0+E9jAmjAhi1rR36yIW6h1GOYdpRxDe6mbkYtlChqLK0Iz8ROBweiEFw2zus7tDFibA==}
 
+  webrtc-adapter@9.0.5:
+    resolution: {integrity: sha512-U9vjByy/sK2OMXu5mmfuZFKTMIUQe34c0JXRO+oDrxJTsntdYT2iIFwYMOV7HhMTuktcZLGf2W1N/OcSf9ssWg==}
+    engines: {node: '>=6.0.0', npm: '>=3.10.0'}
+
   zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
 
 snapshots:
+
+  '@11labs/client@0.2.0(@types/dom-mediacapture-record@1.0.22)':
+    dependencies:
+      livekit-client: 2.19.0(@types/dom-mediacapture-record@1.0.22)
+    transitivePeerDependencies:
+      - '@types/dom-mediacapture-record'
+
+  '@bufbuild/protobuf@1.10.1': {}
+
+  '@livekit/mutex@1.1.1': {}
+
+  '@livekit/protocol@1.45.8':
+    dependencies:
+      '@bufbuild/protobuf': 1.10.1
 
   '@mdx-js/loader@3.1.1':
     dependencies:
@@ -829,6 +872,8 @@ snapshots:
   '@types/debug@4.1.13':
     dependencies:
       '@types/ms': 2.1.0
+
+  '@types/dom-mediacapture-record@1.0.22': {}
 
   '@types/estree-jsx@1.0.5':
     dependencies:
@@ -980,20 +1025,13 @@ snapshots:
     dependencies:
       '@types/estree': 1.0.8
 
+  events@3.3.0: {}
+
   extend-shallow@2.0.1:
     dependencies:
       is-extendable: 0.1.1
 
   extend@3.0.2: {}
-
-  framer-motion@12.38.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1):
-    dependencies:
-      motion-dom: 12.38.0
-      motion-utils: 12.36.0
-      tslib: 2.8.1
-    optionalDependencies:
-      react: 18.3.1
-      react-dom: 18.3.1(react@18.3.1)
 
   graceful-fs@4.2.11: {}
 
@@ -1066,6 +1104,8 @@ snapshots:
 
   is-plain-obj@4.1.0: {}
 
+  jose@6.2.3: {}
+
   js-tokens@4.0.0: {}
 
   js-yaml@3.14.2:
@@ -1074,6 +1114,21 @@ snapshots:
       esprima: 4.0.1
 
   kind-of@6.0.3: {}
+
+  livekit-client@2.19.0(@types/dom-mediacapture-record@1.0.22):
+    dependencies:
+      '@livekit/mutex': 1.1.1
+      '@livekit/protocol': 1.45.8
+      '@types/dom-mediacapture-record': 1.0.22
+      events: 3.3.0
+      jose: 6.2.3
+      loglevel: 1.9.2
+      sdp-transform: 2.15.0
+      tslib: 2.8.1
+      typed-emitter: 2.1.0
+      webrtc-adapter: 9.0.5
+
+  loglevel@1.9.2: {}
 
   longest-streak@3.1.0: {}
 
@@ -1392,12 +1447,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  motion-dom@12.38.0:
-    dependencies:
-      motion-utils: 12.36.0
-
-  motion-utils@12.36.0: {}
-
   ms@2.1.3: {}
 
   nanoid@3.3.11: {}
@@ -1518,9 +1567,18 @@ snapshots:
       unified: 11.0.5
       vfile: 6.0.3
 
+  rxjs@7.8.2:
+    dependencies:
+      tslib: 2.8.1
+    optional: true
+
   scheduler@0.23.2:
     dependencies:
       loose-envify: 1.4.0
+
+  sdp-transform@2.15.0: {}
+
+  sdp@3.2.2: {}
 
   section-matter@1.0.0:
     dependencies:
@@ -1562,6 +1620,10 @@ snapshots:
   trough@2.2.0: {}
 
   tslib@2.8.1: {}
+
+  typed-emitter@2.1.0:
+    optionalDependencies:
+      rxjs: 7.8.2
 
   typescript@5.9.3: {}
 
@@ -1615,5 +1677,9 @@ snapshots:
       vfile-message: 4.0.3
 
   wavesurfer.js@7.12.6: {}
+
+  webrtc-adapter@9.0.5:
+    dependencies:
+      sdp: 3.2.2
 
   zwitch@2.0.4: {}

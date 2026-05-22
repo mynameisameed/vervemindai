@@ -2,6 +2,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Metadata } from 'next';
 import { Inter, Manrope } from 'next/font/google';
+import VoiceWidget from '@/components/VoiceWidget';
 import './globals.css';
 
 const inter = Inter({
@@ -141,6 +142,7 @@ export default function RootLayout({
         }} />
         
         {children}
+        <VoiceWidget />
         <Analytics />
         <SpeedInsights />
       </body>
