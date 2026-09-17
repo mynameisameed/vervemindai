@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VerveMind AI • Autonomous Revenue OS • Interactive Demo Hub</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: rgba(18, 24, 38, 0.75);
+      --border: rgba(255, 255, 255, 0.08);
+      --accent: #8b5cf6;
+      --accent-glow: rgba(139, 92, 246, 0.35);
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --success: #10b981;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: var(--bg);
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(139, 92, 246, 0.15) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(59, 130, 246, 0.12) 0px, transparent 50%);
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+    }
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+    /* Header */
+    .header {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      background: rgba(139, 92, 246, 0.15);
+      border: 1px solid rgba(139, 92, 246, 0.3);
+      border-radius: 9999px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #c4b5fd;
+      letter-spacing: 0.02em;
+    }
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--success);
+      box-shadow: 0 0 10px var(--success);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.9); }
+    }
+    h1 {
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 800;
+      line-height: 1.2;
+      background: linear-gradient(135deg, #ffffff 40%, #a78bfa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    p.subtitle {
+      font-size: clamp(15px, 2vw, 18px);
+      color: var(--text-muted);
+      max-width: 680px;
+    }
+    /* Vertical Selector Tabs */
+    .vertical-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+    }
+    .tab-btn {
+      padding: 10px 20px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--card-bg);
+      color: var(--text-muted);
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 14px;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .tab-btn:hover {
+      border-color: rgba(139, 92, 246, 0.5);
+      color: #fff;
+    }
+    .tab-btn.active {
+      background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(168, 85, 247, 0.2));
+      border-color: var(--accent);
+      color: #fff;
+      box-shadow: 0 0 20px var(--accent-glow);
+    }
+    /* Main Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+    }
+    @media (max-width: 860px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .card-title {
+      font-size: 18px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    /* Video Switcher Tabs */
+    .video-tabs {
+      display: flex;
+      gap: 6px;
+      background: rgba(0, 0, 0, 0.3);
+      padding: 4px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .v-tab-btn {
+      padding: 5px 12px;
+      border-radius: 6px;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    .v-tab-btn.active {
+      background: var(--accent);
+      color: #fff;
+    }
+    /* Video Box */
+    .video-container {
+      width: 100%;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: #000;
+      aspect-ratio: 16 / 9;
+      position: relative;
+    }
+    .video-container video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    /* Value Points */
+    .value-points {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .point {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .point-icon {
+      color: #34d399;
+      font-weight: bold;
+    }
+    /* WebRTC Calling Box */
+    .calling-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 20px;
+      text-align: center;
+      gap: 18px;
+      background: radial-gradient(circle at center, rgba(139, 92, 246, 0.12) 0%, rgba(15, 23, 42, 0) 70%);
+      border-radius: 16px;
+      border: 1px dashed rgba(139, 92, 246, 0.3);
+    }
+    .orb-pulse {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 32px;
+      box-shadow: 0 0 35px rgba(168, 85, 247, 0.6);
+      animation: orbFloat 3s ease-in-out infinite;
+      cursor: pointer;
+    }
+    @keyframes orbFloat {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 30px rgba(168, 85, 247, 0.5); }
+      50% { transform: scale(1.08); box-shadow: 0 0 50px rgba(236, 72, 153, 0.8); }
+    }
+    .cta-btn {
+      padding: 14px 24px;
+      background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+      border: none;
+      border-radius: 12px;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: all 0.2s;
+      box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4);
+      text-decoration: none;
+      width: 100%;
+    }
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 28px rgba(139, 92, 246, 0.6);
+    }
+    /* Guarantee Box */
+    .guarantee-card {
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      border-radius: 16px;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .guarantee-icon {
+      font-size: 36px;
+      flex-shrink: 0;
+    }
+    .guarantee-text h4 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #34d399;
+      margin-bottom: 4px;
+    }
+    .guarantee-text p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+    footer {
+      text-align: center;
+      color: #6b7280;
+      font-size: 13px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Header -->
+    <header class="header">
+      <div class="badge">
+        <span class="badge-dot"></span>
+        Zero-Telecom Cost • WebRTC Voice Agent Active
+      </div>
+      <h1 id="headline">Never Miss a $3,500 Emergency Call After Hours</h1>
+      <p class="subtitle" id="subheadline">
+        Watch our animated architecture demo, then tap the pulsing orb to test our AI receptionist live right on your phone in 1 click.
+      </p>
+
+      <!-- Vertical Tabs -->
+      <div class="vertical-tabs">
+        <button class="tab-btn active" onclick="switchVertical('hvac')">
+          🏠 Home Services (HVAC & Plumbing)
+        </button>
+        <button class="tab-btn" onclick="switchVertical('medspa')">
+          ✨ MedSpas & Aesthetics
+        </button>
+        <button class="tab-btn" onclick="switchVertical('dental')">
+          🦷 Dental & Orthodontics
+        </button>
+      </div>
+    </header>
+
+    <!-- Main Grid -->
+    <div class="grid">
+      <!-- Left Column: Remotion Infographic Video -->
+      <div class="card">
+        <div class="card-header">
+          <div class="card-title">
+            <span>📊</span> How Recovery Works
+          </div>
+          <div class="video-tabs">
+            <button class="v-tab-btn active" id="btn-v1" onclick="switchVideo('v1')">Call Flow</button>
+            <button class="v-tab-btn" id="btn-v2" onclick="switchVideo('v2')">Lead Scoring</button>
+          </div>
+        </div>
+
+        <div class="video-container">
+          <video id="mainVideo" controls autoplay muted loop playsinline poster="">
+            <source id="videoSource" src="workflow-diagram-with-audio.mp4" type="video/mp4">
+            Your browser does not support HTML video.
+          </video>
+        </div>
+
+        <div class="value-points" id="verticalPoints">
+          <div class="point">
+            <span class="point-icon">✓</span>
+            <span><strong>Zero Lost Jobs:</strong> Answers 24/7 in under 600ms while your dispatchers sleep.</span>
+          </div>
+          <div class="point">
+            <span class="point-icon">✓</span>
+            <span><strong>Instant Dispatch Alert:</strong> Captures caller name, urgency, and texts your on-call team.</span>
+          </div>
+          <div class="point">
+            <span class="point-icon">✓</span>
+            <span><strong>Universal Setup:</strong> No software integration needed. 15-minute conditional phone forwarding.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: ElevenLabs WebRTC Voice Receptionist -->
+      <div class="card">
+        <div class="card-title">
+          <span>🎙️</span> Test Live Receptionist (WebRTC)
+        </div>
+        
+        <div class="calling-box">
+          <div class="orb-pulse" title="Tap to talk to AI receptionist">
+            📞
+          </div>
+          <div>
+            <h3 style="font-size: 17px; margin-bottom: 6px;" id="agentName">AI Receptionist (Sameed Voice)</h3>
+            <p style="font-size: 13px; color: var(--text-muted); line-height: 1.4;">
+              Powered by ElevenLabs Conversational AI over WebRTC. Zero telephone bill, zero app downloads. Tap the button below to test right now.
+            </p>
+          </div>
+
+          <!-- ElevenLabs Conversational Widget Embed -->
+          <elevenlabs-convai 
+            agent-id="agent_1301ks0h0t6be5ktqe27e3jvydcm"
+            variant="compact"
+            action-text="Tap to Talk to Receptionist"
+            avatar-orb-color-1="#a855f7"
+            avatar-orb-color-2="#ec4899">
+          </elevenlabs-convai>
+        </div>
+
+        <a href="https://cal.com/sameed-5kimhu/30min" target="_blank" class="cta-btn">
+          <span>📅</span> Schedule 14-Day Free Pilot Audit
+        </a>
+      </div>
+    </div>
+
+    <!-- Guarantee Banner -->
+    <div class="guarantee-card">
+      <div class="guarantee-icon">🛡️</div>
+      <div class="guarantee-text">
+        <h4>The VerveMind Zero-Risk 14-Day Pilot Guarantee</h4>
+        <p>
+          We install after-hours call capture for 14 days completely free. If our AI doesn't capture at least 2 emergencies or consultations you would have completely lost to competitors, you pay $0. If it captures them, keep it for a flat $350/month with zero long-term contracts.
+        </p>
+      </div>
+    </div>
+
+    <footer>
+      © 2026 VerveMind AI • Autonomous Revenue OS • Built for High-Ticket Local Service Leaders
+    </footer>
+  </div>
+
+  <!-- ElevenLabs Official Web Embed Script -->
+  <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+
+  <script>
+    const verticalData = {
+      hvac: {
+        headline: "Never Miss a $3,500 Emergency Call After Hours",
+        subheadline: "When ACs break or pipes burst at 11 PM, callers hire the first company that answers. See how our AI receptionist books emergency dispatch automatically.",
+        agentName: "Home Services AI Dispatcher",
+        points: [
+          "<strong>Zero Lost Jobs:</strong> Answers 24/7 in under 600ms while your dispatchers sleep.",
+          "<strong>Instant Dispatch Alert:</strong> Captures caller name, urgency, and texts your on-call team.",
+          "<strong>Universal Setup:</strong> No software integration needed. 15-minute conditional phone forwarding."
+        ]
+      },
+      medspa: {
+        headline: "Reactivate 50 Dormant Patients & Capture Evening Bookings",
+        subheadline: "Over 65% of MedSpa inquiries browse after 6 PM on Instagram/Google. Let our warm AI receptionist answer treatment questions and book consults 24/7.",
+        agentName: "MedSpa Aesthetic Receptionist",
+        points: [
+          "<strong>Dormant Win-Backs:</strong> Captures Botox, filler, and laser consults automatically.",
+          "<strong>Warm Conversational Pacing:</strong> Answers FAQs and treatment questions naturally.",
+          "<strong>Proven Blueprint:</strong> Based on the exact revenue system built for iVolve MedSpa."
+        ]
+      },
+      dental: {
+        headline: "Capture $2,500 Dental Implant & Emergency Consults 24/7",
+        subheadline: "Relieve front-desk call burden and capture patients seeking emergency tooth pain relief or cosmetic consultations while your office is closed.",
+        agentName: "Dental Practice Receptionist",
+        points: [
+          "<strong>High-Ticket Recovery:</strong> 1 captured implant case pays for 10 months of the AI.",
+          "<strong>Relieve Staff Stress:</strong> Front desk focuses on in-office patients while AI handles call surges.",
+          "<strong>Direct Calendar Booking:</strong> Books directly into Cal.com / Google Calendar slots."
+        ]
+      }
+    };
+
+    function switchVertical(key) {
+      const data = verticalData[key];
+      document.getElementById('headline').innerText = data.headline;
+      document.getElementById('subheadline').innerText = data.subheadline;
+      document.getElementById('agentName').innerText = data.agentName;
+
+      const pointsContainer = document.getElementById('verticalPoints');
+      pointsContainer.innerHTML = data.points.map(pt => `
+        <div class="point">
+          <span class="point-icon">✓</span>
+          <span>${pt}</span>
+        </div>
+      `).join('');
+
+      document.querySelectorAll('.vertical-tabs .tab-btn').forEach(btn => btn.classList.remove('active'));
+      event.currentTarget.classList.add('active');
+    }
+
+    function switchVideo(v) {
+      const video = document.getElementById('mainVideo');
+      const source = document.getElementById('videoSource');
+      const btnV1 = document.getElementById('btn-v1');
+      const btnV2 = document.getElementById('btn-v2');
+
+      if (v === 'v1') {
+        source.src = 'workflow-diagram-with-audio.mp4';
+        btnV1.classList.add('active');
+        btnV2.classList.remove('active');
+      } else {
+        source.src = 'lead-scoring-demo-with-audio.mp4';
+        btnV2.classList.add('active');
+        btnV1.classList.remove('active');
+      }
+      video.load();
+      video.play().catch(() => {});
+    }
+  </script>
+</body>
+</html>
